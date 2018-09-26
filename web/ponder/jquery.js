@@ -1,14 +1,16 @@
-$(document).ready(function(){
-  $(".tab-list").on("click", ".tab", function(e) {
-      e.preventDefault();
+function click() {
+    alert("Clicked!");
+}
 
-      $(".tab").removeClass("active");
-      $(".tab-content").removeClass("show");
-      $(this).addClass("active");
-      $($(this).attr("href")).addClass("show");
-});
+function changeColor() {
+    var textbox_id = "txtColor";
+    var textbox = document.getElementById(textbox_id);
 
- $(".accordion").on("click", ".accordion-header", function() {
-     $(this).toggleClass("active").next().slideToggle();
- });
-});
+    var div_id = "div1";
+    var div = document.getElementById(div_id);
+
+    // We should verify values here before we use them...
+    var color = textbox.value;
+    div.style.backgroundColor = color;
+
+}
