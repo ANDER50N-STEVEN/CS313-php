@@ -7,7 +7,7 @@ function changeColor() {
     var textbox = document.getElementById(textbox_id);
 
     var div_class = "one";
-    var div = document.getElementByClassName(div_class);
+    var div = document.getElementsByClassName(div_class);
 
     // We should verify values here before we use them...
     var color = textbox.value;
