@@ -75,6 +75,7 @@ h1.home{
 }
 
 .email{
+    text-align: right;
     margin-right: 5%;
     font-size: 30px;
 }
