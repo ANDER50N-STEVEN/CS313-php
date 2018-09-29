@@ -1,12 +1,10 @@
 <div class="headerBar"></div>
 
-
       <h1 id = "top"
           class = "home"><a href = "Homepage.html"> <em>
-            Home Page</em></a></h1>
+            Home Page</em></a>
          
-    <a href="mailto:and12128@byui.edu" class="email"> EMAIL </a>
-     
+    <a href="mailto:and12128@byui.edu" class="email"> EMAIL </a>   </h1>
       <hr class = "top"/>
       
       <table class = "archive">
