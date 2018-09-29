@@ -38,8 +38,7 @@ table, tr, th{
     background-color: grey;
     position: fixed;
     bottom: 0;
-    z-index: -1;
-    margin-left: 20%;
+    margin-left: 25%;
 }
 
 table.about {
