@@ -15,4 +15,4 @@
               <td> SignUp </a></td>
           </tr>
       </table>
-      <div class="footerBar"></div>
+    
