@@ -34,6 +34,11 @@ table, tr, th{
     margin-left: 5%;
 }
 
+.footer {
+    background-color: grey;
+    bottom: 0;
+}
+
 table.about {
     padding: 50px;
     margin: auto;

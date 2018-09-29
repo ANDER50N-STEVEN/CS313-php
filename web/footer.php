@@ -1,4 +1,4 @@
-<table class="footer" style="background-color: grey">
+<table class="footer">
           <tr>
               <th> Other Work </th>
               <th> Contact Info </th>
