@@ -4,19 +4,18 @@
       <h1 id = "top"
           class = "home"><a href = "Homepage.html"> <em>
             Home Page</em></a></h1>
-      <br /> <br />
          
-    <a href="mailto:and12128@byui.edu" class="email"> CONTACT </a>
+    <a href="mailto:and12128@byui.edu" class="email"> EMAIL </a>
      
       <hr class = "top"/>
       
       <table class = "archive">
         <tr>
           <td>
-            <a href = "Homepage.html"
+            <a href = "Homepage.php"
                class = "tile"> HOME </a></td>
           <td>
-            <a href = "prove.html"
+            <a href = "prove.php"
                class = "tile" > PROVE </a></td>
           <td>
             <a href = ""
