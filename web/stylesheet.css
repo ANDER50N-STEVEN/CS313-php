@@ -38,6 +38,7 @@ table, tr, th{
     background-color: grey;
     position: fixed;
     bottom: 0;
+    margin: auto;
 }
 
 table.about {
