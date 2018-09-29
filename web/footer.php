@@ -6,11 +6,11 @@
           </tr>
           <tr>
               <td>
-                  <a href="prove.html"> Archive</a>
+                  <a href="prove.php"> Archive</a>
               </td>
               <td>
-                  1 (800) 555-1234 <br />
-                  probablywon'twork@something.com<br />
+                  1 (800) 867-5309 <br />
+                  and12128@byui.edu<br />
               </td>
               <td> SignUp </a></td>
           </tr>
