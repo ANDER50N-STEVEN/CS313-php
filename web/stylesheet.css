@@ -35,9 +35,9 @@ table, tr, th{
 }
 
 table.about {
-    padding: 100px;
+    padding: 50px;
     margin: auto;
-    width: 60%;
+    width: 80%;
 }
 
 th.about {
