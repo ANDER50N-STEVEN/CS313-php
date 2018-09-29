@@ -36,9 +36,9 @@ table, tr, th{
 
 .footer {
     background-color: grey;
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    margin: auto;
+    margin-left: 10%;
 }
 
 table.about {
