@@ -36,7 +36,7 @@ table, tr, th{
 
 .footer {
     background-color: grey;
-    position: static;
+    position: sticky;
     bottom: 0;
 }
 
