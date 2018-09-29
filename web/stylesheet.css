@@ -27,15 +27,7 @@ table, tr, th{
     left: 5%;
 }
 
-.footerBar {
-    height: 40px;
-    background: black;
-    position: fixed;
-    bottom: 0;
-    width: 90%;
-    z-index: -1;
-    margin-left: 5%;
-}
+
 
 .footer {
     display: block;
