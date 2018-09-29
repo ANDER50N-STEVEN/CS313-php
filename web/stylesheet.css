@@ -71,13 +71,14 @@ h1.home{
     margin-left: 7%;
     float: left;
     font-size: 150%;
-    width: 100%;
+    width: 90%;
 }
 
 .email{
     float: right;
     font-size: 30px;
     font-weight: bold;
+    margin-right: 7%;
 }
 
 a.tile{
