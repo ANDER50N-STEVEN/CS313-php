@@ -31,8 +31,7 @@
 				and got a job out here. Our hope is that I will be able to finish my degree
 				 online.  Originally I am from Southern California so the rain is something
 I'm going to have to get used to, but it'll be better than the sub zero tempuratures in Rexburg. 
-              <br /> 1 (800) 555-1234
-              <br /> probablydoesn'twork@something.com
+           
           </td>
       </table>
 

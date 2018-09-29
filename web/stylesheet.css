@@ -93,6 +93,10 @@ table.archive{
  
 }
 
+td.archive:hover {
+    background-color: #add8e6;
+}
+
 hr.archive{
     width: 75%}
 
