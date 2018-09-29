@@ -40,11 +40,16 @@ table, tr, th{
 .footer {
     display: block;
     background-color: grey;
-    
+   
     bottom: 0;
     margin-left: auto;
     margin-right: auto;
 }
+.wrapper{
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
 
 table.about {
     padding: 50px;
