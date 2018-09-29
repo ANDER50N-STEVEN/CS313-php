@@ -27,7 +27,7 @@ table, tr, th{
 .footerBar {
     height: 40px;
     background: black;
-    position: static;
+    position: fixed;
     bottom: 0;
     width: 90%;
     z-index: -1;
