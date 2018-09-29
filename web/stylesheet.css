@@ -120,3 +120,9 @@ h3{
     text-align:left;
     margin: auto;
 }
+
+.homeImg{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
