@@ -6,7 +6,7 @@
             Home Page</em></a></h1>
       <br /> <br />
          
-    <a href="mailto:and12128@byui.edu" class="email"> AND12128@BYUI.EDU</a>
+    <a href="mailto:and12128@byui.edu" class="email"> CONTACT </a>
      
       <hr class = "top"/>
       
