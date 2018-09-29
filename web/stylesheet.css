@@ -34,8 +34,9 @@ table, tr, th{
     background-color: grey;
     position: fixed;
     bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
+    width: 74%;
+    z-index: -1;
+    margin-left: 13%;
 }
 .wrapper{
     min-height: 100%;
