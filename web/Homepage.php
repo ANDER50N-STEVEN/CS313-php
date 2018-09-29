@@ -9,7 +9,7 @@
       <?php
       include('header.php')
       ?>
-
+	  <div class ="wrapper">
       <table class="about">
           <tr>
               <th class="aboutMe"> Interests</th>
@@ -37,7 +37,7 @@ I'm going to have to get used to, but it'll be better than the sub zero tempurat
       </table>
 
 	  <img class = "homeImg" src = "National Harbor.png" alt = "National Harbor with Kate Lynn">
-
+	  </div>
       <?php
 	  include('footer.php')
 	  ?>
