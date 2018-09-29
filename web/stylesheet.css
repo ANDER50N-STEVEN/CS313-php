@@ -36,9 +36,10 @@ table, tr, th{
 
 .footer {
     background-color: grey;
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    margin-left: 10%;
+    z-index: -1;
+    margin-left: 20%;
 }
 
 table.about {
