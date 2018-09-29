@@ -41,7 +41,8 @@ table, tr, th{
     background-color: grey;
     position: fixed;
     bottom: 0;
-    margin-left: 25%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table.about {
