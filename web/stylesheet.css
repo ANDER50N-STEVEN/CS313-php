@@ -47,7 +47,7 @@ table, tr, th{
 }
 .wrapper{
     min-height: 100%;
-    margin-bottom: -100px;
+    margin-bottom: 0 auto -50px;
 }
 
 
