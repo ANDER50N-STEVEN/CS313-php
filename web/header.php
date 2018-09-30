@@ -21,7 +21,7 @@
             <a href = ""
                class = "tile"> PONDER </a></td>
           <td class = "archive">
-            <a href = ""
+            <a href = "https://byui.brightspace.com/d2l/le/content/490016/viewContent/6811648/View"
                class = "tile"> CLASS </a></td>
           <td class = "archive">
             <a href = "mailto:and1212*@byui.edu"
