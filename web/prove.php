@@ -12,7 +12,6 @@
 <h1 class ="assignList"> List of Assignements </h1>
 
 <ul class ="assignList">
-<li><a href = "index.html"> index.html </a></li>
         <li><a href = "Homepage.php"> Week 2 - Home Page </a></li>
         <li><a href = ""> Week 3 </a></li>
         <li><a href = ""> Week 4 </a></li>
