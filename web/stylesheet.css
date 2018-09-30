@@ -38,10 +38,7 @@ table, tr, th{
     z-index: -1;
     margin-left: 13%;
 }
-.wrapper{
-    min-height: 100%;
-    margin-bottom: 0 auto -150px;
-}
+
 
 
 table.about {
