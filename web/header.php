@@ -3,8 +3,10 @@
       <h1 id = "top"
           class = "home"><a href = "Homepage.php"> <em>
             Home Page</em></a>
-         
-    <a href="mailto:and12128@byui.edu" class="email"> EMAIL </a>   </h1>
+
+    <a href="mailto:and12128@byui.edu" class="email"> 
+		<img src="email.jpg" alt="EMAIL" style="width:40px;height:30px;border:0;">
+		</a>   </h1>
       <hr class = "top"/>
       
       <table class = "archive">
