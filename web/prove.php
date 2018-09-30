@@ -24,6 +24,7 @@
         <li><a href = ""> Week 11 </a></li>
         <li><a href = ""> Week 12 </a></li>
         <li><a href = ""> Week 13 </a></li>
+		</ul>
 <?php
 include('footer.php')
 ?>
