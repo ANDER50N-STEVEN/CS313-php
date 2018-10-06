@@ -8,14 +8,14 @@
 		<img src="email.jpg" alt="EMAIL" style="width:40px;height:30px;border:0;">
 		</a>   </h1>
       <hr class = "top"/>
-      
+        
       <table class = "archive">
         <tr>
           <td class = "archive">
-            <a href = "Homepage.php"
+            <a href = "https://hidden-coast-53870.herokuapp.com/Homepage.php"
                class = "tile"> HOME </a></td>
           <td class = "archive">
-            <a href = "prove.php"
+            <a href = "https://hidden-coast-53870.herokuapp.com/prove.php"
                class = "tile" > PROVE </a></td>
           <td class = "archive">
             <a href = ""
