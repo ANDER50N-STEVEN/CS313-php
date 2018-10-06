@@ -1,7 +1,7 @@
 <div class="headerBar"></div>
 
       <h1 id = "top"
-          class = "home"><a href = "Homepage.php"> <em>
+          class = "home"><a href = "https://hidden-coast-53870.herokuapp.com/Homepage.php"> <em>
             Home Page</em></a>
 
     <a href="mailto:and12128@byui.edu" class="email"> 
