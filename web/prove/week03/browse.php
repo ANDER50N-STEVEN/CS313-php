@@ -14,7 +14,7 @@ session_start();
       include('header.php')
       ?>
 	  
-<form action="purchaseReview.php" method="POST">
+<form action="cart.php" method="POST">
      <h3 id = "fantasy" class = "fantasy"> FANTASY </h3>
       <table>
         <tr>
@@ -22,15 +22,14 @@ session_start();
             <img src = "http://ecx.images-amazon.com/images/I/51Nq%2Bl67AEL._AA160_.jpg" ><br />
             <input id="LoTR" 
                    type="checkbox" name="checkbox[]" 
-                   value="11.87" 
-                   onclick="purchaseReview.php; calc(this.value, 'Total', 'LoTR');">
-            <b name="The Lord of the Rings">The Lord of the Rings</b>
+                   value="The Lord of the Rings">
+            <b>The Lord of the Rings</b>
             <br /> Price: $11.87</th>
           <th class="fantasy">
             <img src = "http://ecx.images-amazon.com/images/I/5164%2Bq5eGfL._AA160_.jpg " ><br />
             <input id="EoTW" 
                    type="checkbox" name="checkbox[]" 
-                   value="7.99" 
+                   value="The Eye of the World" 
                    onclick="purchaseReview.php; calc(this.value, 'Total', 'EoTW');">
             <b>The Eye of the World</b>
             <br /> Price:$7.99 </th>
