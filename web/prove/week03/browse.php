@@ -227,7 +227,7 @@ session_start();
                    onclick="purchaseReview.php; calc(this.value, 'Total', 'HG');">
             <b>The Hunger Games</b><br /> Price: $6.21 </th></tr></table>
     <hr />
-
+<br /><br /><br /><br />
 
       <?php
 	  include('footer.php')
