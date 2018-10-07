@@ -80,7 +80,7 @@ session_start();
      
     <hr />
 <br />
-        <input type="submit" name="submit" value="Checkout">
+        <input class ="checkout" type="submit" name="submit" value="Checkout">
     </form>
     <br /><br /><br /><br />
 
