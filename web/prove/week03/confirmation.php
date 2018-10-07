@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$products = $_POST['checkbox'];
+$products = $_POST['checkbox[]'];
 $total = 0;
 
 if (empty($_SESSION['cart'])){
