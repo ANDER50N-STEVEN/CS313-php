@@ -11,7 +11,7 @@ if (empty($_SESSION['cart'])){
     $_SESSION['img'] = array();
 }
 foreach($products as $item)
-    array_push($_SESSION['cart'], $item);
+    $_SESSION['cart'];
 
 ?>
 
