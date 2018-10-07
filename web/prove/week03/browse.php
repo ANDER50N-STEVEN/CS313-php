@@ -16,7 +16,7 @@ session_start();
       include('header.php')
       ?>
 	  
-<form action="confirmation.php" method="POST" href ="confirmation.php">
+<form action="confirmation.php" method="POST">
      <h3 id = "fantasy" class = "fantasy"> FANTASY </h3>
       <table>
         <tr>
@@ -77,11 +77,12 @@ session_start();
                  value="Gardens of the Moon", 5.44, " http://ecx.images-amazon.com/images/I/51f1-OdVfuL._AA160_.jpg">
           <b>Gardens of the Moon</b>
           <br /> Price: $5.44</th></tr></table> 
-</form>
+
      
     <hr />
 <br />
         <input type="submit" name="submit" value="Checkout">
+    </form>
     <br /><br /><br /><br />
 
       <?php
