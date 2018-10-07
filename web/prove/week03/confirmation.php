@@ -11,8 +11,7 @@
       ?>
 	
 
-	  <img class = "homeImg" src = "National Harbor.png" alt = "National Harbor with Kate Lynn">
-	  </div>
+	  
       <?php
 	  include('footer.php')
 	  ?>
