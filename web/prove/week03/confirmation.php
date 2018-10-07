@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$products = explode("|", $_POST['checkbox']);
+$products = $_POST['checkbox'];
 $total = 0;
 
 if (empty($_SESSION['cart'])){
@@ -10,7 +10,8 @@ if (empty($_SESSION['cart'])){
     $_SESSION['cost'] = array();
     $_SESSION['img'] = array();
 }
-array_push($_SESSION['cart'], $products);
+foreach($products as $item)
+    array_push($_SESSION['cart'], $item);
 
 ?>
 
