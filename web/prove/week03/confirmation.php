@@ -10,7 +10,10 @@ if (empty($_SESSION['cart'])){
     $_SESSION['cost'] = array();
     $_SESSION['img'] = array();
 }
-    $_SESSION['cart'] = $products;
+
+foreach($products as $product){
+    array_push($_SESSION['cart'], $product)
+}
 
 ?>
 
