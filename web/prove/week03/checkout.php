@@ -56,9 +56,9 @@ foreach($products as $product){
     </table>
     <br />
     <div class=" checkout">
-    <div class="name">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
           <input id="fn" name="fn" size="40" placeholder="First Name"><br />
-          <input id="ln" name="ln" size="40" placeholder="Last Name"></div>
+          <input id="ln" name="ln" size="40" placeholder="Last Name">
         
         <div class="address">
           <input id="add1" name="add1" size="40" 
@@ -119,9 +119,10 @@ foreach($products as $product){
             <option value="Wisconsin ">Wisconsin </option>
             <option value="Wyoming">Wyoming</option>
           </select>
+         
             </div>
         
-          
+          </form>
     <br />
     <form action="browse.php">
         <input type="submit" value="Continue Shopping" />
@@ -131,6 +132,7 @@ foreach($products as $product){
     <form action="confirmation.php">
         <input type="submit" value="Checkout" />
     </form>
+        
         </div>
     <br />
     <br />
