@@ -12,7 +12,7 @@ if (empty($_SESSION['cart'])){
 }
 
 foreach($products as $product){
-    array_push($_SESSION['cart'], $product)
+    array_push($_SESSION['cart'], $product);
 }
 
 ?>
