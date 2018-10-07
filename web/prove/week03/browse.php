@@ -203,9 +203,9 @@ session_start();
                    value="6.21">
             <b>The Hunger Games</b><br /> Price: $6.21 </th></tr></table>
     <hr />
-<br /><br /><br />
-        <input type="submit" name="submit" value="Submit">
-    <br />
+<br />
+        <input type="submit" name="submit" value="Checkout">
+    <br /><br /><br /><br />
 
       <?php
 	  include('footer.php')
