@@ -54,6 +54,12 @@ foreach($products as $product){
           ?>
       </table>
       <br />
+
+      <br />
+      <input class="contShopping" type="submit" name="submit" value="Continue Shopping" />
+
+      <br />
+      <input class="checkout" type="submit" name="submit" value="Checkout" />
 <br />
 <br />
 <br />
