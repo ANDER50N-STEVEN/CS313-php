@@ -1,24 +1,4 @@
-<?php
-session_start();
-
-$products = $_POST['checkbox'];
-$total = 0;
-
-if (empty($_SESSION['cart'])){
-    $_SESSION['cart'] = array();
-    $_SESSION['book'] = array();
-    $_SESSION['cost'] = array();
-    $_SESSION['img'] = array();
-}
-
-foreach($products as $product){
-    array_push($_SESSION['cart'], $product);
-}
-
-?>
-
-
-<!DOCTYPE html PUBLIC >
+﻿<!DOCTYPE html PUBLIC >
 <html lang = "english">
   
   <head><title> Home Page </title>
@@ -29,42 +9,10 @@ foreach($products as $product){
       <?php
       include('header.php')
       ?>
+	
 
-      <br />
-      <?php
-      var_dump($_SESSION['cart']);
-      ?>
-
-      <table>
-          <tr>
-              <th>Image</th>
-              <th>Item</th>
-              <th>Cost</th>
-          </tr>
-          <?php
-          foreach($_SESSION['cart'] as $item){
-              $temp = explode("|", $item);
-              echo "<tr>
-                        <td >$temp[2]</td>
-                        <td>$temp[0]</td>
-                        <td>$temp[1]</td>
-                        </tr>";
-                        $total += $temp[1];
-          }
-          ?>
-      </table>
-      <br />
-
-      <br />
-      <input class="contShopping" type="submit" name="submit" value="Continue Shopping" />
-
-      <br />
-      <input class="checkout" type="submit" name="submit" value="Checkout" />
-<br />
-<br />
-<br />
-<br />
-
+	  <img class = "homeImg" src = "National Harbor.png" alt = "National Harbor with Kate Lynn">
+	  </div>
       <?php
 	  include('footer.php')
 	  ?>

@@ -16,7 +16,7 @@ session_start();
       include('header.php')
       ?>
 	  
-<form action="confirmation.php" method="POST">
+<form action="cart.php" method="POST">
      <h3 id = "fantasy" class = "fantasy"> FANTASY </h3>
       <table>
         <tr>
