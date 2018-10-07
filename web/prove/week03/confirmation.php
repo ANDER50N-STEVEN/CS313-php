@@ -24,7 +24,9 @@ array_push($_SESSION['cart'], $products);
       ?>
 
       <br />
-      
+      <?php
+      var_dump($_SESSION['cart']);
+      ?>
       <br />
 <br />
 <br />
