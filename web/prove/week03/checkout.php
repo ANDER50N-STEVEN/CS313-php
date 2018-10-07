@@ -120,7 +120,7 @@ foreach($products as $product){
             <option value="Wyoming">Wyoming</option>
           </select>
             </div>
-        </div>
+        
           
     <br />
     <form action="browse.php">
@@ -131,6 +131,7 @@ foreach($products as $product){
     <form action="confirmation.php">
         <input type="submit" value="Checkout" />
     </form>
+        </div>
     <br />
     <br />
     <br />
