@@ -40,12 +40,13 @@ if (empty($_SESSION['cart'])){
           </tr>
           <?php
           foreach($_SESSION['cart'] as $item){
+              $temp = explode("|", $item);
               echo "<tr>
-                        <td >$item[2]</td>
-                        <td>$item[0]</td>
-                        <td>$item[1]</td>
+                        <td >$temp[2]</td>
+                        <td>$temp[0]</td>
+                        <td>$temp[1]</td>
                         </tr>";
-                        $total += $item[1];
+                        $total += $temp[1];
           }
           ?>
       </table>
