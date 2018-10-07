@@ -122,3 +122,11 @@ a.ya {
     font-family: Copperplate;
     font-weight: bolder;
 }
+
+input.checkout{
+    margin: auto;
+}
+
+div.checkout{
+    margin: auto;
+}

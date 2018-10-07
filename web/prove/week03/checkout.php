@@ -55,8 +55,9 @@ foreach($products as $product){
         ?>
     </table>
     <br />
+    <div class=" checkout">
     <div class="name">
-          <input id="fn" name="fn" size="40" placeholder="First Name">
+          <input id="fn" name="fn" size="40" placeholder="First Name"><br />
           <input id="ln" name="ln" size="40" placeholder="Last Name"></div>
         
         <div class="address">
@@ -118,6 +119,8 @@ foreach($products as $product){
             <option value="Wisconsin ">Wisconsin </option>
             <option value="Wyoming">Wyoming</option>
           </select>
+            </div>
+        </div>
           
     <br />
     <form action="browse.php">
