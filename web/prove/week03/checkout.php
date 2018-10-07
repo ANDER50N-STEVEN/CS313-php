@@ -62,10 +62,13 @@ foreach($products as $product){
         <div class="address">
           <input id="add1" name="add1" size="40" 
                  placeholder="Address">
+            <br />
           <input id="add2" name="add2" size="40" 
                  placeholder="Address Cont. (optional)">
+            <br />
           <input id="Zip" name="Zip" size="10" placeholder="Zip code">
           <input id="City" name="City" size="40" placeholder="City">
+            <br />
           <select name="State" id="State">
             <option value="Alabama ">Alabama </option>
             <option value="Alaska ">Alaska </option>
