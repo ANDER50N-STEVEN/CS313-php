@@ -74,7 +74,10 @@ a:link{
 a:visited{
     color: white;}
 
-
+h3{
+    text-align:left;
+    margin-left: 10%;
+}
 
 .homeImg{
     display: block;
