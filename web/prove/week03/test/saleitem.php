@@ -32,10 +32,13 @@ class SaleItem
 		</div>";
 	}
 }
-$fast_car = new SaleItem(0, "FAST CAR", "This car goes fast", "http://ecx.images-amazon.com/images/I/51Nq%2Bl67AEL._AA160_.jpg", 100000);
-$slow_car = new SaleItem(1, "SLOW CAR", "This car goes slow", "slow_car.jpg", 30000);
-$ugly_car = new SaleItem(2, "UGLY CAR", "This car is soooo ugly, please take it!", "ugly_car.jpg", 24000);
-$green_car = new SaleItem(3, "GREEN CAR", "This car is green", "green_car.jpg", 60000);
-$motorcycle = new SaleItem(4, "MOTORCYCLE", "This ca.... wait, this shouldn't be here.", "motorcycle.jpg", 8000);
-$items_for_sale = array($fast_car, $slow_car, $ugly_car, $green_car, $motorcycle);
+$LotR = new SaleItem(0, "The Lord of the Rings", "J.R. Tolkien", "http://ecx.images-amazon.com/images/I/51Nq%2Bl67AEL._AA160_.jpg", 11.87);
+$EotW = new SaleItem(1, "The Eye of the World", "Robert Jordan", "http://ecx.images-amazon.com/images/I/5164%2Bq5eGfL._AA160_.jpg", 7.99);
+$WoK = new SaleItem(2, "The Way of Kings", "Brandon Sanderson", "http://ecx.images-amazon.com/images/I/51bjoG8C%2B4L._AA160_.jpg", 8.99);
+$CT = new SaleItem(3, "The Crown Tower", "Michael J. Sullivan", "http://ecx.images-amazon.com/images/I/51jIQA2jq9L._AA160_.jpg", 8.89);
+$BtS = new SaleItem(4, "Belgarath the Sorcerer", "David Eddings", "http://ecx.images-amazon.com/images/I/51BmlSQXY5L._AA160_.jpg", 7.99);
+$NotW = new SaleItem(4, "The Name of the Wind", "Patrick Rothfuss", "http://ecx.images-amazon.com/images/I/51HGCx5Rh6L._AA160_.jpg", 7.99);
+$WFR = new SaleItem(4, "Wizards First Rule", "Terry Goodkind", "http://ecx.images-amazon.com/images/I/51rBfVFsqYL._AA160_.jpg", 6.91);
+$GotM = new SaleItem(4, "Gardens of the Moon", "Steven Erikson", "http://ecx.images-amazon.com/images/I/51f1-OdVfuL._AA160_.jpg", 5.44);
+$items_for_sale = array($LotR, $EotW, $WoK, $CT, $BtS, $NotW, $WFR, $GotM);
 ?>
