@@ -1,18 +1,12 @@
 <?php
 session_start();
 
-$products = $_POST['checkbox'];
-$total = 0;
-
-if (empty($_SESSION['cart'])){
-    $_SESSION['cart'] = array();
-    $_SESSION['book'] = array();
-    $_SESSION['cost'] = array();
-    $_SESSION['img'] = array();
+if (!isset($_SESSION["cart"])) {
+	$_SESSION["cart"] = array();
 }
-
-foreach($products as $product){
-    array_push($_SESSION['cart'], $product);
+$products = $_POST["checkbox"];
+foreach ($products as $product) {
+	array_push($_SESSION["cart"], $product);
 }
 
 ?>
@@ -42,7 +36,9 @@ foreach($products as $product){
               <th>Cost</th>
           </tr>
           <?php
-          foreach($_SESSION['cart'] as $item){
+
+          $products = $_SESSION['cart']
+          foreach($products as $item){
               $temp = explode("|", $item);
               echo "<tr>
                         <td >$temp[2]</td>
