@@ -4,7 +4,7 @@ require('start_session.php');
 ?>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css" />
     <title>Cart - Prove 03</title>
 </head>
 <body>
