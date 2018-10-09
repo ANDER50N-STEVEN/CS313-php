@@ -136,7 +136,11 @@ div.checkout{
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)
 }
 
-
+.w3-container:after, .w3-container:before {
+    content: "";
+    display: table;
+    clear: both
+}
 
 .w3-show-inline-block {
     display: inline-block !important
