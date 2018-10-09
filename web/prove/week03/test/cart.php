@@ -1,67 +1,76 @@
 <?php
-require('saleitem.php');
-require('start_session.php');
-?>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="../stylesheet.css" />
-    <title>Cart - Prove 03</title>
-</head>
-<body>
-    <?php
-    require('../header.php');
-    require('header.php');
-    ?>
-    <div class='w3-container'>
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] === 'GET' and isset($_GET['additemid'])) {
-            if (isset($_GET['quantity'])) {
-                $quantity = htmlspecialchars($_GET['quantity']);
-            } else {
-                $quantity = 1;
-            }
-            $new_item_id = htmlspecialchars($_GET['additemid']);
-            foreach($items_for_sale as $item) {
-                if ($item->item_id == $new_item_id) {
-                    $new_item = clone $item;
-                    $new_item->quantity = $quantity;
-                }
-            }
-            if (isset($new_item)) {
-                $_SESSION['cartitems']["$new_item_id"] = $new_item;
-                $add_info = "Added item #$new_item_id to cart";
-            } else {
-                $add_error = "Item #$new_item_id not found in db";
-            }
-        }
-        ?>
-        <h1>CART</h1>
-        <?php
-        if (isset($add_info)) {
-            echo "<p class='info'>$add_info</p>";
-        } elseif (isset($add_error)) {
-            echo "<p class='error'>$add_error</p>";
-        }
-        if (isset($_SESSION['cartitems'])) {
-            $cartitems = $_SESSION['cartitems'];
-            $total_cost = 0;
-            foreach ($cartitems as $item) {
-                $total_cost += ($item->price * $item->quantity);
-            }
-            $_SESSION['total_cost'] = $total_cost;
-            //echo '<ul>';
-            foreach ($cartitems as $item) {
-                echo $item->outputbrowse();
-            }
-            //echo '</ul>';
-            echo "<p>TOTAL COST: \$$total_cost</p>";
-        } else {
-            echo '<p>No items in cart</p>';
+session_start();
+
+if (!isset($_SESSION["cart"])) {
+	$_SESSION["cart"] = array();
 }
-        ?>
-    </div>
-    <?php
-    require('../footer.php');
-    ?>
-</body>
+$products = $_POST["checkbox"];
+foreach ($products as $product) {
+	array_push($_SESSION["cart"], $product);
+}
+
+?>
+
+
+<!DOCTYPE html PUBLIC >
+<html lang = "english">
+  
+  <head><title> Home Page </title>
+    <meta charset = "utf-8">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  </head>
+  <body>      
+      <?php
+      include('header.php')
+      ?>
+
+      <br />
+      <?php
+      var_dump($products);
+      ?>
+
+      <table>
+          <tr>
+              <th>Image</th>
+              <th>Item</th>
+              <th>Cost</th>
+          </tr>
+          <?php
+
+          $products = $_SESSION['cart'];
+          foreach($products as $item){
+              $temp = explode("|", $item);
+              echo "<tr>
+                        <td >$temp[2]</td>
+                        <td>$temp[0]</td>
+                        <td>$temp[1]</td>
+                        </tr>";
+                        $total = $temp[1];
+                        
+          }
+          ?>
+      </table>
+      <?php
+      echo "<p> $total . I'm awesome</p>";
+      ?>
+      <br />
+
+      <br />
+    <form action="browse.php">
+        <input type="submit" value="Continue Shopping" />
+    </form>
+
+      <br />
+    <form action="checkout.php">
+    <input type="submit" value="Checkout" />
+    </form>
+<br />
+<br />
+<br />
+<br />
+
+      <?php
+	  include('footer.php')
+	  ?>
+  </body>
 </html>
