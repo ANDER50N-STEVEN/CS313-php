@@ -1,135 +1,146 @@
 <?php
-require('saleitem.php');
-require('start_session.php');
+session_start();
+
+$products = $_POST['checkbox'];
+$total = 0;
+
+if (empty($_SESSION['cart'])){
+    $_SESSION['cart'] = array();
+    $_SESSION['book'] = array();
+    $_SESSION['cost'] = array();
+    $_SESSION['img'] = array();
+}
+
+foreach($products as $product){
+    array_push($_SESSION['cart'], $product);
+}
+
 ?>
-<html>
+
+
+<!DOCTYPE html PUBLIC >
+<html lang="english">
+
 <head>
-    <link rel="stylesheet" type="text/css" href="../stylesheet.css" />
-    <title>Checkout - Prove 03</title>
+    <title> Home Page </title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
     <?php
-    require('../header.php');
-    require('header.php');
+    include('header.php')
     ?>
-    <div class='w3-container'>
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $name = $addr1 = $addr2 = $state = $city = $zip = $error = "";
-            if (isset($_POST['name'])) {
-                $name = htmlspecialchars($_POST['name']);
-            } else {
-                $error .= 'name is missing!<br />';
-            }
-            if (isset($_POST['addr1'])) {
-                $addr1 = htmlspecialchars($_POST['addr1']);
-            } else {
-                $error .= 'addr1 is missing!<br />';
-            }
-            if (isset($_POST['addr2'])) {
-                $addr2 = htmlspecialchars($_POST['addr2']);
-            } else {
-                $error .= 'addr2 is missing!<br />';
-            }
-            if (isset($_POST['state'])) {
-                $state = htmlspecialchars($_POST['state']);
-            } else {
-                $error .= 'state is missing!<br />';
-            }
-            if (isset($_POST['city'])) {
-                $city = htmlspecialchars($_POST['city']);
-            } else {
-                $error .= 'city is missing!<br />';
-            }
-            if (isset($_POST['zip'])) {
-                $zip = htmlspecialchars($_POST['zip']);
-            } else {
-                $error .= 'zip is missing!<br />';
-            }
-            if (empty($error)) {
-                echo '<p>Thank you for your purchase!</p>';
-                echo "<p>Shipped to:</p><p>$name<br />$addr1<br />$addr2<br />$city, $state<br />$zip</p>";
-                echo "<p>Your total was: \${$_SESSION['total_cost']}</p>";
-                echo '<p>Items purchased:</p>';
-                $cartitems = $_SESSION['cartitems'];
-                foreach ($cartitems as $item) {
-                    echo $item->outputbrowse();
-                }
-                session_unset();
-            } else {
-                echo "<p>$error</p>";
-            }
-        } else {
-        ?>
-        <h1>CHECKOUT</h1>
-        <form action='checkout.php' method='post'>
-            <table id='tbl_checkout'>
-                <tr>
-                    <td>
-                        <label>Name:</label>
-                    </td>
-                    <td>
-                        <input type='text' name='name' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Address 1:</label>
-                    </td>
-                    <td>
-                        <input type='text' name='addr1' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Address 2:</label>
-                    </td>
-                    <td>
-                        <input type='text' name='addr2' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>State:</label>
-                    </td>
-                    <td>
-                        <input type='text' name='state' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>City:</label>
-                    </td>
-                    <td>
-                        <input type='text' name='city' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Zip Code:</label>
-                    </td>
-                    <td>
-                        <input type='text' name='zip' />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>Total Cost:</label>
-                    </td>
-                    <td>
-                        $<?php echo $_SESSION['total_cost']; ?>
-                    </td>
-                </tr>
-            </table>
-            <input type='submit' value='Submit Order' class='w3-button w3-green' />
-            <a href='cart.php' class='w3-button w3-green'>Return to cart</a>
-        </form>
-        <?php
-}
-        ?>
-    </div>
+
+    <br />
     <?php
-    require('../footer.php');
+    var_dump($_SESSION['cart']);
+    ?>
+
+    <table>
+        <tr>
+            <th>Image</th>
+            <th>Item</th>
+            <th>Cost</th>
+        </tr>
+        <?php
+        foreach($_SESSION['cart'] as $item){
+            $temp = explode("|", $item);
+            echo "<tr>
+                        <td >$temp[2]</td>
+                        <td>$temp[0]</td>
+                        <td>$temp[1]</td>
+                        </tr>";
+            $total += $temp[1];
+        }
+        ?>
+    </table>
+    <br />
+    <div class=" checkout">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+          <input id="fn" name="fn" size="40" placeholder="First Name"><br />
+          <input id="ln" name="ln" size="40" placeholder="Last Name">
+        
+        <div class="address">
+          <input id="add1" name="add1" size="40" 
+                 placeholder="Address">
+            <br />
+          <input id="add2" name="add2" size="40" 
+                 placeholder="Address Cont. (optional)">
+            <br />
+          <input id="Zip" name="Zip" size="10" placeholder="Zip code">
+          <input id="City" name="City" size="40" placeholder="City">
+            <br />
+          <select name="State" id="State">
+            <option value="Alabama ">Alabama </option>
+            <option value="Alaska ">Alaska </option>
+            <option value="Arizona ">Arizona </option>
+            <option value="Arkansas ">Arkansas </option>
+            <option value="California ">California </option>
+            <option value="Colorado ">Colorado </option>
+            <option value="Connecticut ">Connecticut </option>
+            <option value="Delaware ">Delaware </option>
+            <option value="Florida ">Florida </option>
+            <option value="Georgia ">Georgia </option>
+            <option value="Hawaii ">Hawaii </option>
+            <option value="Idaho ">Idaho </option>
+            <option value="Illinois Indiana ">Illinois Indiana </option>
+            <option value="Iowa ">Iowa </option>
+            <option value="Kansas ">Kansas </option>
+            <option value="Kentucky ">Kentucky </option>
+            <option value="Louisiana ">Louisiana </option>
+            <option value="Maine ">Maine </option>
+            <option value="Maryland ">Maryland </option>
+            <option value="Massachusetts ">Massachusetts </option>
+            <option value="Michigan ">Michigan </option>
+            <option value="Minnesota ">Minnesota </option>
+            <option value="Mississippi ">Mississippi </option>
+            <option value="Missouri ">Missouri </option>
+            <option value="Montana Nebraska ">Montana Nebraska </option>
+            <option value="Nevada ">Nevada </option>
+            <option value="New Hampshire ">New Hampshire </option>
+            <option value="New Jersey ">New Jersey </option>
+            <option value="New Mexico ">New Mexico </option>
+            <option value="New York ">New York </option>
+            <option value="North Carolina ">North Carolina </option>
+            <option value="North Dakota ">North Dakota </option>
+            <option value="Ohio ">Ohio </option>
+            <option value="Oklahoma ">Oklahoma </option>
+            <option value="Oregon ">Oregon </option>
+            <option value="Pennsylvania Rhode Island ">Pennsylvania Rhode Island </option>
+            <option value="South Carolina ">South Carolina </option>
+            <option value="South Dakota ">South Dakota </option>
+            <option value="Tennessee ">Tennessee </option>
+            <option value="Texas ">Texas </option>
+            <option value="Utah ">Utah </option>
+            <option value="Vermont ">Vermont </option>
+            <option value="Virginia ">Virginia </option>
+            <option value="Washington ">Washington </option>
+            <option value="West Virginia ">West Virginia </option>
+            <option value="Wisconsin ">Wisconsin </option>
+            <option value="Wyoming">Wyoming</option>
+          </select>
+         
+            </div>
+        
+          </form>
+    <br />
+    <form action="browse.php">
+        <input type="submit" value="Continue Shopping" />
+    </form>
+
+    <br />
+    <form action="confirmation.php">
+        <input type="submit" value="Checkout" />
+    </form>
+        
+        </div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <?php
+    include('footer.php')
     ?>
 </body>
 </html>
