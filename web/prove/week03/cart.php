@@ -37,7 +37,7 @@ foreach ($products as $product) {
           </tr>
           <?php
 
-          $products = $_SESSION['cart']
+          $products = $_SESSION['cart'];
           foreach($products as $item){
               $temp = explode("|", $item);
               echo "<tr>
