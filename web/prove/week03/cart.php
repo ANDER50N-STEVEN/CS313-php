@@ -45,7 +45,7 @@ foreach ($products as $product) {
                         <td>$temp[0]</td>
                         <td>$temp[1]</td>
                         </tr>";
-                        $total += $temp[1];
+                        $total = $temp[1];
                         
           }
           ?>
