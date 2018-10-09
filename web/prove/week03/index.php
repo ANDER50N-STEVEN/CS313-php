@@ -21,7 +21,6 @@ require('saleitem.php');
     require('header.php');
     ?>
     <div class='w3-container '>
-        <h1>CARS FOR SALE</h1>
         <?php
         foreach ($items_for_sale as $item) {
             echo $item->outputBrowse();
