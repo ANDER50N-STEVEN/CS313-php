@@ -20,6 +20,7 @@ class SaleItem
 		<div class='w3-card w3-show-inline-block w3-margin' style='vertical-align: top;'>
 		<header class='w3-container w3-green'><h3>$this->name</h3></header>
 		<div class='w3-container'>
+        <img src = $this->image ><br />
 		<p>$this->description</p>
 		<p>Price: \$$this->price</p>
 		<form action='cart.php' name='update_$this->item_id'>
