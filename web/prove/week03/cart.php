@@ -26,7 +26,7 @@ foreach ($products as $product) {
 
       <br />
       <?php
-      var_dump($_SESSION['cart']);
+      var_dump($products);
       ?>
 
       <table>
