@@ -9,7 +9,7 @@ require('start_session.php');
 </head>
 <body>
     <?php
-    require('header.php');
+    require('../header.php');
     ?>
     <div class='w3-container'>
         <?php
@@ -127,5 +127,8 @@ require('start_session.php');
 }
         ?>
     </div>
+    <?php
+    require('../footer.php');
+    ?>
 </body>
 </html>

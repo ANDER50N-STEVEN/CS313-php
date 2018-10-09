@@ -27,5 +27,8 @@ require('saleitem.php');
 }
         ?>
     </div>
+    <?php
+    require('../footer.php');
+    ?>
 </body>
 </html>
