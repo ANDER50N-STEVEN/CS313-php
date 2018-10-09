@@ -25,6 +25,9 @@ require('start_session.php');
                     $new_item = clone $item;
                     $new_item->quantity = $quantity;
                 }
+                if($item->quantity == 0){
+                    unset($item);
+                    }
             }
             if (isset($new_item)) {
                 $_SESSION['cartitems']["$new_item_id"] = $new_item;

@@ -26,7 +26,7 @@ class SaleItem
 		<form action='cart.php' name='update_$this->item_id'>
 		<input type='hidden' name='additemid' value='$this->item_id' /><br />
 		<input type='number' name='quantity' value=$this->quantity /><br />
-		<input type='submit' value='Add to cart/update quantity' /><br />
+		<input type='submit' value='Add to cart' /><br />
 		</form>
 		</div>
 		</div>";
