@@ -13,7 +13,7 @@
 
 <ul class ="assignList">
         <li><a href = "Homepage.php"> Week 2 - Home Page </a></li>
-        <li><a href = "prove/week03/browse.php"> Week 3 </a></li>
+        <li><a href = "prove/week03/index.php"> Week 3 </a></li>
         <li><a href = "prove/week04/browse.php"> Week 4 </a></li>
         <li><a href = "prove/week05/browse.php"> Week 5 </a></li>
         <li><a href = "prove/week06/browse.php"> Week 6 </a></li>
