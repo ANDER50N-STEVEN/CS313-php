@@ -11,7 +11,7 @@ require('saleitem.php');
     <style>
         div.w3-card {
             width: 300px;
-            height: 300px;
+            height: 400px;
         }
     </style>
 </head>
