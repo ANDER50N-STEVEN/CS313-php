@@ -25,8 +25,8 @@ class SaleItem
 		<p>Price: \$$this->price</p>
 		<form action='cart.php' name='update_$this->item_id'>
 		<input type='hidden' name='additemid' value='$this->item_id' /><br />
-		<input type='number' name='quantity' value=$this->quantity /><br />
-		<input type='submit' value='Add to cart' /><br />
+		<input type='checkbox' name='quantity' value=$this->quantity /><br />
+		<input type='submit' value='Add to cart' /><input type='submit' value='Remove All' /><br />
 		</form>
 		</div>
 		</div>";
@@ -37,8 +37,8 @@ $EotW = new SaleItem(1, "The Eye of the World", "Robert Jordan", "http://ecx.ima
 $WoK = new SaleItem(2, "The Way of Kings", "Brandon Sanderson", "http://ecx.images-amazon.com/images/I/51bjoG8C%2B4L._AA160_.jpg", 8.99);
 $CT = new SaleItem(3, "The Crown Tower", "Michael J. Sullivan", "http://ecx.images-amazon.com/images/I/51jIQA2jq9L._AA160_.jpg", 8.89);
 $BtS = new SaleItem(4, "Belgarath the Sorcerer", "David Eddings", "http://ecx.images-amazon.com/images/I/51BmlSQXY5L._AA160_.jpg", 7.99);
-$NotW = new SaleItem(4, "The Name of the Wind", "Patrick Rothfuss", "http://ecx.images-amazon.com/images/I/51HGCx5Rh6L._AA160_.jpg", 7.99);
-$WFR = new SaleItem(4, "Wizards First Rule", "Terry Goodkind", "http://ecx.images-amazon.com/images/I/51rBfVFsqYL._AA160_.jpg", 6.91);
-$GotM = new SaleItem(4, "Gardens of the Moon", "Steven Erikson", "http://ecx.images-amazon.com/images/I/51f1-OdVfuL._AA160_.jpg", 5.44);
+$NotW = new SaleItem(5, "The Name of the Wind", "Patrick Rothfuss", "http://ecx.images-amazon.com/images/I/51HGCx5Rh6L._AA160_.jpg", 7.99);
+$WFR = new SaleItem(6, "Wizards First Rule", "Terry Goodkind", "http://ecx.images-amazon.com/images/I/51rBfVFsqYL._AA160_.jpg", 6.91);
+$GotM = new SaleItem(7, "Gardens of the Moon", "Steven Erikson", "http://ecx.images-amazon.com/images/I/51f1-OdVfuL._AA160_.jpg", 5.44);
 $items_for_sale = array($LotR, $EotW, $WoK, $CT, $BtS, $NotW, $WFR, $GotM);
 ?>
