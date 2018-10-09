@@ -6,7 +6,7 @@ require('saleitem.php');
 
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
     <title>Prove03</title>
     <style>
         div.w3-card {
