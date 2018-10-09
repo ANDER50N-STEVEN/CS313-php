@@ -13,13 +13,13 @@ require('start_session.php');
     ?>
     <div class='w3-container'>
         <?php
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' and isset($_POST['additemid'])) {
-            if (isset($_POST['quantity'])) {
-                $quantity = htmlspecialchars($_POST['quantity']);
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' and isset($_GET['additemid'])) {
+            if (isset($_GET['quantity'])) {
+                $quantity = htmlspecialchars($_GET['quantity']);
             } else {
                 $quantity = 1;
             }
-            $new_item_id = htmlspecialchars($_POST['additemid']);
+            $new_item_id = htmlspecialchars($_GET['additemid']);
             foreach($items_for_sale as $item) {
                 if ($item->item_id == $new_item_id) {
                     $new_item = clone $item;
