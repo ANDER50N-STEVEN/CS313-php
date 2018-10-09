@@ -10,6 +10,7 @@ require('start_session.php');
 <body>
     <?php
     require('../header.php');
+    require('header.php');
     ?>
     <div class='w3-container'>
         <?php
