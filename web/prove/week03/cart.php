@@ -46,6 +46,7 @@ foreach ($products as $product) {
                         <td>$temp[1]</td>
                         </tr>";
                         $total += $temp[1];
+                        echo "<p> $total</p>";
           }
           ?>
       </table>
