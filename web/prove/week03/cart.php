@@ -51,7 +51,7 @@ foreach ($products as $product) {
           ?>
       </table>
       <?php
-      echo "<p> $total</p>";
+      echo "<p> $total . I'm awesome</p>";
       ?>
       <br />
 
