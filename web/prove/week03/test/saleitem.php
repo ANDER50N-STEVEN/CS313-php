@@ -31,7 +31,7 @@ class SaleItem
 		</div>";
 	}
 }
-$fast_car = new SaleItem(0, "FAST CAR", "This car goes fast", "fast_car.jpg", 100000);
+$fast_car = new SaleItem(0, "FAST CAR", "This car goes fast", "http://ecx.images-amazon.com/images/I/51Nq%2Bl67AEL._AA160_.jpg", 100000);
 $slow_car = new SaleItem(1, "SLOW CAR", "This car goes slow", "slow_car.jpg", 30000);
 $ugly_car = new SaleItem(2, "UGLY CAR", "This car is soooo ugly, please take it!", "ugly_car.jpg", 24000);
 $green_car = new SaleItem(3, "GREEN CAR", "This car is green", "green_car.jpg", 60000);
