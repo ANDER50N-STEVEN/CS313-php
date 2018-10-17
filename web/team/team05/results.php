@@ -43,7 +43,8 @@
       $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures WHERE id=:id');
       $stmt->bindValue(':id', $id, PDO::PARAM_INT);
       $stmt->execute();
-      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      
       
       echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
       
