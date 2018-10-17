@@ -38,10 +38,11 @@
   
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
+     echo "Posted!";
     if(isset($_POST['book'])) 
     {
       $bookName = test_input($_POST['book']);
-      
+     
       
       $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM table WHERE book=:bookName');
       $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
@@ -60,6 +61,9 @@
           echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span>\" ".$row['content']."\"</p>";
         }      
       }
+    } else {
+      
+      echo "Something Else!";
     }
   }
   
