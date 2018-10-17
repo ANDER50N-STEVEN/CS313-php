@@ -42,7 +42,7 @@
       $bookName = test_input($_POST['book']);
      	echo $bookName;
       
-      $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM table WHERE book=:bookName');
+      $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures WHERE book=:bookName');
       $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
