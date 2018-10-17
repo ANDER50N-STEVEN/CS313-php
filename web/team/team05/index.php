@@ -36,11 +36,9 @@
   
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
-     echo "Posted!";
     if(isset($_POST['book'])) 
     {
       $bookName = test_input($_POST['book']);
-     	echo $bookName;
       
       $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures WHERE book=:bookName');
       $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
@@ -56,7 +54,8 @@
       else {
         foreach ($rows as $row)
         {
-          echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span>\" ".$row['content']."\"</p>";
+          echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span>"</p>";
+          echo "<a href='results.php?id=" . $row['id']. "' >" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a>";
         }      
       }
     } else {
