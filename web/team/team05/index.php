@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,14 @@
 </head>
 <body>
   <?php
+  
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+  }
+  
     try
     {
       $dbUrl = getenv('DATABASE_URL');
@@ -27,13 +36,43 @@
       die();
     }
   
-  echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Resources</span></p>";
-  
-  foreach ($db->query('SELECT id, book, chapter, verse, content FROM scriptures') as $row)
+  if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
-		echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span>\"".$row['content']."\"</p>";
-  }  
+    if(isset($_POST['book'])) 
+    {
+      $bookName = test_input($_POST['book']);
+      
+      
+      $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM table WHERE book=:bookName');
+      $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
+      $stmt->execute();
+      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      
+      echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Resources</span></p>";
+      
+      if(count($rows) <= 0)
+      {
+        echo "No Books Found";
+      }
+      else {
+        foreach ($rows as $row)
+        {
+          echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span>\" ".$row['content']."\"</p>";
+        }      
+      }
+    }
+  }
+  
+  
+
   
   ?>
+  
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  <label for="book">Book</label>
+  <input type="text" value="<?php echo $book;?>" id="book" name="book">
+  <input type="submit" name="submit" value="Submit">
+</form>
+  
 </body>
 </html>
