@@ -54,8 +54,11 @@
       else {
         foreach ($rows as $row)
         {
-          echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span>"</p>";
+          //echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span></p>";
+          
           echo "<a href='results.php?id=" . $row['id']. "' >" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a>";
+          
+          
         }      
       }
     } else {
