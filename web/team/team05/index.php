@@ -1,11 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Team 05</title>
-</head>
-<body>
-  <?php
+  
+   <?php
   
     function test_input($data) {
       $data = trim($data);
@@ -42,7 +40,7 @@
     if(isset($_POST['book'])) 
     {
       $bookName = test_input($_POST['book']);
-     
+     	echo $bookName;
       
       $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM table WHERE book=:bookName');
       $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
@@ -71,10 +69,13 @@
 
   
   ?>
+</head>
+<body>
+ 
   
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <label for="book">Book</label>
-  <input type="text" value="<?php echo $book;?>" id="book" name="book">
+  <input type="text" id="book" name="book">
   <input type="submit" name="submit" value="Submit">
 </form>
   
