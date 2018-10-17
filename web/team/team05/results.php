@@ -48,8 +48,7 @@
       
       echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
       
-    	echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ." " . $row['content'] . "</span></p>";
-
+    	echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span><br> " . $row['content'] . "</p>";
       
     }
   }
