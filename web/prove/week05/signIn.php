@@ -44,7 +44,7 @@
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if($row[password] == $pass)
-		  echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
+		 location.replace("https://www.w3schools.com")
       else
 		  echo "<p>pass" . $pass . " : row " . $row . " </p>";
     }
