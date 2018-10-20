@@ -36,7 +36,7 @@
   
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
-    if(isset($_POST['book'])) 
+    if(isset($_POST['user'])) 
     {
       $userName = test_input($_POST['user']);
       
@@ -78,6 +78,14 @@
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <label for="user">USERNAME</label>
   <?php
+  $userName = test_input($_POST['user']);
+      
+      $stmt = $db->prepare('SELECT id, username, password, display_name FROM project1.user WHERE user=:userName');
+      $stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
+      $stmt->execute();
+      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      
+      echo "<p><span style='font-size:2em; font-weight:bold;'>User Select</span></p>";
   foreach ($rows as $row)
         {
           
