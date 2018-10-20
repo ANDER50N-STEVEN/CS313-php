@@ -46,7 +46,7 @@ session_start();
 			<table style="width:80%">
 			<tr>
 				<th style="width:200px">Title</th>
-				<th style="width:50px">$_SESSION['user_id]</th> 
+				<th style="width:50px">Rating</th> 
 				<th>Comments</th>
 			  </tr>
 	<?php
@@ -54,7 +54,7 @@ session_start();
 				FROM  project1.library tbl_a    
 				JOIN project1.rating tbl_b   
 				ON tbl_a.id = tbl_b.book_id
-				WHERE user_id = '".$_SESSION['user_id']."'";
+				WHERE user_id = '".$_SESSION['']."'";
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
@@ -66,6 +66,7 @@ session_start();
     echo "</tr>";
 }
 echo "</table>";
+echo "<p>" . $_SESSION['user_id'] . "</p>";
 ?>
   
    <?php
