@@ -46,7 +46,7 @@ session_start();
 			<table style="width:80%">
 			<tr>
 				<th style="width:200px">Title</th>
-				<th style="width:50px">Rating</th> 
+				<th style="width:50px">$_SESSION['user_id]</th> 
 				<th>Comments</th>
 			  </tr>
 	<?php
