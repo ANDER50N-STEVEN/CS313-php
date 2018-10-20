@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <link rel="stylesheet" type="text/css" href="../stylesheet.css" />
   <title></title>
   
    <?php
@@ -36,7 +37,9 @@
   ?>
 </head>
 <body>
- 
+ <?php
+    require('../header.php');
+    ?>
   
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <?php
@@ -56,6 +59,8 @@
         }
 		?>
 </form>
-  
+   <?php
+    require('../footer.php');
+    ?>
 </body>
 </html>
