@@ -39,7 +39,6 @@
  
   
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  <label for="user">USERNAME</label>
   <?php
       
 	  $query = "SELECT display_name FROM project1.user";
@@ -53,15 +52,9 @@
       echo "<p><span style='font-size:2em; font-weight:bold;'>User Select</span></p>";
   foreach ($rows as $row)
         {
-          
           echo "<a href='signIn.php?id=" . $row['id']. "' >" . $row['display_name'] . "</a>" . "</br>";
-          
-          
         }
 		?>
-  <input type="text" id="user" name="user">
-  
-  <input type="submit" name="submit" value="Submit">
 </form>
   
 </body>
