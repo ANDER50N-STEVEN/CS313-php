@@ -42,11 +42,11 @@ session_start();
  <?php
     require('../header.php');
     ?>
-  <div class='ratings'>
+  <div class='ratings' style="text-align: center">
 			<table style="width:80%">
 			<tr>
-				<th>Title</th>
-				<th>Rating</th> 
+				<th style="width:200px">Title</th>
+				<th style="width:50px">Rating</th> 
 				<th>Comments</th>
 			  </tr>
 	<?php
