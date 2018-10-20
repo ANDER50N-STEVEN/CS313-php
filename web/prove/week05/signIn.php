@@ -43,8 +43,8 @@
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
-      
-      echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
+      if($row == $pass)
+		  echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
       
     }
   }
