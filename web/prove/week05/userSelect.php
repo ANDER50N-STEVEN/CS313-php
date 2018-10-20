@@ -79,7 +79,7 @@
   <label for="user">USERNAME</label>
   <?php
       
-      $stmt = $db->prepare('SELECT display_name FROM project1.user WHERE display_name=:userName');
+      $stmt = $db->prepare('SELECT display_name FROM project1.user');
       $stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
