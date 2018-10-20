@@ -43,7 +43,7 @@
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
-      if($row == $pass)
+      if($row[password] == $pass)
 		  echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
       else
 		  echo "<p>pass" . $pass . " : row " . $row . " </p>";
