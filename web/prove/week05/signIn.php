@@ -45,14 +45,15 @@
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if($row == $pass)
 		  echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
-      
+      else
+		  echo "<p> incorrect password </p>";
     }
   }
   ?>
   </head>
 <body>
  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  <label for="book">Please Enter Your Password</label>
+  <label for="message">Please Enter Your Password</label>
   <input type="text" id="pass" name="pass">
   <input type="submit" name="submit" value="Submit">
 </form>
