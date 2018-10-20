@@ -46,7 +46,7 @@
       foreach($row as $row)
 	  {
 		  if($row == $pass)
-		  echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
+		  location.replace("https://hidden-coast-53870.herokuapp.com/prove/week05/userpage.php")
       }
     }
   }
