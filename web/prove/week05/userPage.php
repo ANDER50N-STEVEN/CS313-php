@@ -57,7 +57,6 @@ session_start();
 				WHERE user_id = 1";
 	  $stmt = $db->prepare($query);
       $stmt->execute();
-      $row = $stmt->fetch(PDO::FETCH_ASSOC);
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {  
 	echo "<tr>";
@@ -68,7 +67,6 @@ session_start();
 }
 echo "</table>";
 ?>
-	  ?>
   
    <?php
     require('../../footer.php');
