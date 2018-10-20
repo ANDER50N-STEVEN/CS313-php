@@ -34,26 +34,28 @@
       die();
     }
   
-     
-  ?>
-  </head>
-<body>
- <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  <label for="book">Please Enter Your Password</label>
-  <input type="text" id="pass" name="pass">
-  <input type="submit" name="submit" value="Submit">
-</form>
-<?php
-   $pass = test_input($_get['pass']);
+  if($_SERVER['REQUEST_METHOD'] == 'POST')
+  {
+    if(isset($_POST['pass'])) 
+    {
+      $pass = test_input($_POST['pass']);
       $query = "SELECT password FROM project1.user";
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
-      foreach($row as $row)
-	  {
-		  if($row == $pass)
-		  location.replace("https://hidden-coast-53870.herokuapp.com/prove/week05/userpage.php")
-      }
-	  ?>
+      
+      echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
+      
+    }
+  }
+  ?>
+  </head>
+<body>
+ <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  <label for="book">Please Enter Your Password</label>
+  <input type="text" id="pass" name="pass">
+  <input type="submit" name="submit" value="Submit">
+</form>
+  
 </body>
 </html>
