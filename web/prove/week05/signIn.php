@@ -44,9 +44,9 @@
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if($row[password] == $pass)
-		 location.replace("https://www.w3schools.com");
+		 echo '<script>window.location.href = "https://www.w3schools.com";</script>';
       else
-		  echo "<p>pass" . $pass . " : row " . $row . " </p>";
+		  echo "<p>incorrect password, please try again.</p>";
     }
   }
   ?>
