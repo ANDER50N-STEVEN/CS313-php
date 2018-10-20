@@ -58,10 +58,16 @@ session_start();
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
-      if($row[password] == $pass)
-		 echo '<script>window.location.href = "userPage.php";</script>';
-      else
-		  echo "<p>incorrect password, please try again.</p>";
+      while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+{  
+	echo "<tr>";
+    echo "<td>" . $row['title'] . "</td>";
+    echo "<td>" . $row['rating'] . "</td>";
+    echo "<td>" . $row['comments'] . "</td>";
+    echo "</tr>";
+}
+echo "</table>";
+?>
 	  ?>
   
    <?php
