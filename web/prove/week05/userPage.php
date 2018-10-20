@@ -62,7 +62,7 @@ session_start();
 	echo "<tr>";
     echo "<td>" . $row['title'] . "</td>";
     echo "<td>" . $row['rating'] . "</td>";
-    echo "<td>" . $row['comments'] . "</td>";
+    echo "<td>" . $row['review'] . "</td>";
     echo "</tr>";
 }
 echo "</table>";
