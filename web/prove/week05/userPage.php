@@ -58,7 +58,7 @@ session_start();
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
-      while ($row = $statement->fetch(PDO::FETCH_ASSOC))
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {  
 	echo "<tr>";
     echo "<td>" . $row['title'] . "</td>";
