@@ -66,7 +66,7 @@ session_start();
     echo "</tr>";
 }
 echo "</table>";
-echo "<p>" . $_SESSION['user_id'] . "</p>";
+echo $_SESSION['user_id'];
 ?>
   
    <?php
