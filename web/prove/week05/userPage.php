@@ -54,7 +54,7 @@ session_start();
 				FROM  project1.library tbl_a    
 				JOIN project1.rating tbl_b   
 				ON tbl_a.id = tbl_b.book_id
-				WHERE user_id = " . $_SESSION['user_id'] . ";";
+				WHERE user_id = '{$_SESSION['user_id']}';";
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
