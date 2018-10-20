@@ -78,7 +78,6 @@
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <label for="user">USERNAME</label>
   <?php
-  $userName = test_input($_POST['user']);
       
       $stmt = $db->prepare('SELECT display_name FROM project1.user WHERE display_name=:userName');
       $stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
