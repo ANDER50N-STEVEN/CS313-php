@@ -32,44 +32,7 @@
     {
       echo 'Error!: ' . $ex->getMessage();
       die();
-    }
-  
-  if($_SERVER['REQUEST_METHOD'] == 'POST')
-  {
-    if(isset($_POST['user'])) 
-    {
-      $userName = test_input($_POST['user']);
-      
-      $stmt = $db->prepare('SELECT id, username, password, display_name FROM project1.user WHERE user=:userName');
-      $stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
-      $stmt->execute();
-      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      
-      echo "<p><span style='font-size:2em; font-weight:bold;'>User Select</span></p>";
-      
-      if(count($rows) <= 0)
-      {
-        echo "No Users Found";
-      }
-      else {
-        foreach ($rows as $row)
-        {
-          //echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span></p>";
-          
-          echo "<a href='results.php?id=" . $row['id']. "' >" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a>";
-          
-          
-        }      
-      }
-    } else {
-      
-      echo "Something Else!";
-    }
-  }
-  
-  
-
-  
+    }  
   ?>
 </head>
 <body>
