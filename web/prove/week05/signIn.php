@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,9 +45,7 @@ session_start();
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if($row[password] == $pass){
-		  $_SESSION['name'] = $row[username];
-		  $_SESSION['user_id'] = $row[user_id];
-		  $_SESSION['display_name'] = $row[display_name];
+		 
 		 echo '<script>window.location.href = "userPage.php";</script>';
 	  }
       else
