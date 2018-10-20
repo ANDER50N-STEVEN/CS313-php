@@ -77,7 +77,7 @@
   
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <label for="user">USERNAME</label>
-  
+  <?php
   foreach ($rows as $row)
         {
           
@@ -85,6 +85,7 @@
           
           
         }
+		?>
   <input type="text" id="user" name="user">
   
   <input type="submit" name="submit" value="Submit">
