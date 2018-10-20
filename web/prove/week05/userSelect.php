@@ -80,8 +80,9 @@
   
   foreach ($rows as $row)
         {
-         
-          echo "<a href='signIn.php?id=" . $row['id']. "' >" . $row['display_name'] . "</a></br>";
+          
+          echo "<a href='signIn.php?id=" . $row['id']. "' >" . $row['userName'] . "</a>" . "</br>";
+          
           
         }
   <input type="text" id="user" name="user">
