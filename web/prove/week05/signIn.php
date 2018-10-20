@@ -46,7 +46,7 @@
       if($row == $pass)
 		  echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
       else
-		  echo "<p> incorrect password </p>";
+		  echo "<p>pass" . $pass . " : row " . $row . " </p>";
     }
   }
   ?>
