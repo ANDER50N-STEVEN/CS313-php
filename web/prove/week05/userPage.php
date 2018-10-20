@@ -4,11 +4,11 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Sign In <title>  
+ <link rel="stylesheet" type="text/css" href="../stylesheet.css" />
+  <title>User Page</title>
+   <?php
   
-  <?php
-  
-  	function test_input($data) {
+    function test_input($data) {
       $data = trim($data);
       $data = stripslashes($data);
       $data = htmlspecialchars($data);
@@ -35,35 +35,37 @@ session_start();
     {
       echo 'Error!: ' . $ex->getMessage();
       die();
-    }
-  
-  if($_SERVER['REQUEST_METHOD'] == 'POST')
-  {
-    if(isset($_POST['pass'])) 
-    {
-      $pass = test_input($_POST['pass']);
-      $query = "SELECT password FROM project1.user";
+    }  
+  ?>
+</head>
+<body>
+ <?php
+    require('../header.php');
+    ?>
+  <div class='ratings'>
+			<table style="width:80%">
+			<tr>
+				<th>Title</th>
+				<th>Rating</th> 
+				<th>Comments</th>
+			  </tr>
+	<?php
+      $query = "SELECT tbl_a.title, tbl_b.rating, tbl_b.review
+				FROM  project1.library tbl_a    
+				JOIN project1.rating tbl_b   
+				ON tbl_a.id = tbl_b.book_id
+				WHERE user_id = " . $_SESSION['user_id'] . ";";
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
-      if($row[password] == $pass){
-		  $_SESSION['name'] = $row[username];
-		  $_SESSION['user_id'] = $row[user_id];
-		  $_SESSION['display_name'] = $row[display_name];
+      if($row[password] == $pass)
 		 echo '<script>window.location.href = "userPage.php";</script>';
-	  }
       else
 		  echo "<p>incorrect password, please try again.</p>";
-    }
-  }
-  ?>
-  </head>
-<body>
- <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-  <label for="message">Please Enter Your Password</label>
-  <input type="text" id="pass" name="pass">
-  <input type="submit" name="submit" value="Submit">
-</form>
+	  ?>
   
+   <?php
+    require('../../footer.php');
+    ?>
 </body>
 </html>
