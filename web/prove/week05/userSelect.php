@@ -56,7 +56,7 @@ session_start();
       echo "<p><span style='font-size:2em; font-weight:bold;'>User Select</span></p>";
   foreach ($rows as $row)
         {
-          echo "<a href='signIn.php?id=" . $row['id']. "' >" . $row['display_name'] . "</a>" . "</br>";
+          echo "<a href='signIn.php?id=" . $row[id]. "' >" . $row['display_name'] . "</a>" . "</br>";
         }
 		?>
 </form>
