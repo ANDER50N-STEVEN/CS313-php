@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['id']=$_GET['id'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,7 +51,6 @@ $_SESSION['id']=$_GET['id'];
 		 $_SESSION['name'] = $row[username];
 		 $_SESSION['user_id'] = $row[id];
 		 $_SESSION['display_name'] = $row[display_name];
-
 		 echo '<script>window.location.href = "userPage.php";</script>';
 	  }
       else
