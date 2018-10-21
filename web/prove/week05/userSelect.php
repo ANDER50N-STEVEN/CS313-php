@@ -45,7 +45,7 @@ session_start();
     require('../header.php');
     ?>
   
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  <form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <?php
       
 	  $query = "SELECT display_name, id FROM project1.user";
