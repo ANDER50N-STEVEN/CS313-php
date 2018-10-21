@@ -45,6 +45,7 @@ if (!isset($_SESSION['id'])) {
   </head>
 <body>
  <?php
+  require('../header.php');
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
     if(isset($_POST['pass'])) 
@@ -72,6 +73,8 @@ if (!isset($_SESSION['id'])) {
   <input type="text" id="pass" name="pass">
   <input type="submit" name="submit" value="Submit">
 </form>
-  
+    <?php
+    require('../../footer.php');
+    ?>
 </body>
 </html>
