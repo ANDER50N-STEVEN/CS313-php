@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$_SESSION['id']=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,10 +38,7 @@ session_start();
       die();
     }
   
-  if($_SERVER['REQUEST_METHOD'] == 'POST')
-  {
-    if(isset($_POST['pass'])) 
-    {
+
       $pass = test_input($_POST['pass']);
       $query = "SELECT password, username, id, display_name FROM project1.user WHERE id = '{$_SESSION['id']}'";
 	  $stmt = $db->prepare($query);
@@ -55,8 +52,7 @@ session_start();
 	  }
       else
 		  echo "<p>incorrect password, please try again.</p>";
-    }
-  }
+  
   ?>
   </head>
 <body>
