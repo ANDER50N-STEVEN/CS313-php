@@ -1,7 +1,6 @@
 <?php
 session_start();
-$_SESSION['id']=$_GET['id'];
-$id = intval($_SESSION['id']);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +37,6 @@ $id = intval($_SESSION['id']);
       echo 'Error!: ' . $ex->getMessage();
       die();
     }
-  
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
     if(isset($_POST['pass'])) 
@@ -58,6 +56,10 @@ $id = intval($_SESSION['id']);
       else
 		  echo "<p>incorrect password, please try again.</p>";
     }
+  }
+  else{
+	  $_SESSION['id']=$_GET['id'];
+$id = intval($_SESSION['id']);
   }
   ?>
   </head>
