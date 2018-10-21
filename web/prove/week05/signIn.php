@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+$_SESSION['id']=$_GET['id'];
+$id = intval($_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +38,11 @@ session_start();
       echo 'Error!: ' . $ex->getMessage();
       die();
     }
+  ?>
+
+  </head>
+<body>
+ <?php
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
     if(isset($_POST['pass'])) 
@@ -57,13 +63,7 @@ session_start();
 		  echo "<p>incorrect password, please try again.</p>";
     }
   }
-  else{
-	  $_SESSION['id']=$_GET['id'];
-$id = intval($_SESSION['id']);
-  }
   ?>
-  </head>
-<body>
  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <label for="message">Please Enter Your Password</label>
   <?php echo "SELECT password, username, id, display_name FROM project1.user WHERE id = ". $id;; ?>
