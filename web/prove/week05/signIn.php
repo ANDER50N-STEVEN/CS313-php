@@ -42,13 +42,13 @@ session_start();
     if(isset($_POST['pass'])) 
     {
       $pass = test_input($_POST['pass']);
-      $query = "SELECT password FROM project1.user";
+      $query = "SELECT password, username, id, display_name FROM project1.user";
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
       if($row[password] == $pass){
 		 $_SESSION['name'] = $row[username];
-		 $_SESSION['user_id'] = '1';
+		 $_SESSION['user_id'] = $row[id];
 		 $_SESSION['display_name'] = $row[display_name];
 
 		 echo '<script>window.location.href = "userPage.php";</script>';
