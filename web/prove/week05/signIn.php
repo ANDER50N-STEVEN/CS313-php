@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['id']=$_GET[id];
+$_SESSION['id']=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,13 +37,13 @@ $_SESSION['id']=$_GET[id];
       echo 'Error!: ' . $ex->getMessage();
       die();
     }
-  
+  $id = intval($_SESSION['id']);
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
     if(isset($_POST['pass'])) 
     {
       $pass = test_input($_POST['pass']);
-      $query = "SELECT password, username, id, display_name FROM project1.user WHERE id = '{$_SESSION['id']}'";
+      $query = "SELECT password, username, id, display_name FROM project1.user WHERE id = ". $id;
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -63,7 +63,7 @@ $_SESSION['id']=$_GET[id];
 <body>
  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <label for="message">Please Enter Your Password</label>
-  <?php echo $_SESSION['id']; ?>
+  <?php echo $id; ?>
   <input type="text" id="pass" name="pass">
   <input type="submit" name="submit" value="Submit">
 </form>
