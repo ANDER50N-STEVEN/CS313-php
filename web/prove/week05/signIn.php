@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['id']=$_POST['id'];
+$_SESSION['id']=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
