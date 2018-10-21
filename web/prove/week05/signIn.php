@@ -1,6 +1,7 @@
 <?php
 session_start();
 $_SESSION['id']=$_GET['id'];
+$id = intval($_SESSION['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +38,7 @@ $_SESSION['id']=$_GET['id'];
       echo 'Error!: ' . $ex->getMessage();
       die();
     }
-  $id = intval($_SESSION['id']);
+  
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
     if(isset($_POST['pass'])) 
