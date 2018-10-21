@@ -63,7 +63,7 @@ $_SESSION['id']=$_GET['id'];
 <body>
  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <label for="message">Please Enter Your Password</label>
-  <?php echo $id; ?>
+  <?php echo "SELECT password, username, id, display_name FROM project1.user WHERE id = ". $id;; ?>
   <input type="text" id="pass" name="pass">
   <input type="submit" name="submit" value="Submit">
 </form>
