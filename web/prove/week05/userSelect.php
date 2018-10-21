@@ -47,12 +47,9 @@ session_start();
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <?php
       
-	  $query = "SELECT display_name FROM project1.user";
+	  $query = "SELECT display_name, id FROM project1.user";
 	  $stmt = $db->prepare($query);
 	  $stmt->execute();
-      //$stmt = $db->prepare('SELECT display_name FROM project1.user');
-      //$stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
-      //$stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       
       echo "<p><span style='font-size:2em; font-weight:bold;'>User Select</span></p>";
