@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['id']=$_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +43,7 @@ session_start();
     if(isset($_POST['pass'])) 
     {
       $pass = test_input($_POST['pass']);
-      $query = "SELECT password, username, id, display_name FROM project1.user";
+      $query = "SELECT password, username, id, display_name FROM project1.user WHERE id = '{$_SESSION['id']}'";
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
