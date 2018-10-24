@@ -20,6 +20,7 @@
 		$verse = htmlspecialchars($_POST['verse']);
 		$content = htmlspecialchars($_POST['content']);
 		$topicIds = $_POST['topicIds'];
+		$addTopic = htmlspecialchars($_POST['addTopic']);
 		
 		  
 		try
@@ -53,7 +54,14 @@
 		$stmt->execute();
 		
 		$newId = $db->lastInsertId('scriptures_id_seq');
-	
+		
+		if(!empty($addTopic)){
+			$stmt = $db->prepare('INSERT INTO topic(name)
+								VALUES(:addTopic)');
+			$stmt->bindValue(':addTopic', $addTopic, PDO::PARAM_STR);
+			$stmt->execute();
+		}
+		
 		foreach ($topicIds as $topicId)
 		{
 			echo "ScriptureId: $newId, topicId: $topicId";
