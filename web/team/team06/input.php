@@ -14,15 +14,15 @@
   
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
-    if(isset($_POST['book'])) 
-	{
+    
 		$book = htmlspecialchars($_POST['book']);
 		$chapter = htmlspecialchars($_POST['chapter']);
 		$verse = htmlspecialchars($_POST['verse']);
 		$content = htmlspecialchars($_POST['content']);
 		$topics = htmlspecialchars($_POST['topic']);
 		
-		  try
+		  
+		try
     {
       $dbUrl = getenv('DATABASE_URL');
 
@@ -52,7 +52,7 @@
 		$stmt->bindValue(':content', $content, PDO::PARAM_STR);
 		$stmt->execute();
 		$newId = $pdo->lastInsertId('scriptures_id_seq');
-		
+		echo "trial";
 		foreach($topics as $topic)
 		{
 			echo "ScriptureId: $newId, topicId: $topic";
@@ -64,8 +64,6 @@
 			
 			$stmt->execute();
 		}
-		
-	}
 	
 	
   }
