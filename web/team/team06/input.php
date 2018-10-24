@@ -153,6 +153,7 @@
         }  
   
   ?>
+	<input type = 'checkbox' >
   <input type="submit" name="submit" value="Submit">
 </form>
   
