@@ -54,6 +54,7 @@
 		$stmt->bindValue(':content', $content, PDO::PARAM_STR);
 		$stmt->execute();
 		$newId = $pdo->lastInsertId('scriptures_id_seq');
+		echo $faith . "this is faith";
 		if(!empty($faith)){
 			$faithId = 1;
 			$stmtf = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
