@@ -60,8 +60,8 @@
 			
 			$stmt = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
 								VALUES(:newId, :topicId)');
-			$stmt->bindValue(':newId', $newId, PDO::PARAM_INT););
-			$stmt->bindValue(':topicId', $topicId, PDO::PARAM_INT););
+			$stmt->bindValue(':newId', $newId, PDO::PARAM_INT);
+			$stmt->bindValue(':topicId', $topicId, PDO::PARAM_INT);
 			
 			$stmt->execute();
 		}
