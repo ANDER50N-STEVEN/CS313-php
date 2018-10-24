@@ -21,18 +21,22 @@
   <label for="book">Book</label>
   <input type="text" id="book" name="book">
   <input type="submit" name="submit" value="Submit">
+  </br>
   
   <label for="chapter">Chapter</label>
   <input type="text" id="chapter" name="chapter">
   <input type="submit" name="submit" value="Submit">
+  </br>
   
   <label for="verse">Verse</label>
   <input type="text" id="verse" name="verse">
   <input type="submit" name="submit" value="Submit">
+  </br>
   
   <label for="content">Content</label>
   <input type="textarea" id="content" name="content">
   <input type="submit" name="submit" value="Submit">
+  </br>
   
   <?php
     try
@@ -64,7 +68,7 @@
         foreach ($rows as $row)
         {
           
-          echo "<input type='checkbox' name='topic' value=" . $row['name'] . ">" . $row['name'];
+          echo "<input type='checkbox' name='topic' value=" . $row['name'] . ">" . $row['name'] . "</br>";
 
         }      
   
