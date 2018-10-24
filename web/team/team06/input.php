@@ -64,7 +64,7 @@
         foreach ($rows as $row)
         {
           
-          echo "<input type='checkbox' name='topic' value=" . "$row['name']" . ">" . "$row['name']";
+          echo "<input type='checkbox' name='topic' value=" . $row['name'] . ">" . $row['name'];
 
         }      
   
