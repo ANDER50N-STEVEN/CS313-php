@@ -126,7 +126,7 @@
         foreach ($rows as $row)
         {
           
-		echo "<input type='checkbox' name='topic[]'" . "value=" . $row['id'] . ">" . $row['name'] . "</br>";
+		echo "<input type='checkbox' name='topic[]'" . "value='" . $row['id'] . "'>" . $row['name'] . "</br>";
 
         }  
   
