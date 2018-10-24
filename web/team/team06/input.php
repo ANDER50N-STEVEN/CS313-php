@@ -19,7 +19,7 @@
 		$chapter = htmlspecialchars($_POST['chapter']);
 		$verse = htmlspecialchars($_POST['verse']);
 		$content = htmlspecialchars($_POST['content']);
-		$topicIds = htmlspecialchars($_POST['topicIds']);
+		$topicIds = $_POST['topicIds'];
 		
 		  
 		try
