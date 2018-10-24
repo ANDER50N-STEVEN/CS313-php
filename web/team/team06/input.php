@@ -68,7 +68,7 @@
 		}
 		
 		$stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
-	$statement->execute();
+	$stmt->execute();
 	
 	while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 	{
