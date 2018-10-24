@@ -53,7 +53,7 @@
 		$stmt->execute();
 		
 		$newId = $db->lastInsertId('scriptures_id_seq');
-		echo "why";
+	
 		foreach ($topicIds as $topicId)
 		{
 			echo "ScriptureId: $newId, topicId: $topicId";
@@ -64,8 +64,32 @@
 			$stmt->bindValue(':topicId', $topicId, PDO::PARAM_INT);
 			
 			$stmt->execute();
+			echo "</br>";
 		}
-	echo "won't";
+		
+		$stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures');
+	$statement->execute();
+	
+	while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+	{
+		echo '<p>';
+		echo '<strong>' . $row['book'] . ' ' . $row['chapter'] . ':';
+		echo $row['verse'] . '</strong>' . ' - ' . $row['content'];
+		echo '<br />';
+		echo 'Topics: ';
+		// get the topics now for this scripture
+		$stmtTopics = $db->prepare('SELECT name FROM topic t'
+			. ' INNER JOIN scripture_to_topic st ON st.topicId = t.id'
+			. ' WHERE st.scripture_id = :scriptureId');
+		$stmtTopics->bindValue(':scriptureId', $row['id']);
+		$stmtTopics->execute();
+
+		while ($topicRow = $stmtTopics->fetch(PDO::FETCH_ASSOC))
+		{
+			echo $topicRow['name'] . ' ';
+		}
+		echo '</p>';
+	}
 	
   }
   ?>
