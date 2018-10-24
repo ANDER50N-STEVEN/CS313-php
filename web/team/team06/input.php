@@ -56,10 +56,12 @@
 		$newId = $db->lastInsertId('scriptures_id_seq');
 		
 		if(!empty($addTopic)){
+			array_push($topicIds, addTopic);
 			$stmt = $db->prepare('INSERT INTO topic(name)
 								VALUES(:addTopic)');
 			$stmt->bindValue(':addTopic', $addTopic, PDO::PARAM_STR);
 			$stmt->execute();
+			
 		}
 		
 		foreach ($topicIds as $topicId)
