@@ -61,12 +61,12 @@
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       
-        // foreach ($rows as $row)
-        // {
+        foreach ($rows as $row)
+        {
           
-          // echo "<input type='checkbox' name='topic' value=" . "$row['name']" . ">" . $row['name'];
+          echo "<input type='checkbox' name='topic' value=" . "$row['name']" . ">" . "$row['name']";
 
-        // }      
+        }      
   
   
   ?>
