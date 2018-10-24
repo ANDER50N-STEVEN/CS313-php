@@ -51,9 +51,11 @@
 		$stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
 		$stmt->bindValue(':content', $content, PDO::PARAM_STR);
 		$stmt->execute();
-		echo "trial";
+		
 		$newId = $db->lastInsertId('scriptures_id_seq');
-		echo "trial";
+		$var = empty($topics);
+		echo $var;
+		
 		foreach($topics as $topic)
 		{
 			echo "ScriptureId: $newId, topicId: $topic";
