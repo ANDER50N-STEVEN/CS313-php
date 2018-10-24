@@ -54,7 +54,7 @@
 		
 		$newId = $db->lastInsertId('scriptures_id_seq');
 		$var = empty($topics);
-		echo $var;
+		echo "$var";
 		
 		foreach($topics as $topic)
 		{
