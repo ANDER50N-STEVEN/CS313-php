@@ -53,8 +53,25 @@
 		$stmt->bindValue(':verse', $verse, PDO::PARAM_STR);
 		$stmt->bindValue(':content', $content, PDO::PARAM_STR);
 		$stmt->execute();
-		
-		
+		$newId = $pdo->lastInsertId('scriptures_id_seq');
+		if($faith != ""){
+			$faithId = 1;
+			$stmtf = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
+							VALUES(:newId, :faithId);');
+			$stmtf->execute();
+		}
+		if($sacrifice != ""){
+			$sacrificeId = 2;
+			$stmts = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
+							VALUES(:newId, :sacrificeId);');
+			$stmts->execute();
+		}
+		if($charity != ""){
+			$charityId = 3;
+			$stmtc = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
+							VALUES(:newId, :charityId);');
+			$stmtc->execute();
+		}
 		
 	}
 	
