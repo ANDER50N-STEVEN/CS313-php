@@ -20,9 +20,7 @@
 		$chapter = htmlspecialchars($_POST['chapter']);
 		$verse = htmlspecialchars($_POST['verse']);
 		$content = htmlspecialchars($_POST['content']);
-		$faith = htmlspecialchars($_POST['FAITH']);
-		$sacrifice = htmlspecialchars($_POST['SACRIFICE']);
-		$charity = htmlspecialchars($_POST['CHARITY']);
+		$topics = htmlspecialchars($_POST['topic']);
 		
 		  try
     {
@@ -47,40 +45,24 @@
     }
 		
 		$stmt = $db->prepare('INSERT INTO scriptures(book, chapter, verse, content) 
-							VALUES (:book, :chapter, :verse, :content);');
+							VALUES (:book, :chapter, :verse, :content)');
 		$stmt->bindValue(':book', $book, PDO::PARAM_STR);
 		$stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
 		$stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
 		$stmt->bindValue(':content', $content, PDO::PARAM_STR);
 		$stmt->execute();
 		$newId = $pdo->lastInsertId('scriptures_id_seq');
-		echo $faith . "this is faith";
-		if(!empty($faith)){
-			$faithId = 1;
-			$stmtf = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
-							VALUES(:newId, :faithId);');
-			$stmtf->bindValue(':newId', $newId, PDO::PARAM_INT);
-			$stmt->bindValue(':faithId', $faithId, PDO::PARAM_INT);
-			$stmtf->execute();
-			echo "faith works";
-		}
-		if(!empty($sacrifice)){
-			$sacrificeId = 2;
-			$stmts = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
-							VALUES(:newId, :sacrificeId);');
-			$stmtf->bindValue(':newId', $newId, PDO::PARAM_INT);
-			$stmt->bindValue(':sacrificeId', $sacrificeId, PDO::PARAM_INT);
-			$stmts->execute();
-			echo "sacrifice works";
-		}
-		if(!empty($charity)){
-			$charityId = 3;
-			$stmtc = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
-							VALUES(:newId, :charityId);');
-			$stmtf->bindValue(':newId', $newId, PDO::PARAM_INT);
-			$stmt->bindValue(':charityId', $charityId, PDO::PARAM_INT);
-			$stmtc->execute();
-			echo "charity works";
+		
+		foreach($topics as $topic)
+		{
+			echo "ScriptureId: $newId, topicId: $topic";
+			
+			$stmt = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
+								VALUES(:newId, :topic)');
+			$stmt->bindValue(':newId', $newId);
+			$stmt->bindValue(':topic', $topic);
+			
+			$stmt->execute();
 		}
 		
 	}
@@ -136,14 +118,14 @@
       die();
     }
   
-      $stmt = $db->prepare('SELECT name FROM topic');
+      $stmt = $db->prepare('SELECT id, name FROM topic');
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       
         foreach ($rows as $row)
         {
           
-		echo "<input type='checkbox' name=" . $row['name'] . "value=" . $row['name'] . ">" . $row['name'] . "</br>";
+		echo "<input type='checkbox' name='topic[]'" . "value=" . $row['id'] . ">" . $row['name'] . "</br>";
 
         }  
   
