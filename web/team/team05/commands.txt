@@ -1,0 +1,201 @@
+CORE REQUIREMENTS
+https://content.byui.edu/file/14882098-ce1f-44ba-a196-a7aebcb3d5ce/1/week05/prepare-basic-query.html
+
+1.CREATE DATA BASE
+-----------------------------------------------------------------------------
+CREATE TABLE scriptures (
+id serial NOT NULL PRIMARY KEY,
+book VARCHAR(255) NOT NULL,
+chapter	INT NOT NULL,
+verse INT NOT NULL,
+content TEXT NOT NULL
+);
+
+2. INSERT SCRIPTURES
+-----------------------------------------------------------------------------
+INSERT INTO scriptures (book, chapter, verse, content) VALUES 
+("John", 1, 5,"And the light shineth in darkness; and the darkness comprehended it not."),
+("Doctrine and Covenants", 88, 49, 
+"The light shineth in darkness, and the darkness comprehendeth it not; nevertheless, the day shall come when you shall comprehend even God, being quickened in him and by him."),
+("Doctrine and Covenants", 93, 28,
+"He that keepeth his commandments receiveth truth and light, until he is glorified in truth and knoweth all things."),
+("Mosiah", 16, 9,
+"He is the light and the life of the world; yea, a light that is endless, that can never be darkened; yea, and also a life which is endless, that there can be no more death.");
+
+-------------------
+Step 3: Create a PHP page to query this database and list the scriptures. Put a heading at the top of the page to display "Scripture Resources". 
+Then for each scripture, display the book chapter and verse in bold, followed by a hyphen and then the content of the scripture in quotes
+https://content.byui.edu/file/14882098-ce1f-44ba-a196-a7aebcb3d5ce/1/week05/prepare-php-query.html
+-----------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Team 05</title>
+  
+   <?php
+  
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+  }
+  
+    try
+    {
+      $dbUrl = getenv('DATABASE_URL');
+
+      $dbOpts = parse_url($dbUrl);
+
+      $dbHost = $dbOpts["host"];
+      $dbPort = $dbOpts["port"];
+      $dbUser = $dbOpts["user"];
+      $dbPassword = $dbOpts["pass"];
+      $dbName = ltrim($dbOpts["path"],'/');
+
+      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch (PDOException $ex)
+    {
+      echo 'Error!: ' . $ex->getMessage();
+      die();
+    }
+  
+  if($_SERVER['REQUEST_METHOD'] == 'POST')
+  {
+    if(isset($_POST['book'])) 
+    {
+      $bookName = test_input($_POST['book']);
+      
+      $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures WHERE book=:bookName');
+      $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
+      $stmt->execute();
+      $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      
+      echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Resources</span></p>";
+      
+      if(count($rows) <= 0)
+      {
+        echo "No Books Found";
+      }
+      else {
+        foreach ($rows as $row)
+        {
+          //echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span></p>";
+          
+          echo "<a href='results.php?id=" . $row['id']. "' >" . $row['book'] . " " . $row['chapter'] . ":" . $row['verse'] . "</a>";
+          
+          
+        }      
+      }
+    } else {
+      
+      echo "Something Else!";
+    }
+  }
+  
+  
+
+  
+  ?>
+</head>
+<body>
+ 
+  
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  <label for="book">Book</label>
+  <input type="text" id="book" name="book">
+  <input type="submit" name="submit" value="Submit">
+</form>
+  
+</body>
+</html>
+
+4. STRETCH CHALLENGES N1: Create a PHP form to search for a book and display all the scriptures in your database that match that book.
+-----------------------------------------------------------------------------
+pseudo code
+query accepts a book and searches for all records with that book
+loop through information and display each value in the array that match
+
+SELECT * FROM scriptures WHERE book = $book;
+
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+  <label for="book">Book</label>
+  <input type="text" value="<?php echo $book;?>" id="book" name="book">
+  <input type="submit" name="submit" value="Submit">
+</form>
+
+5.Change your results page so that it only lists the book, chapter, and verse of the scripture (not the content), but make that text a link. 
+Have the link lead to a "Scripture Details" page where the user can see the content for the selected scripture.
+
+Hint: You might consider adding the scripture id as a query parameter for the details page link.
+-----------------------------------------------------------------------------
+
+6.Build out the Scripture Details page. It should display the reference and the content for the scripture that was clicked.
+-----------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Team 05</title>  
+  
+  <?php
+  
+  	function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+  }
+  
+    try
+    {
+      $dbUrl = getenv('DATABASE_URL');
+
+      $dbOpts = parse_url($dbUrl);
+
+      $dbHost = $dbOpts["host"];
+      $dbPort = $dbOpts["port"];
+      $dbUser = $dbOpts["user"];
+      $dbPassword = $dbOpts["pass"];
+      $dbName = ltrim($dbOpts["path"],'/');
+
+      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch (PDOException $ex)
+    {
+      echo 'Error!: ' . $ex->getMessage();
+      die();
+    }
+  
+  if($_SERVER['REQUEST_METHOD'] == 'GET')
+  {
+    if(isset($_GET['id'])) 
+    {
+      $id = test_input($_GET['id']);
+      
+      $stmt = $db->prepare('SELECT id, book, chapter, verse, content FROM scriptures WHERE id=:id');
+      $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+      $stmt->execute();
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);
+      
+      
+      echo "<p><span style='font-size:2em; font-weight:bold;'>Scripture Details</span></p>";
+      
+    	echo "<p><span style='font-weight:bold'>" . $row['book'] . " " .  $row['chapter'] . ":". $row['verse'] ."</span><br> " . $row['content'] . "</p>";
+
+      
+    }
+  }
+  
+  ?>
+  </head>
+<body>
+
+  
+</body>
+</html>

@@ -104,4 +104,6 @@ INSERT INTO project1.user (id, username, password, display_name) VALUES
 
 INSERT INTO project1.rating (id, user_id, book_id, rating, review) VALUES
 (1, 1, 5, 5, 'This is one of my favorite books, not because the book itself is that unique, but because it sets the stage and creates characters you learn to love'),
-(2, 2, 4.5, 5, 'Really good book, but a little too much like Lord of the Rings');
+(2, 2, 4.5, 5, 'Really good book, but a little too much like Lord of the Rings'),
+(3, 1, 2, 5, 'This is one of the greates books ever written, if only because of its originallity in the world'),
+(4, 1, 12, 4.5, 'This book series is amazing, fantastic world and so deep.  It did have its weird moments though.');
