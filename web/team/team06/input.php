@@ -154,7 +154,9 @@
   
   ?>
 	<input type = 'checkbox' >
-  <input type="submit" name="submit" value="Submit">
+	<input type="text" id="addTopic" name="addTopic">
+	</br>
+	<input type="submit" name="submit" value="Submit">
 </form>
   
 </body>
