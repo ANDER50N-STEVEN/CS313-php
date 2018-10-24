@@ -49,8 +49,8 @@
 		$stmt = $db->prepare('INSERT INTO scriptures(book, chapter, verse, content) 
 							VALUES (:book, :chapter, :verse, :content);');
 		$stmt->bindValue(':book', $book, PDO::PARAM_STR);
-		$stmt->bindValue(':chapter', $chapter, PDO::PARAM_STR);
-		$stmt->bindValue(':verse', $verse, PDO::PARAM_STR);
+		$stmt->bindValue(':chapter', $chapter, PDO::PARAM_INT);
+		$stmt->bindValue(':verse', $verse, PDO::PARAM_INT);
 		$stmt->bindValue(':content', $content, PDO::PARAM_STR);
 		$stmt->execute();
 		$newId = $pdo->lastInsertId('scriptures_id_seq');
@@ -59,6 +59,8 @@
 			$faithId = 1;
 			$stmtf = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
 							VALUES(:newId, :faithId);');
+			$stmtf->bindValue(':newId', $newId, PDO::PARAM_INT);
+			$stmt->bindValue(':faithId', $faithId, PDO::PARAM_INT);
 			$stmtf->execute();
 			echo "faith works";
 		}
@@ -66,6 +68,8 @@
 			$sacrificeId = 2;
 			$stmts = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
 							VALUES(:newId, :sacrificeId);');
+			$stmtf->bindValue(':newId', $newId, PDO::PARAM_INT);
+			$stmt->bindValue(':sacrificeId', $sacrificeId, PDO::PARAM_INT);
 			$stmts->execute();
 			echo "sacrifice works";
 		}
@@ -73,6 +77,8 @@
 			$charityId = 3;
 			$stmtc = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
 							VALUES(:newId, :charityId);');
+			$stmtf->bindValue(':newId', $newId, PDO::PARAM_INT);
+			$stmt->bindValue(':charityId', $charityId, PDO::PARAM_INT);
 			$stmtc->execute();
 			echo "charity works";
 		}
