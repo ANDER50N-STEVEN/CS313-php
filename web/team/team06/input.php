@@ -53,8 +53,6 @@
 		$stmt->execute();
 		
 		$newId = $db->lastInsertId('scriptures_id_seq');
-		$var = empty($topicIds);
-		echo "$var";
 		
 		foreach($topicIds as $topicId)
 		{
@@ -62,8 +60,8 @@
 			
 			$stmt = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
 								VALUES(:newId, :topicId)');
-			$stmt->bindValue(':newId', $newId);
-			$stmt->bindValue(':topicId', $topicId);
+			$stmt->bindValue(':newId', $newId, PDO::PARAM_INT););
+			$stmt->bindValue(':topicId', $topicId, PDO::PARAM_INT););
 			
 			$stmt->execute();
 		}
