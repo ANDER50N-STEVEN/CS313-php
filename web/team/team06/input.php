@@ -53,12 +53,12 @@
 		$stmt->execute();
 		
 		$newId = $db->lastInsertId('scriptures_id_seq');
-		$var = empty($topics);
+		$var = empty($topicIds);
 		echo "$var";
 		
 		foreach($topicIds as $topicId)
 		{
-			echo "ScriptureId: $newId, topicId: $topic";
+			echo "ScriptureId: $newId, topicId: $topicId";
 			
 			$stmt = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
 								VALUES(:newId, :topicId)');
