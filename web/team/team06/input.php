@@ -19,7 +19,7 @@
 		$chapter = htmlspecialchars($_POST['chapter']);
 		$verse = htmlspecialchars($_POST['verse']);
 		$content = htmlspecialchars($_POST['content']);
-		$topics = htmlspecialchars($_POST['topic']);
+		$topicIds = htmlspecialchars($_POST['topicIds']);
 		
 		  
 		try
@@ -56,14 +56,14 @@
 		$var = empty($topics);
 		echo "$var";
 		
-		foreach($topics as $topic)
+		foreach($topicIds as $topicId)
 		{
 			echo "ScriptureId: $newId, topicId: $topic";
 			
 			$stmt = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
-								VALUES(:newId, :topic)');
+								VALUES(:newId, :topicId)');
 			$stmt->bindValue(':newId', $newId);
-			$stmt->bindValue(':topic', $topic);
+			$stmt->bindValue(':topicId', $topicId);
 			
 			$stmt->execute();
 		}
@@ -126,7 +126,7 @@
         foreach ($rows as $row)
         {
           
-		echo "<input type='checkbox' name='topic[]'" . "value='" . $row['id'] . "'>" . $row['name'] . "</br>";
+		echo "<input type='checkbox' name='topicIds[]'" . "value='" . $row['id'] . "'>" . $row['name'] . "</br>";
 
         }  
   
