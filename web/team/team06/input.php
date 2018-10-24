@@ -12,6 +12,17 @@
       return $data;
   }
   
+  if($_SERVER['REQUEST_METHOD'] == 'POST')
+  {
+    if(isset($_POST['book'])) 
+	{
+		$book = htmlspecialchars($_POST['book']);
+		$chapter = htmlspecialchars($_POST['chapter']);
+		$verse = htmlspecialchars($_POST['verse']);
+		$content = htmlspecialchars($_POST['content']);
+		$topic = htmlspecialchars($_POST['topic']);
+	}
+  }
   ?>
 </head>
 <body>
@@ -20,22 +31,22 @@
   <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   <label for="book">Book</label>
   <input type="text" id="book" name="book">
-  <input type="submit" name="submit" value="Submit">
+  
   </br>
   
   <label for="chapter">Chapter</label>
   <input type="text" id="chapter" name="chapter">
-  <input type="submit" name="submit" value="Submit">
+  
   </br>
   
   <label for="verse">Verse</label>
   <input type="text" id="verse" name="verse">
-  <input type="submit" name="submit" value="Submit">
+  
   </br>
   
   <label for="content">Content</label>
   <input type="textarea" id="content" name="content">
-  <input type="submit" name="submit" value="Submit">
+ 
   </br>
   
   <?php
@@ -68,12 +79,12 @@
         foreach ($rows as $row)
         {
           
-          echo "<input type='checkbox' name='topic' value=" . $row['name'] . ">" . $row['name'] . "</br>";
+          echo "<input type='checkbox' name='topic' value=" . $row['name'] . "[]>" . $row['name'] . "</br>";
 
-        }      
-  
+        }  
   
   ?>
+  <input type="submit" name="submit" value="Submit">
 </form>
   
 </body>
