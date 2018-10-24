@@ -1,0 +1,31 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+https://hidden-coast-53870.herokuapp.com/prove/week05/userSelect.php
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+https://github.com/MisterANDER50N/CS313-php
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+Currently you can select the user you would like to "sign in" as, then you are presented with a login page where you are asked for a password, password doesn't work and so anything works.
+Once logged in the user can see all of the different books they have reviewed and their ratings.
+
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+I can't figure out how to transfer the id from the first page to the second so the sign in is hardcoded to the first id.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+How simple it was to input queries.
+
+6. Why should you create a separate user account for your application to access the database?
+so there is only one person who can modify the database
+
+7. Please select the category you feel best describes your assignment:
+
+C - Slightly deficient, but still mostly adequate
+
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+I spent most of my time trying to get information to transfer between sessions but because I needed an integer it wouldn't work.
+Because of this waste of time I was only able to make a handful of my databases accessable and they aren't formated very well at all.
+All that being said I feel I am able to access information from the database very easily I just will need to change the sign in page.
