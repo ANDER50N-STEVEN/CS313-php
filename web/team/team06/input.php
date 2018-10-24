@@ -53,8 +53,8 @@
 		$stmt->execute();
 		
 		$newId = $db->lastInsertId('scriptures_id_seq');
-		
-		foreach($topicIds as $topicId)
+		echo "why";
+		foreach ($topicIds as $topicId)
 		{
 			echo "ScriptureId: $newId, topicId: $topicId";
 			
@@ -65,7 +65,7 @@
 			
 			$stmt->execute();
 		}
-	
+	echo "won't";
 	
   }
   ?>
