@@ -15,7 +15,7 @@
 		<body>
 			<?php
 				require('../header.php');
-				echo $create;
+				echo $create . "before";
 				if($_SERVER['REQUEST_METHOD'] == 'GET')
 				{
 					$title = htmlspecialchars($_GET['title']);
@@ -29,7 +29,7 @@
 							$create = true;
 					}				
 				}
-				echo $create;
+				echo $create . "after";
 			?>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 			
