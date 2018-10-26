@@ -9,7 +9,7 @@
 			<title>CREATE PROFILE</title>
 			<?php
 				require('dbConnect.php');
-				$create = false;
+				
 			?>
 	</head>
 		<body>
@@ -18,6 +18,7 @@
 				echo $create . "before";
 				if($_SERVER['REQUEST_METHOD'] == 'GET')
 				{
+					$create = false;
 					$title = htmlspecialchars($_GET['title']);
 			
 					$stmt = $db->prepare('SELECT title
