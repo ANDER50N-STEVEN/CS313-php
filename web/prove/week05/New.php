@@ -16,7 +16,7 @@
 
 				if($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
-					if(isset($_POST['pass']))
+					if(isset($_POST['pass']) && isset($_POST['userName']))
 					{
 						$userName = htmlspecialchars($_POST['userName']);
 						$pass = htmlspecialchars($_POST['pass']);
@@ -50,6 +50,8 @@
 		<input type="text" id="pass" name="pass"></br>
 		<input type="submit" name="submit" value="Submit">
 		</form>
+		
+		
 
 		<?php
 			require('../../footer.php');
