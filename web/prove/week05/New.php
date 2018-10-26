@@ -48,9 +48,9 @@
 		<label for="message">Please Enter Your Password</label></br>
 		<input type="text" id="pass" name="pass"></br>
 		<input type="submit" name="submit" value="Submit">
-		</form>
+		</form></br> 
 		<form method="post" action="creatProfile.php">
-		<input type="submit" name="submit" value="Submit">
+		<input type="submit" name="submit" value="Create Profile">
 		</form>
 		
 		
