@@ -6,7 +6,7 @@
 <html lang="en">
 	<head>
 		<link rel="stylesheet" type="text/css" href="../stylesheet.css" />
-			<title>User Select</title>
+			<title>CREATE PROFILE</title>
 			<?php
 				require('dbConnect.php');
 				

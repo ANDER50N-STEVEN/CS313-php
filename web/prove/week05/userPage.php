@@ -7,41 +7,15 @@ session_start();
  <link rel="stylesheet" type="text/css" href="../stylesheet.css" />
   <title>User Page</title>
    <?php
-  
-    function test_input($data) {
-      $data = trim($data);
-      $data = stripslashes($data);
-      $data = htmlspecialchars($data);
-      return $data;
-  }
-  
-    try
-    {
-      $dbUrl = getenv('DATABASE_URL');
-
-      $dbOpts = parse_url($dbUrl);
-
-      $dbHost = $dbOpts["host"];
-      $dbPort = $dbOpts["port"];
-      $dbUser = $dbOpts["user"];
-      $dbPassword = $dbOpts["pass"];
-      $dbName = ltrim($dbOpts["path"],'/');
-
-      $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-    catch (PDOException $ex)
-    {
-      echo 'Error!: ' . $ex->getMessage();
-      die();
-    }  
+	require('dbConnect.php');
   ?>
 </head>
 <body>
  <?php
     require('../header.php');
+	echo "<p> Hello  " . $_SESSION["name"] . "</p>";
     ?>
+	
   <div class='ratings' style="text-align: center">
 			<table style="width:80%">
 			<tr>
@@ -66,8 +40,13 @@ session_start();
     echo "</tr>";
 }
 echo "</table>";
-echo "<p> Hello  " . $_SESSION["user_id"] . "</p>";
+
 ?>
+  
+  	<form action="createBookReview.php">
+	<input type="text" name="title" />
+		<input type="submit" value="Create Book Review" />
+		</form>
   
    <?php
     require('../../footer.php');
