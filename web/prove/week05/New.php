@@ -5,7 +5,7 @@
 <html lang="en">
 	<head>
 		<link rel="stylesheet" type="text/css" href="../stylesheet.css" />
-			<title>User Select</title>
+			<title>SIGN IN</title>
 			<?php
 				require('dbConnect.php');
 			?>
