@@ -68,8 +68,6 @@
 		
 		foreach ($topicIds as $topicId)
 		{
-			echo "ScriptureId: $newId, topicId: $topicId";
-			
 			$stmt = $db->prepare('INSERT INTO scripture_to_topic(scripture_id, topic_id)
 								VALUES(:newId, :topicId)');
 			$stmt->bindValue(':newId', $newId, PDO::PARAM_INT);
