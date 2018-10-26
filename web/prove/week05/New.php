@@ -34,7 +34,6 @@
 							$_SESSION['name'] = $row['username'];
 							$_SESSION['user_id'] = $row['id'];
 							$_SESSION['display_name'] = $row['display_name'];
-							echo "change page";
 							echo '<script>window.location.href = "userPage.php";</script>';
 							}
 						else
