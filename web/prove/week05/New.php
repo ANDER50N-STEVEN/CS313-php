@@ -16,7 +16,7 @@
 
 				if($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
-					if(isset($_POST['pass'] && isset ($_POST['userName']))) 
+					if(isset($_POST['pass']))
 					{
 						$userName = test_input($_POST['userName']);
 						$pass = test_input($_POST['pass']);
