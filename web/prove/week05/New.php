@@ -33,7 +33,9 @@
 							$_SESSION['name'] = $row['username'];
 							$_SESSION['user_id'] = $row['id'];
 							$_SESSION['display_name'] = $row['display_name'];
-							echo '<script>window.location.href = "userPage.php";</script>';
+							$new_Page ="userPage.php";
+							header("Location: $new_Page");
+							die();
 							}
 						}
 						echo "<p>incorrect password, please try again.</p>";	
@@ -49,7 +51,7 @@
 		<input type="text" id="pass" name="pass"></br>
 		<input type="submit" name="submit" value="Submit">
 		</form></br> 
-		<form method="post" action="createProfile.php">
+		<form action="createProfile.php">
 		<input type="submit" name="submit" value="Create Profile">
 		</form>
 		
