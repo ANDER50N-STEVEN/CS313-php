@@ -2,7 +2,6 @@
 session_start();
 if (!isset($_SESSION['id'])) {
 	$_SESSION['id']=$_GET['id'];
-	$id = intval($_SESSION['id']);
 }
 ?>
 <!DOCTYPE html>
@@ -52,7 +51,10 @@ if (!isset($_SESSION['id'])) {
     if(isset($_POST['pass'])) 
     {
       $pass = test_input($_POST['pass']);
-      $query = "SELECT password, username, id, display_name FROM project1.user WHERE id = 1";  // I can't get the session Id to work
+      $query = "SELECT password, username, id, display_name 
+				FROM project1.user 
+				WHERE id = :id";  
+	  $stmt->bindValue(':id', $_SESSION['id'], PDO::PARAM_INT);
 	  $stmt = $db->prepare($query);
       $stmt->execute();
       $row = $stmt->fetch(PDO::FETCH_ASSOC);
