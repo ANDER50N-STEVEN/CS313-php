@@ -30,17 +30,18 @@
 						foreach ($rows as $row)
 						{
 							echo "<a href='signIn.php?id=" . $row['id']. "' >" . $row['display_name'] . "</a>" . "</br>";
-						}
-						
-						if($rows[password] == $pass){
-							$_SESSION['name'] = $rows[username];
-							$_SESSION['user_id'] = $rows[id];
-							$_SESSION['display_name'] = $rows[display_name];
+							if($row['password'] == $pass && $row['display_name'] == $userName){
+							$_SESSION['name'] = $row['username'];
+							$_SESSION['user_id'] = $row['id'];
+							$_SESSION['display_name'] = $row['display_name'];
 							echo "change page";
 							echo '<script>window.location.href = "userPage.php";</script>';
 							}
 						else
 							echo "<p>incorrect password, please try again.</p>";
+						}
+						
+						
 					}
 				}
 			?>
