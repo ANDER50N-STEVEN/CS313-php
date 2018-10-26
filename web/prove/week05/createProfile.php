@@ -17,6 +17,7 @@
 				require('../header.php');
 				if($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
+					require('dbConnect.php');
 					echo "enter if";
 					$name = htmlspecialchars($_POST['name']);
 					$userName = htmlspecialchars($_POST['userName']);
