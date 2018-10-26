@@ -31,11 +31,11 @@
 			?>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 			
-			<label for="name">Title</label></br>
-			<input type="text" id="name" name="name" value="<?php $title?>"></br>
+			<label for="title">Title</label></br>
+			<input type="text" id="title" name="title" value="<?php echo $title?>"></br></br>
 			
 			<label for="username"> Author</label></br>
-			<input type="text" id="userName" name="userName"></br>
+			<input type="text" id="userName" name="userName"></br></br>
 
 			<label for="message">Genre</label></br>
 			<?php
@@ -49,12 +49,12 @@
 			?>
 			<input type = 'checkbox' >
 			<input type="text" id="addGenre" name="addGenre">
-			</br>
+			</br></br>
 			<input type='radio' name='rating' value='1'>1</input>
 			<input type='radio' name='rating' value='2'>2</input>
 			<input type='radio' name='rating' value='3'>3</input>
 			<input type='radio' name='rating' value='4'>4</input>
-			<input type='radio' name='rating' value='5'>5</input></br>
+			<input type='radio' name='rating' value='5'>5</input></br></br>
 			
 			<label for="name">Review</label></br>
 			<textarea rows="4" cols="50" id="name" name="name" value="<?php $title?>"></textarea></br>
