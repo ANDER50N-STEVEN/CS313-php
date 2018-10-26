@@ -57,7 +57,7 @@
 			<input type='radio' name='rating' value='5'>5</input></br>
 			
 			<label for="name">Review</label></br>
-			<textarea rows="4" cols="50" id="name" name="name" value="<?php $title?>"></br>
+			<textarea rows="4" cols="50" id="name" name="name" value="<?php $title?>"></textarea></br>
 					
 			<input type="submit" name="submit" value="Submit">
 			</form></br> 
