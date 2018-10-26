@@ -54,10 +54,10 @@
 			<input type='radio' name='rating' value='2'>2</input>
 			<input type='radio' name='rating' value='3'>3</input>
 			<input type='radio' name='rating' value='4'>4</input>
-			<input type='radio' name='rating' value='5'>5</input>
+			<input type='radio' name='rating' value='5'>5</input></br>
 			
 			<label for="name">Review</label></br>
-			<input type="text" id="name" name="name" value="<?php $title?>"></br>
+			<input type="textarea" rows="4" cols="50" id="name" name="name" value="<?php $title?>"></br>
 					
 			<input type="submit" name="submit" value="Submit">
 			</form></br> 
