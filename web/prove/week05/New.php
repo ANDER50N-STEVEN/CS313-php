@@ -29,7 +29,7 @@
 
 						foreach ($rows as $row)
 						{
-							echo "<a href='signIn.php?id=" . $row['id']. "' >" . $row['display_name'] . "</a>" . "</br>";
+							echo "<a href='signIn.php?id=" . $rows['id']. "' >" . $rows['display_name'] . "</a>" . "</br>";
 						}
 						
 						if($rows[password] == $pass){
