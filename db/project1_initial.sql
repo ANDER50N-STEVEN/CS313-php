@@ -15,7 +15,7 @@ CREATE SCHEMA project1;
 
 CREATE TABLE project1.user
 (
-	id SERIAL NOT NULL PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	username VARCHAR(100) NOT NULL UNIQUE,
 	password VARCHAR(100) NOT NULL,
 	display_name VARCHAR(100) NOT NULL
@@ -95,9 +95,9 @@ INSERT INTO project1.library (id, title, author, genre_id) VALUES
 (19, 'The Mists of Avalon','Marion Zimmer Bradley', 1),  
 (20, 'Magician: Apprentice', 'Raymond E. Feist', 1) ;
 
-INSERT INTO project1.user (id, username, password, display_name) VALUES
-(1, 'Steven Anderson', 'password', 'MisterANDER50N'),
-(2, 'Katherine Anderson', 'avatar', 'Kate Lynn');
+INSERT INTO project1.user (username, password, display_name) VALUES
+('Steven Anderson', 'password', 'MisterANDER50N'),
+('Katherine Anderson', 'avatar', 'Kate Lynn');
 
 #	I realized book_id and library might be confusing.  might need to change
 #	that.  

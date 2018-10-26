@@ -27,10 +27,13 @@
 					$stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
 					$stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
 					$stmt->execute();
+					$new_Page ="New.php";
+					header("Location: $new_Page");
+					die();
 					
 				}
 			?>
-			<form method="post" action="New.php">
+			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 			
 			<label for="message">What is your full name</label></br>
 		<input type="text" id="name" name="name"></br>
