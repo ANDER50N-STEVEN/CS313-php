@@ -29,6 +29,16 @@
 							$create = true;
 					}				
 				}
+				
+				if($_SERVER['REQUEST_METHOD'] == 'POST'){
+					$title = htmlspecialchars($_POST['title']);
+					$author = htmlspecialchars($_POST['author']);
+					$genre = $_POST['genre'];
+					$rating = $_POST['rating'];
+					$review = htmlspecialchars($_POST['review']);
+					
+					
+				}
 				echo $create . "after";
 			?>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
