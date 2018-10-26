@@ -70,7 +70,7 @@ if (!isset($_SESSION['id'])) {
     }
   }
   ?>
- <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+ <form method="post" action="<?php echo htmlspecialchars($_SERVER["userPage.php"]);?>">
   <label for="message">Please Enter Your Password</label>
   <?php echo "SELECT password, username, id, display_name FROM project1.user WHERE id = ". $_SESSION['id']; ?>
   <input type="text" id="pass" name="pass">
