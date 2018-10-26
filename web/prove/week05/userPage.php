@@ -43,7 +43,7 @@ echo "</table>";
 
 ?>
   
-  	<form action="createBookReview.php">
+  	<form method="get" action='createBookReview.php'>
 	<input type="text" name="title" />
 		<input type="submit" value="Create Book Review" />
 		</form>
