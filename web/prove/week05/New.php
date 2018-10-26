@@ -49,7 +49,7 @@
 		<input type="text" id="pass" name="pass"></br>
 		<input type="submit" name="submit" value="Submit">
 		</form></br> 
-		<form method="post" action="creatProfile.php">
+		<form method="post" action="createProfile.php">
 		<input type="submit" name="submit" value="Create Profile">
 		</form>
 		
