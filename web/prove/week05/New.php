@@ -16,7 +16,7 @@
 
 				if($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
-					if(isset($_POST['pass']) && isset($_POST['userName']))
+					if(isset($_POST['pass']))
 					{
 						$userName = htmlspecialchars($_POST['userName']);
 						$pass = htmlspecialchars($_POST['pass']);
@@ -36,8 +36,7 @@
 							echo '<script>window.location.href = "userPage.php";</script>';
 							}
 						}
-						echo "<p>incorrect password, please try again.</p>";
-						
+						echo "<p>incorrect password, please try again.</p>";	
 					}
 				}
 			?>
@@ -48,6 +47,9 @@
 
 		<label for="message">Please Enter Your Password</label></br>
 		<input type="text" id="pass" name="pass"></br>
+		<input type="submit" name="submit" value="Submit">
+		</form>
+		<form method="post" action="creatProfile.php">
 		<input type="submit" name="submit" value="Submit">
 		</form>
 		
