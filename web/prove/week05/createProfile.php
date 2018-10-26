@@ -17,11 +17,12 @@
 				require('../header.php');
 				if($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
-					require('dbConnect.php');
 					echo "enter if";
 					$name = htmlspecialchars($_POST['name']);
 					$userName = htmlspecialchars($_POST['userName']);
 					$pass = htmlspecialchars($_POST['pass']);
+					
+					echo $name . " " . $userName . " " . $pass;
 					
 					$stmt = $db->prepare('INSERT INTO project1.user(username, password, display_name) 
 							VALUES (:name, :pass, :userName)');
