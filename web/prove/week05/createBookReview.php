@@ -15,6 +15,7 @@
 		<body>
 			<?php
 				require('../header.php');
+				$title = htmlspecialchars($_GET['title']);
 				echo $create . "before";
 				
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
