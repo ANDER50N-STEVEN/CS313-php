@@ -17,6 +17,7 @@
 				require('../header.php');
 				if($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
+					echo "enter if";
 					$name = htmlspecialchars($_POST['name']);
 					$userName = htmlspecialchars($_POST['userName']);
 					$pass = htmlspecialchars($_POST['pass']);
@@ -35,7 +36,7 @@
 			?>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 			
-			<label for="message">What is your full name</label></br>
+			<label for="name">What is your full name</label></br>
 		<input type="text" id="name" name="name"></br>
 			
 		<label for="username"> Please Enter A Username</label></br>
