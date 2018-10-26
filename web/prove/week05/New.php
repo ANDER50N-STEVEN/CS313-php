@@ -51,7 +51,7 @@
 		<input type="text" id="pass" name="pass"></br>
 		<input type="submit" name="submit" value="Submit">
 		</form></br> 
-		<form action="createProfile.php">
+		<form method="get" action="createProfile.php">
 		<input type="submit" name="submit" value="Create Profile">
 		</form>
 		
