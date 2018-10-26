@@ -25,17 +25,17 @@
 						
 						$stmt = $db->prepare($query);
 						$stmt->execute();
-						$row = $stmt->fetch(PDO::FETCH_ASSOC);
+						$rows = $stmt->fetch(PDO::FETCH_ASSOC);
 
 						foreach ($rows as $row)
 						{
 							echo "<a href='signIn.php?id=" . $row['id']. "' >" . $row['display_name'] . "</a>" . "</br>";
 						}
 						
-						if($row[password] == $pass){
-							$_SESSION['name'] = $row[username];
-							$_SESSION['user_id'] = $row[id];
-							$_SESSION['display_name'] = $row[display_name];
+						if($rows[password] == $pass){
+							$_SESSION['name'] = $rows[username];
+							$_SESSION['user_id'] = $rows[id];
+							$_SESSION['display_name'] = $rows[display_name];
 							echo "change page";
 							echo '<script>window.location.href = "userPage.php";</script>';
 							}
