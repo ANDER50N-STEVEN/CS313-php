@@ -21,7 +21,7 @@
 						$userName = htmlspecialchars($_POST['userName']);
 						$pass = htmlspecialchars($_POST['pass']);
 						$query = "SELECT password, username, id, display_name 
-						FROM project1.user;"
+						FROM project1.user";
 						
 						$stmt = $db->prepare($query);
 						$stmt->execute();
