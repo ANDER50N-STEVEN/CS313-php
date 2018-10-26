@@ -17,12 +17,9 @@
 				require('../header.php');
 				if($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
-					echo "enter if";
 					$name = htmlspecialchars($_POST['name']);
 					$userName = htmlspecialchars($_POST['userName']);
 					$pass = htmlspecialchars($_POST['pass']);
-					
-					echo $name . " " . $userName . " " . $pass;
 					
 					$stmt = $db->prepare('INSERT INTO project1.user(username, password, display_name) 
 							VALUES (:name, :pass, :userName)');
@@ -31,7 +28,6 @@
 					$stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
 					$stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
 					$stmt->execute();
-						echo "something";
 					$new_Page ="New.php";
 					header("Location: $new_Page");
 					die();
