@@ -18,8 +18,8 @@
 				{
 					if(isset($_POST['pass']))
 					{
-						$userName = test_input($_POST['userName']);
-						$pass = test_input($_POST['pass']);
+						$userName = htmlspecialchars($_POST['userName']);
+						$pass = htmlspecialchars($_POST['pass']);
 						$query = "SELECT password, username, id, display_name 
 						FROM project1.user;"
 						
