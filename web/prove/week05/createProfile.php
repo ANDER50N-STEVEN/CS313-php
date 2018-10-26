@@ -26,6 +26,7 @@
 					
 					$stmt = $db->prepare('INSERT INTO project1.user(username, password, display_name) 
 							VALUES (:name, :pass, :userName)');
+							echo "something";
 					$stmt->bindValue(':name', $name, PDO::PARAM_STR);
 					$stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
 					$stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
