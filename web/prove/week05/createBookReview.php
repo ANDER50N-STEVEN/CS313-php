@@ -67,31 +67,6 @@
 			<input type='radio' name='rating' value='4'>4</input>
 			<input type='radio' name='rating' value='5'>5</input></br></br>
 			
-			<label for="summary">Summary</label></br>
-			<?php
-			if($_SERVER['REQUEST_METHOD'] == 'GET'){
-				if(isset($_GET['title']))
-					{
-					$stmt = $db->prepare('SELECT title, summary
-										FROM project1.library
-										WHERE title =:title');
-					$stmt->bindValue(':title', $title);
-					$stmt->execute();
-					$rows = $stmt->fetch(PDO::FETCH_ASSOC);
-					foreach($rows as $row){
-						if($row['title'] == $title){
-							echo "<p>" . row['summary'] . "</p>";
-						}				
-					}
-					}
-					else{
-						echo "something";
-						echo "<textarea rows='4' cols='50' id='summary' name='summary' ></textarea></br>";
-					}
-			}
-			
-			?>
-			
 			<label for="review">Review</label></br>
 			<textarea rows="4" cols="50" id="review" name="review" ></textarea></br>
 					
