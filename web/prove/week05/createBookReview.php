@@ -40,7 +40,8 @@
 					$result->execute();
 						if($result->num_rows == 0) {
 							$stmt = $db->prepare('INSERT INTO project1.author(author_name)
-												VALUES (:author)');
+												VALUES (:author_name)');
+							$stmt->bindValue(':author_name', $author, PDO::PARAM_STR);
 							$stmt->execute();
 							$author_id = $db->lastInsertId('project1.author_id_seq');
 						}else
