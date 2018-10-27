@@ -61,7 +61,7 @@
 							 $stmt->execute();
 							 $title_id = $db->lastInsertId('project1.library_id_seq');
 						}else
-							$title_id = $row['id']
+							$title_id = $row['id'];
 						
 					foreach ($genreIds as $genreId){
 						$stmt = $db->prepare('INSERT INTO books_genres(title_id, genre_id)
