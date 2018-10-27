@@ -110,9 +110,9 @@ INSERT INTO project1.user (username, password, display_name) VALUES
 
 
 INSERT INTO project1.rating (user_id, book_id, rating, review) VALUES
-(1, 1, 5, 5, 'This is one of my favorite books, not because the book itself is that unique, but because it sets the stage and creates characters you learn to love'),
-(2, 2, 4, 5, 'Really good book, but a little too much like Lord of the Rings'),
-(3, 1, 2, 5, 'This is one of the greates books ever written, if only because of its originallity in the world');
+(1, 5, 5, 'This is one of my favorite books, not because the book itself is that unique, but because it sets the stage and creates characters you learn to love'),
+(2, 5, 4, 'Really good book, but a little too much like Lord of the Rings'),
+(1, 2, 5, 'This is one of the greates books ever written, if only because of its originallity in the world');
 
 INSERT INTO project1.books_genres (title_id, genre_id) VALUES
 (1, 1),

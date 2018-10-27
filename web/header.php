@@ -18,8 +18,8 @@
             <a href = "prove.php"
                class = "tile" > PROVE </a></td>
           <td class = "archive">
-            <a href = ""
-               class = "tile"> PONDER </a></td>
+            <a href = "team.php"
+               class = "tile"> TEAM WORK </a></td>
           <td class = "archive">
             <a href = "https://byui.brightspace.com/d2l/le/content/490016/viewContent/6811648/View"
                class = "tile"> CLASS </a></td>
