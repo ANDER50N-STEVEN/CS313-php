@@ -18,6 +18,8 @@
 				$title = htmlspecialchars($_GET['title']);
 				echo $create . "before";
 				
+				
+				
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					$title = htmlspecialchars($_POST['title']);
 					$author = htmlspecialchars($_POST['author']);
@@ -58,11 +60,30 @@
 			<input type = 'checkbox' >
 			<input type="text" id="addGenre" name="addGenre">
 			</br></br>
+			
 			<input type='radio' name='rating' value='1'>1</input>
 			<input type='radio' name='rating' value='2'>2</input>
 			<input type='radio' name='rating' value='3'>3</input>
 			<input type='radio' name='rating' value='4'>4</input>
 			<input type='radio' name='rating' value='5'>5</input></br></br>
+			
+			<label for="summary">Summary</label></br>
+			<?php
+			if($_SERVER['REQUEST_METHOD'] == 'GET'){
+				$stmt = $db->prepare('SELECT title, summary
+									From project1.library');
+				$stmt->execute();
+				$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				foreach($rows as $row){
+					if($row['title'] == $title){
+						echo "<p>" . row['summary'] . "</p>";
+					}				
+				}
+			}
+			else
+				echo "<textarea rows='4' cols='50' id='summary' name='summary' ></textarea></br>";
+			}
+			?>
 			
 			<label for="review">Review</label></br>
 			<textarea rows="4" cols="50" id="review" name="review" ></textarea></br>
