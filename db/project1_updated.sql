@@ -74,9 +74,9 @@ INSERT INTO project1.author (author_name) VALUES
 ('Marion Zimmer Bradley'),  
 ('Raymond E. Feist'); 
 
-INSERT INTO project1.library (id, title, author_id, genre_id) VALUES
-(1, 'A Game of Thrones', 1, 1)  ,
-(2, 'The Lord of the Rings', 2, 1)  ,
+INSERT INTO project1.library (id, title, author_id, genre_id, summary) VALUES
+(1, 'A Game of Thrones', 1, 1, 'Game of Thrones is roughly based on the storylines of A Song of Ice and Fire, set in the fictional Seven Kingdoms of Westeros and the continent of Essos. The series chronicles the violent dynastic struggles among the realms noble families for the Iron Throne, while other families fight for independence from it.')  ,
+(2, 'The Lord of the Rings', 2, 1, 'The future of civilization rests in the fate of the One Ring, which has been lost for centuries. Powerful forces are unrelenting in their search for it. But fate has placed it in the hands of a young Hobbit named Frodo Baggins, who inherits the Ring and steps into legend. A daunting task lies ahead for Frodo when he becomes the Ringbearer - to destroy the One Ring in the fires of Mount Doom where it was forged.')  ,
 (3, 'The Name of the Wind', 3, 1 ),
 (4, 'The Chronicles of Narnia', 4, 1 ),
 (5, 'The Eye of the World', 5, 1 ),
