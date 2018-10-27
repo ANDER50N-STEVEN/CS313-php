@@ -52,7 +52,8 @@
 					$result = $db->prepare("SELECT id FROM project1.library WHERE title = :title");
 					$result->bindValue(':title', $title, PDO::PARAM_STR);
 					$result->execute();
-						if($result->num_fields == 0) {
+					$row = $result->fetch(PDO::FETCH_ASSOC);
+						if($row['id'] == 0) {
 							 $stmt = $db->prepare('INSERT INTO project1.library(title, author_id)
 												VALUES (:title, :author_id)');
 							 $stmt->bindValue(':title', $title, PDO::PARAM_STR);
@@ -60,7 +61,7 @@
 							 $stmt->execute();
 							 $title_id = $db->lastInsertId('project1.library_id_seq');
 						}else
-							$title_id = $result;
+							$title_id = $row['id']
 						
 					foreach ($genreIds as $genreId){
 						$stmt = $db->prepare('INSERT INTO books_genres(title_id, genre_id)
