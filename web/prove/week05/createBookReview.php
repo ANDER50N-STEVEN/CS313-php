@@ -85,7 +85,6 @@
 			}
 			else
 				echo "<textarea rows='4' cols='50' id='summary' name='summary' ></textarea></br>";
-			}
 			?>
 			
 			<label for="review">Review</label></br>
