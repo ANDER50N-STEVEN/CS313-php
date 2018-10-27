@@ -39,6 +39,7 @@
 					$result->bindValue(':author', $author, PDO::PARAM_STR);
 					$result->execute();
 						if($result->num_fields == 0) {
+							echo $result;
 							$stmt = $db->prepare('INSERT INTO project1.author(author_name)
 												VALUES (:author_name)');
 							$stmt->bindValue(':author_name', $author, PDO::PARAM_STR);
