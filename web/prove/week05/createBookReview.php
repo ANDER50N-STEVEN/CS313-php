@@ -9,7 +9,6 @@
 			<title>CREATE PROFILE</title>
 			<?php
 				require('dbConnect.php');
-				$create = true;
 			?>
 	</head>
 		<body>
@@ -21,21 +20,63 @@
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					$title = htmlspecialchars($_POST['title']);
 					$author = htmlspecialchars($_POST['author']);
-					$genre = $_POST['genre'];
+					$genreIds = $_POST['genreIds'];
 					$rating = $_POST['rating'];
 					$review = htmlspecialchars($_POST['review']);
+					$addGenre = htmlspecialchars($_POST['addGenre']);
+					$user_id = $_SESSION['user_id'];
 					
-					$stmt = $db->prepare('SELECT title
-											From project1.library');
+					if(!empty($addGenre)){
+						$stmt = $db->prepare('INSERT INTO project1.genre(genre)
+											VALUES(:addGenre)');
+						$stmt->bindValue(':addGenre', $addGenre, PDO::PARAM_STR);
+						$stmt->execute();
+						$addGenreId = $db->lastInsertId('project1.genre_id_seq');
+						array_push($genreIds, $addGenreId);	
+					}
+					
+					$result = $db->prepare('SELECT id FROM project1.author WHERE author_name = :author');
+					$result->bindValue(':author', $author, PDO::PARAM_STR);
+					$result->execute();
+						if($result->num_rows == 0) {
+							$stmt = $db->prepare('INSERT INTO project1.author(author_name)
+												VALUES (:author)');
+							$author_id = $db->lastInsertId('project1.author_id_seq');
+						}else
+							$author_id = $result;
+					
+					$result = $db->prepare("SELECT id FROM project1.library WHERE title = :title");
+					$result->bindValue(':title', $title, PDO::PARAM_STR);
+					$result->execute();
+						if($result->num_rows == 0) {
+							 $stmt = $db->prepare('INSERT INTO project1.library(title, author_id)
+												VALUES (:title, :author_id)');
+							 $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+							 $stmt->bindValue(':author_id', $author_id, PDO::PARAM_INT);
+							 $stmt->execute();
+							 $title_id = $db->lastInsertId('project1.library_id_seq');
+						}else
+							$title_id = $result;
+						
+					foreach ($genreIds as $genreId){
+						$stmt = $db->prepare('INSERT INTO books_genres(title_id, genre_id)
+											VALUES(:newId, :genreId)');
+						$stmt->bindValue(':newId', $newId, PDO::PARAM_INT);
+						$stmt->bindValue(':genreId', $genreId, PDO::PARAM_INT);
+						$stmt->execute();
+					}
+					
+					$stmt = $db->prepare('INSERT INTO project1.rating(user_id, book_id, rating, review) 
+							VALUES (:user_id, :book_id, :rating, :review)');
+					$stmt->bindValue(':user_id',$user_id , PDO::PARAM_STR);
+					$stmt->bindValue(':book_id', $title_id, PDO::PARAM_INT);
+					$stmt->bindValue(':rating', $rating, PDO::PARAM_INT);
+					$stmt->bindValue(':review', $review, PDO::PARAM_STR);
 					$stmt->execute();
-					$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-					foreach($rows as $row){
-						if($row['title'] == $title)
-							$create = false;
-					}				
-					
+					$new_Page ="userPage.php";
+					header("Location: $new_Page");
+					die();
 				}
-				echo $create . "after";
 			?>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 			
