@@ -29,8 +29,9 @@ session_start();
 				ON tbl_a.id = tbl_b.book_id
 				INNER JOIN project1.user tbl_c
 				ON tbl_b.user_id = tbl_c.id
-				WHERE title = '{$_SESSION['title']}'";
+				WHERE title = :bookName";
       $stmt = $db->prepare($query);
+	  $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       
