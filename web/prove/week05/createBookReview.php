@@ -9,7 +9,7 @@
 			<title>CREATE PROFILE</title>
 			<?php
 				require('dbConnect.php');
-				$create;
+				$create = true;
 			?>
 	</head>
 		<body>
@@ -17,8 +17,6 @@
 				require('../header.php');
 				$title = htmlspecialchars($_GET['title']);
 				echo $create . "before";
-				
-				
 				
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					$title = htmlspecialchars($_POST['title']);
@@ -33,7 +31,7 @@
 					$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 					foreach($rows as $row){
 						if($row['title'] == $title)
-							$create = true;
+							$create = false;
 					}				
 					
 				}
