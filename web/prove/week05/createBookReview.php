@@ -78,9 +78,15 @@
 					$stmtTopics->bindValue(':title', $title);
 					$stmt->execute();
 					$rows = $stmt->fetch(PDO::FETCH_ASSOC);
+					foreach($rows as $row){
+						if($row['title'] == $title){
 							echo "<p>" . row['summary'] . "</p>";
-					
-					
+						}				
+					}
+					}
+					else{
+						echo "something";
+						echo "<textarea rows='4' cols='50' id='summary' name='summary' ></textarea></br>";
 					}
 			}
 			
