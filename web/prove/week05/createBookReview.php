@@ -38,7 +38,7 @@
 					$result = $db->prepare('SELECT id FROM project1.author WHERE author_name = :author');
 					$result->bindValue(':author', $author, PDO::PARAM_STR);
 					$result->execute();
-					$row = $stmt->fetch(PDO::FETCH_ASSOC);
+					$row = $result->fetch(PDO::FETCH_ASSOC);
 						if($row['id'] == 0) {
 							echo $row['id'];
 							$stmt = $db->prepare('INSERT INTO project1.author(author_name)
