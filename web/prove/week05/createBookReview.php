@@ -65,7 +65,7 @@
 						
 					foreach ($genreIds as $genreId){
 						echo $genreId;
-						$stmt = $db->prepare('INSERT INTO books_genres(title_id, genre_id)
+						$stmt = $db->prepare('INSERT INTO project1.books_genres(title_id, genre_id)
 											VALUES(:newId, :genreId)');
 						$stmt->bindValue(':newId', $newId, PDO::PARAM_INT);
 						$stmt->bindValue(':genreId', $genreId, PDO::PARAM_INT);
