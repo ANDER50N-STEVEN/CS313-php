@@ -8,6 +8,33 @@ session_start();
   <title>User Page</title>
    <?php
 	require('dbConnect.php');
+	
+	 if($_SERVER['REQUEST_METHOD'] == 'POST')
+	  {
+		if(isset($_POST['book'])) 
+		{
+		  $bookName = test_input($_POST['search']);
+		  
+		  $stmt = $db->prepare('SELECT title FROM project1.library WHERE title=:bookName');
+		  $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
+		  $stmt->execute();
+		  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		  
+		  if(count($rows) <= 0)
+		  {
+			echo "No Reviews Found";
+		  }
+		  else{
+			$new_Page ="review.php";
+			header("Location: $new_Page");
+			die();
+		  }			  
+			  
+		} else {
+		  
+		  echo "Something Else!";
+		}
+	  }
   ?>
 </head>
 <body>
@@ -15,6 +42,12 @@ session_start();
     require('../header.php');
 	echo "<p> Hello  " . $_SESSION["name"] . "</p>";
     ?>
+	
+	<form method="post" action="review.php">
+	<label for="search">Search for a Book</label>
+	<input type="text" id="search" name="search">
+	<input type="submit" name="submit" value="Submit">
+	</form>
 	
   <div class='ratings' style="text-align: center">
 			<table style="width:80%">
