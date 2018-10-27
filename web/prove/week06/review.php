@@ -1,6 +1,10 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <link rel="stylesheet" type="text/css" href="../stylesheet.css" />
   <title>Reviews</title>
   
    <?php
