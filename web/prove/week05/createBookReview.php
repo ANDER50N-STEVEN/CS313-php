@@ -70,7 +70,7 @@
 			<label for="summary">Summary</label></br>
 			<?php
 			if($_SERVER['REQUEST_METHOD'] == 'GET'){
-				if(isset($_POST['pass']))
+				if(isset($_GET['title']))
 					{
 					$stmt = $db->prepare('SELECT title, summary
 										From project1.library');
