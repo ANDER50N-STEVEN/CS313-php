@@ -73,9 +73,9 @@
 				if(isset($_GET['title']))
 					{
 					$stmt = $db->prepare('SELECT title, summary
-										From project1.library
+										FROM project1.library
 										WHERE title =:title');
-					$stmtTopics->bindValue(':title', $title);
+					$stmt->bindValue(':title', $title);
 					$stmt->execute();
 					$rows = $stmt->fetch(PDO::FETCH_ASSOC);
 					foreach($rows as $row){
