@@ -38,15 +38,16 @@
 					$result = $db->prepare('SELECT id FROM project1.author WHERE author_name = :author');
 					$result->bindValue(':author', $author, PDO::PARAM_STR);
 					$result->execute();
-						if($result->num_fields == 0) {
-							echo $result;
+					$row = $stmt->fetch(PDO::FETCH_ASSOC)
+						if($row['id'] == 0) {
+							echo $row['id'];
 							$stmt = $db->prepare('INSERT INTO project1.author(author_name)
 												VALUES (:author_name)');
 							$stmt->bindValue(':author_name', $author, PDO::PARAM_STR);
 							$stmt->execute();
 							$author_id = $db->lastInsertId('project1.author_id_seq');
 						}else
-							$author_id = $result;
+							$author_id = $row['id'];
 					
 					$result = $db->prepare("SELECT id FROM project1.library WHERE title = :title");
 					$result->bindValue(':title', $title, PDO::PARAM_STR);
