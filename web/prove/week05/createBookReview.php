@@ -38,7 +38,7 @@
 					$result = $db->prepare('SELECT id FROM project1.author WHERE author_name = :author');
 					$result->bindValue(':author', $author, PDO::PARAM_STR);
 					$result->execute();
-						if($result->num_rows == 0) {
+						if($result->num_fields == 0) {
 							$stmt = $db->prepare('INSERT INTO project1.author(author_name)
 												VALUES (:author_name)');
 							$stmt->bindValue(':author_name', $author, PDO::PARAM_STR);
@@ -50,7 +50,7 @@
 					$result = $db->prepare("SELECT id FROM project1.library WHERE title = :title");
 					$result->bindValue(':title', $title, PDO::PARAM_STR);
 					$result->execute();
-						if($result->num_rows == 0) {
+						if($result->num_fields == 0) {
 							 $stmt = $db->prepare('INSERT INTO project1.library(title, author_id)
 												VALUES (:title, :author_id)');
 							 $stmt->bindValue(':title', $title, PDO::PARAM_STR);
