@@ -73,18 +73,14 @@
 				if(isset($_GET['title']))
 					{
 					$stmt = $db->prepare('SELECT title, summary
-										From project1.library');
+										From project1.library
+										WHERE title =:title');
+					$stmtTopics->bindValue(':title', $title);
 					$stmt->execute();
-					$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-					foreach($rows as $row){
-						if($row['title'] == $title){
+					$rows = $stmt->fetch(PDO::FETCH_ASSOC);
 							echo "<p>" . row['summary'] . "</p>";
-						}				
-					}
-					}
-					else{
-						echo "something";
-						echo "<textarea rows='4' cols='50' id='summary' name='summary' ></textarea></br>";
+					
+					
 					}
 			}
 			
