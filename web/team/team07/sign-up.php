@@ -31,7 +31,8 @@
 						die();
 					
 					} else  {
-						echo "You entered two different passwords";
+						echo "<span style='color:red'> Passwords do not Match </span><br />";
+						echo "<script>function myFunction() {document.getElementById('invalid').style.visibility = 'visible;}</script>";
 					}
 			
 				}
@@ -42,9 +43,11 @@
 		<input type="text" id="userName" name="userName"></br>
 
 		<label for="pass">Please Enter A Password</label></br>
-		<input type="password" id="pass" name="pass"></br>
+		<input type="password" id="pass" name="pass">
+		<span hidden class="invalid" style='color:red'> * </span><br /></br>
 		<label for="test">Please Re-enter your Password</label></br>
-		<input type="passwor" id="test" name="test">
+		<input type="password" id="test" name="test">
+		<span hidden class="invalid" style='color:red'> * </span><br />
 
 		</br>
 		<input type="submit" name="submit" value="Submit">
