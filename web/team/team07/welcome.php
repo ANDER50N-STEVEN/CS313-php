@@ -1,5 +1,13 @@
 <?php
 	session_start();
+	if (isset($_SESSION['username']))
+{
+	$username = $_SESSION['username'];
+}
+else{
+	header("Location: sign-in.php");
+	die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,27 +20,9 @@
 		<body>
 			<?php
 				
-						$query = "SELECT password, username, id
-						FROM simple";
-						
-						$stmt = $db->prepare($query);
-						$stmt->execute();
-						$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-						foreach ($rows as $row)
-						{
-							if($row['username'] == $_SESSION['userName']){
-							echo "Welcome " . $_SESSION['userName'];
+	
+				echo "Welcome " . $_SESSION['userName'];
 							
-							}
-							else{
-								echo "oops";
-								echo "</br> ".$_SESSION['userName'];
-								// $new_Page ="sign-in.php";
-							// header("Location: $new_Page");
-							// die();
-							}
-						}
 			?>
 	
 	</body>
