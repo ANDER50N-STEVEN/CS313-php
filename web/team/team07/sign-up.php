@@ -32,7 +32,6 @@
 					
 					} else  {
 						echo "<span style='color:red'> Passwords do not Match </span><br />";
-						echo "<script>document.getElementById('invalid').style.visibility = 'visible';</script>";
 					}
 			
 				}
@@ -44,12 +43,20 @@
 
 		<label for="pass">Please Enter A Password</label></br>
 		<input type="password" id="pass" name="pass">
-		<span hidden class="invalid" style='color:red'> * </span><br /></br>
+		<?php
+			if($_SERVER['REQUEST_METHOD'] == 'POST'){
+				echo "<span style='color:red'> * </span>";
+			}
+			echo "</br>";
+		?>
 		<label for="test">Please Re-enter your Password</label></br>
 		<input type="password" id="test" name="test">
-		<span hidden class="invalid" style='color:red'> * </span><br />
-
-		</br>
+		<?php
+			if($_SERVER['REQUEST_METHOD'] == 'POST'){
+				echo "<span style='color:red'> * </span>";
+			}
+			echo "</br>";
+		?>
 		<input type="submit" name="submit" value="Submit">
 		</form></br> 
 	</body>
