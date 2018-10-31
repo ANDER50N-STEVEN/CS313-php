@@ -26,9 +26,10 @@
 							
 							}
 							else{
-								$new_Page ="sign-in.php";
-							header("Location: $new_Page");
-							die();
+								echo "oops";
+								// $new_Page ="sign-in.php";
+							// header("Location: $new_Page");
+							// die();
 							}
 						}
 			?>
