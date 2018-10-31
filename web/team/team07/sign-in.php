@@ -35,7 +35,6 @@
 							die();
 							}
 						}
-						else
 						echo "<p>incorrect password, please try again.</p>";	
 					}
 				}
