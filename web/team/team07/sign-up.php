@@ -16,12 +16,13 @@
 				{
 					$userName = htmlspecialchars($_POST['userName']);
 					$pass = htmlspecialchars($_POST['pass']);
+					$passwordHash = password_hash($pass, PASSWORD_DEFAULT);
 					
 					$stmt = $db->prepare('INSERT INTO simple(username, password) 
 							VALUES (:userName, :pass)');
-					
-					$stmt->bindValue(':pass', $pass, PDO::PARAM_STR);
 					$stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
+					$stmt->bindValue(':pass', $passwordHash, PDO::PARAM_STR);
+				
 					$stmt->execute();
 					$new_Page ="sign-in.php";
 					header("Location: $new_Page");
