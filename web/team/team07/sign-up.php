@@ -31,6 +31,7 @@
 							header("Location: $new_Page");
 							die();
 						}else
+							echo $pass;
 							echo "<span style='color:red'> Passwords must be 7 to 15 characters and contain a number, capital, and non-capital letter </span><br />";	
 						
 					} else  {
