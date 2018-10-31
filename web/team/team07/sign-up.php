@@ -32,7 +32,7 @@
 					
 					} else  {
 						echo "<span style='color:red'> Passwords do not Match </span><br />";
-						echo "<script>function myFunction() {document.getElementById('invalid').style.visibility = 'visible;}</script>";
+						echo "<script>function myFunction() {document.getElementById('invalid').style.visibility = 'visible';}</script>";
 					}
 			
 				}
