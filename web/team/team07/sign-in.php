@@ -27,10 +27,10 @@
 
 						foreach ($rows as $row)
 						{
-							if(password_verify($row['password'], $passwordHash) && $row['display_name'] == $userName){
+							if(password_verify( $passwordHash, $row['password']) && $row['username'] == $userName){
 							$_SESSION['userName'] = $row['username'];
 							$_SESSION['user_id'] = $row['id'];
-							$new_Page ="Welcome.php";
+							$new_Page ="welcome.php";
 							header("Location: $new_Page");
 							die();
 							}
