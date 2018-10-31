@@ -27,6 +27,7 @@
 
 						foreach ($rows as $row)
 						{
+							echo "entering if";
 							if(password_verify( $passwordHash, $row['password']) && $row['username'] == $userName){
 							$_SESSION['userName'] = $row['username'];
 							$_SESSION['user_id'] = $row['id'];
@@ -35,6 +36,8 @@
 							die();
 							}
 						}
+						echo $pass;
+						echo $passwordHash;
 						echo "<p>incorrect password, please try again.</p>";	
 					}
 				}
