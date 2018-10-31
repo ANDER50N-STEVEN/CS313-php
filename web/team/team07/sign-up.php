@@ -18,18 +18,21 @@
 					$pass = htmlspecialchars($_POST['pass']);
 					$test = htmlspecialchars($_POST['test']);
 					if ($pass == $test) {
-						$passwordHash = password_hash($pass, PASSWORD_DEFAULT);
-					
-						$stmt = $db->prepare('INSERT INTO simple(username, password) 
-								VALUES (:userName, :pass)');
-						$stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
-						$stmt->bindValue(':pass', $passwordHash, PDO::PARAM_STR);
-					
-						$stmt->execute();
-						$new_Page ="sign-in.php";
-						header("Location: $new_Page");
-						die();
-					
+						if(preg_match(=(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,15}){
+							$passwordHash = password_hash($pass, PASSWORD_DEFAULT);
+						
+							$stmt = $db->prepare('INSERT INTO simple(username, password) 
+									VALUES (:userName, :pass)');
+							$stmt->bindValue(':userName', $userName, PDO::PARAM_STR);
+							$stmt->bindValue(':pass', $passwordHash, PDO::PARAM_STR);
+						
+							$stmt->execute();
+							$new_Page ="sign-in.php";
+							header("Location: $new_Page");
+							die();
+						}else
+							echo "<span style='color:red'> Passwords must be 7 to 15 characters and contain a number, capital, and non-capital letter </span><br />";	
+						
 					} else  {
 						echo "<span style='color:red'> Passwords do not Match </span><br />";
 					}
