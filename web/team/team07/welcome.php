@@ -21,7 +21,7 @@
 
 						foreach ($rows as $row)
 						{
-							if($row['display_name'] == $_SESSION['userName']){
+							if($row['username'] == $_SESSION['userName']){
 							echo "Welcome " . $_SESSION['userName'];
 							
 							}
