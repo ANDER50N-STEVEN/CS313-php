@@ -1,0 +1,38 @@
+After completing the assignment, please answer the questions in this text file and submit it to I-Learn.
+
+1. Copy and paste the URL for your web application:
+
+https://hidden-coast-53870.herokuapp.com/prove/week06/New.php
+
+2. Copy and paste the URL for your source code repository (e.g., GitHub):
+
+https://github.com/MisterANDER50N/CS313-php/tree/master/web/prove/week06
+
+3. Briefly list and describe the elements of the application that are functioning. Include any special instructions about how to login and/or use your application.
+
+	1. Sign In Page - Requires correct username and password or the creation of a username and password.  (precreated one is MisterANDER50N --- password. case sensitive)	  
+	2. Display of books user has reviewed.
+	3. ability to add review.
+	4. ability to search for a book and have reviews listed.
+	
+4. Briefly describe any pieces of the assignment that are not yet working correctly.
+
+	Still goes to the page of empty book reviews if searching for a book, I want it to stay on the page if that is the case.
+
+5. Briefly describe the "coolest" thing you learned while completing this assignment.
+
+	The coolest thing I learned is that you can join multiple tables.  I previously thought you could only join 2
+
+6. What is a benefit of having a foreign key constraint?
+
+	You can organize information by multiple sets of IDs rather than having to repeat information.
+
+7. Please select the category you feel best describes your assignment:
+
+D - Meets requirements
+
+
+
+8. Provide a brief justification (1-2 sentences) for selecting that category.
+
+	Still just a basic website, but inserts and retrieves multiple varities of information, and I believe gets everything I will need for the final site.
