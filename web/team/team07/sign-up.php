@@ -18,7 +18,7 @@
 					$pass = htmlspecialchars($_POST['pass']);
 					$test = htmlspecialchars($_POST['test']);
 					if ($pass == $test) {
-						if(preg_match('(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,15})', $pass)){
+						if(preg_match('(?=.*[a-z]).{7,15})', $pass)){
 							$passwordHash = password_hash($pass, PASSWORD_DEFAULT);
 						
 							$stmt = $db->prepare('INSERT INTO simple(username, password) 
