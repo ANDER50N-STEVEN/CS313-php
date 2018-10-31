@@ -46,7 +46,7 @@
 		<input type="text" id="userName" name="userName"></br>
 
 		<label for="message">Please Enter Your Password</label></br>
-		<input type="text" id="pass" name="pass"></br>
+		<input type="password" id="pass" name="pass"></br>
 		<input type="submit" name="submit" value="Submit">
 		</form></br> 
 		<form action="sign-up.php">

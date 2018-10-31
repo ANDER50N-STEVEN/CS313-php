@@ -17,7 +17,7 @@
 
         <li><a href = "team/team05/index.php"> Week 5 - Search Database </a></li>
         <li><a href = "team/team06/input.php"> Week 6 - Input Database </a></li>
-        <li><a href = "team/team07/browse.php"> Week 7 </a></li>
+        <li><a href = "team/team07/sign-in.php"> Week 7 - Login Page </a></li>
         <li><a href = "team/team08/browse.php"> Week 8 </a></li>
         <li><a href = "team/team09/browse.php"> Week 9 </a></li>
         <li><a href = "team/team10/browse.php"> Week 10 </a></li>

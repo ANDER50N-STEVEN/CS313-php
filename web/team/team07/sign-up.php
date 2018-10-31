@@ -36,7 +36,7 @@
 		<input type="text" id="userName" name="userName"></br>
 
 		<label for="pass">Please Enter A Password</label></br>
-		<input type="text" id="pass" name="pass"></br>
+		<input type="password" id="pass" name="pass"></br>
 		<input type="submit" name="submit" value="Submit">
 		</form></br> 
 	</body>
