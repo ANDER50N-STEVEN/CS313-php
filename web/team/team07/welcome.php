@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	if (isset($_SESSION['username']))
+	if (isset($_SESSION['userName']))
 {
-	$username = $_SESSION['username'];
+	$userName = $_SESSION['userName'];
 }
 else{
 	header("Location: sign-in.php");
