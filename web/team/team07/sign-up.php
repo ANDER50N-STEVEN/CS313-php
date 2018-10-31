@@ -17,7 +17,7 @@
 					$userName = htmlspecialchars($_POST['userName']);
 					$pass = htmlspecialchars($_POST['pass']);
 					$test = htmlspecialchars($_POST['test']);
-					$rgx = '^\S*(?=\S{7,})(?=\S*[a-z])\S*$';
+					$rgx = '/^\S*(?=\S{7,})(?=\S*[a-z])\S*$/';
 					if ($pass == $test) {
 						if(preg_match($rgx, $pass)){
 							$passwordHash = password_hash($pass, PASSWORD_DEFAULT);
