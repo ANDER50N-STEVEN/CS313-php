@@ -13,6 +13,7 @@ session_start();
 	  {
 		if(isset($_POST['book'])) 
 		{
+			
 		  $bookName = test_input($_POST['search']);
 		  
 		  $stmt = $db->prepare('SELECT title FROM project1.library WHERE title=:bookName');
@@ -25,6 +26,7 @@ session_start();
 			echo "No Reviews Found";
 		  }
 		  else{
+			  $_SESSION['title'] = $row['title'];
 			$new_Page ="review.php";
 			header("Location: $new_Page");
 			die();
