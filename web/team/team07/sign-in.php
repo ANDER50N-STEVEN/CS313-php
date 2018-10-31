@@ -17,7 +17,6 @@
 					{
 						$userName = htmlspecialchars($_POST['userName']);
 						$pass = htmlspecialchars($_POST['pass']);
-						$passwordHash = password_hash($pass, PASSWORD_DEFAULT);
 						$query = "SELECT password, username, id
 						FROM simple";
 						
@@ -27,8 +26,7 @@
 
 						foreach ($rows as $row)
 						{
-							echo "entering if";
-							if(password_verify( $passwordHash, $row['password']) && $row['username'] == $userName){
+							if(password_verify( $pass, $row['password']) && $row['username'] == $userName){
 							$_SESSION['userName'] = $row['username'];
 							$_SESSION['user_id'] = $row['id'];
 							$new_Page ="welcome.php";
