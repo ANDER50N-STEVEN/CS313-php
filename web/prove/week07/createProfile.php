@@ -79,7 +79,7 @@
 			?>
 			<hr style="height:5px; visibility:hidden;" />
 			
-			<input type="submit" name="submit" value="Submit">
+			<input type="submit" name="submit" value="Submit" class='submit'>
 			</form></br>
 				<?php
 				require('../../footer.php');

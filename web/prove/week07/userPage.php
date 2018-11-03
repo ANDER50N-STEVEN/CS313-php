@@ -45,7 +45,7 @@ session_start();
 	echo "<p> Hello  " . $_SESSION["name"] . "</p>";
     ?>
 	
-	<form method="post" action="review.php">
+	<form method="post" action="review.php" class='signin'>
 	<label for="search">Search for a Book</label>
 	<input type="text" id="search" name="search">
 	<input type="submit" name="submit" value="Submit">
@@ -56,7 +56,7 @@ session_start();
 			<tr>
 				<th style="width:200px">Title</th>
 				<th style="width:50px">Rating</th> 
-				<th>Comments</th>
+				<th style='width:300px'>Comments</th>
 			  </tr>
 	<?php
       $query = "SELECT tbl_a.title, tbl_b.rating, tbl_b.review
