@@ -55,12 +55,11 @@
 			<input type="text" id="name" name="name" placeholder='Full Name'>
 			<hr style="height:5px; visibility:hidden;" />
 				
-			<label for="username"></label></br>
+			<label for="username"></label>
 			<input type="text" id="userName" name="userName">
 			<hr style="height:5px; visibility:hidden;" />
 
 			<label for="message"></label>
-			<hr style="height:5px; visibility:hidden;" />
 			<input type="password" id="pass" name="pass">
 			<?php
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -68,9 +67,9 @@
 				}
 				echo "</br>";
 			?>
+			<hr style="height:5px; visibility:hidden;" />
 			
 			<label for="test"></label>
-			<hr style="height:5px; visibility:hidden;" />
 			<input type="password" id="test" name="test">
 			<?php
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -78,6 +77,8 @@
 				}
 				echo "</br>";
 			?>
+			<hr style="height:5px; visibility:hidden;" />
+			
 			<input type="submit" name="submit" value="Submit">
 			</form></br>
 				<?php
