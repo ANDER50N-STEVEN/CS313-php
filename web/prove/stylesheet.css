@@ -155,6 +155,11 @@ form.signin{
 	margin: 0 auto; 
 }
 
+.intro {
+	color: rgba(255, 255, 255, .6);
+	font-size: 20;
+}
+
 .submit {
       border: 1px solid transparent;
       border-radius: 40px;
