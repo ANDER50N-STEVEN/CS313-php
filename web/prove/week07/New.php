@@ -43,7 +43,8 @@
 				}
 			?>
 		
-		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='signin'>
+		<img src="book.jpg" alt="Logo" height="76" width="76">
 		<label for="username"> Please Enter Your Username</label></br>
 		<input type="text" id="userName" name="userName"></br>
 
@@ -51,7 +52,7 @@
 		<input type="password" id="pass" name="pass"></br>
 		<input type="submit" name="submit" value="Submit">
 		</form></br> 
-		<form action="createProfile.php">
+		<form action="createProfile.php" class='signin'>
 		<input type="submit" value="Create Profile" />
 		</form>
 		
