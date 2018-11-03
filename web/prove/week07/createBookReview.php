@@ -14,6 +14,12 @@
 		<body>
 			<?php
 				require('../header.php');
+				if($_GET['title'] == '')
+				{
+					$new_Page ="userPage.php";
+					header("Location: $new_Page");
+					die();
+				}
 				$title = htmlspecialchars($_GET['title']);
 				echo $create . "before";
 				
