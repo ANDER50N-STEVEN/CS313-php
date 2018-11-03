@@ -28,6 +28,7 @@
 					$user_id = $_SESSION['user_id'];
 					
 					if(!empty($addGenre)){
+						echo $addGenre;
 						$stmt = $db->prepare('INSERT INTO project1.genre(genre)
 											VALUES(:addGenre)');
 						$stmt->bindValue(':addGenre', $addGenre, PDO::PARAM_STR);
