@@ -44,12 +44,12 @@
 			?>
 		
 		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='signin'>
-		<img src="book.jpg" alt="Logo" height="76" width="76">
-		<label for="username"> Please Enter Your Username</label></br>
-		<input type="text" id="userName" name="userName"></br>
+		<img src="book.jpg" alt="Logo" height="120" width="120"></br>
+		<label for="username"> SIGN INTO uREVIEW</label></br>
+		<input type="text" id="userName" name="userName" placeholder="User Name"></br>
 
 		<label for="message">Please Enter Your Password</label></br>
-		<input type="password" id="pass" name="pass"></br>
+		<input type="password" id="pass" name="pass" placeholder="Password"></br>
 		<input type="submit" name="submit" value="Submit">
 		</form></br> 
 		<form action="createProfile.php" class='signin'>
