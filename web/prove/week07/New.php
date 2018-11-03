@@ -52,7 +52,7 @@
 		<input type="submit" name="submit" value="Submit" class='submit'>
 		</form></br> 
 		<form action="createProfile.php" class='signin'>
-		<input type="submit" value="Create Profile" />
+		<input type="submit" value="Create Profile" class='submit'/>
 		</form>
 		
 		
