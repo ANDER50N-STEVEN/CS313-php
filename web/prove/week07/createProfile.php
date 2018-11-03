@@ -49,8 +49,7 @@
 				
 				}
 			?>
-			<div class="signin">
-			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='signin'>
 			
 			<label for="name">What is your full name</label></br>
 			<input type="text" id="name" name="name"></br>
@@ -75,7 +74,7 @@
 				echo "</br>";
 			?>
 			<input type="submit" name="submit" value="Submit">
-			</form></br> </div>
+			</form></br>
 				<?php
 				require('../../footer.php');
 			?>
