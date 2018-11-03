@@ -56,11 +56,11 @@
 			<hr style="height:5px; visibility:hidden;" />
 				
 			<label for="username"></label>
-			<input type="text" id="userName" name="userName">
+			<input type="text" id="userName" name="userName" placeholder='User Name'>
 			<hr style="height:5px; visibility:hidden;" />
 
 			<label for="message"></label>
-			<input type="password" id="pass" name="pass">
+			<input type="password" id="pass" name="pass" placeholder='Password'>
 			<?php
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					echo "<span style='color:red'> * </span>";
@@ -70,7 +70,7 @@
 			<hr style="height:5px; visibility:hidden;" />
 			
 			<label for="test"></label>
-			<input type="password" id="test" name="test">
+			<input type="password" id="test" name="test" placeholder='Re-Enter Password'>
 			<?php
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					echo "<span style='color:red'> * </span>";
