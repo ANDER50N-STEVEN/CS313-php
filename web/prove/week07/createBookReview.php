@@ -1,5 +1,13 @@
 <?php
 	session_start();
+		if (isset($_SESSION['userName']))
+{
+	$userName = $_SESSION['userName'];
+}
+else{
+	header("Location: New.php");
+	die();
+}
 ?>
 
 <!DOCTYPE html>
