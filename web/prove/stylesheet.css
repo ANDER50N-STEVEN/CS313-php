@@ -149,3 +149,8 @@ div.checkout{
     padding: 0.01em 16px;
     text-align: center;
 }
+
+form.signin{
+	margin: 0 auto; 
+width:250px;
+}
