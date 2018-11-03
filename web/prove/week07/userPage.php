@@ -46,9 +46,8 @@ session_start();
     ?>
 	
 	<form method="post" action="review.php" class='signin'>
-	<label for="search">Search for a Book</label>
-	<input type="text" id="search" name="search">
-	<input type="submit" name="submit" value="Submit">
+	<input type="text" id="search" name="search" placeholder='Title'>
+	<input type="submit" name="submit" value="Search for a Book" class='submit'>
 	</form>
 	
   <div class='ratings' style="text-align: center">
@@ -80,7 +79,7 @@ echo "</table>";
   
   	<form method="get" action='createBookReview.php'>
 	<input type="text" name="title" />
-		<input type="submit" value="Create Book Review" />
+		<input type="submit" value="Create Book Review" class='submit' placeholder='Title'/>
 		</form>
   
    <?php
