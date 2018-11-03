@@ -16,7 +16,12 @@ session_start();
  <?php
  
  require('../header.php');
- 
+ if($_POST['search'] == '')
+				{
+					$new_Page ="userPage.php";
+					header("Location: $new_Page");
+					die();
+				}
    if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
     if(isset($_POST['search'])) 
