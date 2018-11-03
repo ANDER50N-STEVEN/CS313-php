@@ -45,13 +45,13 @@ session_start();
 	echo "<p> Hello  " . $_SESSION["name"] . "</p>";
     ?>
 	
-	<form method="post" action="review.php" class='signin'>
+	<form method="post" action="review.php" class='signin' style='text-align: right'>
 	<input type="text" id="search" name="search" placeholder='Title'>
 	<input type="submit" name="submit" value="Search for a Book" class='submit'>
 	</form></br>
 	
   <div class='ratings' style="text-align: center">
-			<h1> Your Reviews</h1>
+			<h1> <?php $_SESSION['name'] ?>'s Reviews</h1>
 			<table style="width:80%">
 			<tr>
 				<th style="width:200px">Title</th>
