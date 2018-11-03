@@ -16,7 +16,6 @@
 				require('../header.php');
 				
 				$title = htmlspecialchars($_GET['title']);
-				echo $create . "before";
 				
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					$title = htmlspecialchars($_POST['title']);
@@ -86,7 +85,7 @@
 					die();
 				}
 			?>
-			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='signin'>
 			
 			<label for="title">Title</label></br>
 			<input type="text" id="title" name="title" value="<?php echo $title?>"></br></br>
@@ -117,7 +116,7 @@
 			<label for="review">Review</label></br>
 			<textarea rows="4" cols="50" id="review" name="review" ></textarea></br>
 					
-			<input type="submit" name="submit" value="Submit">
+			<input type="submit" name="submit" value="Submit" class='submit'>
 			</form></br> 
 			<?php
 			require('../../footer.php');
