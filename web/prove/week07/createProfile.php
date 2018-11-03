@@ -49,7 +49,7 @@
 				
 				}
 			?>
-			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='signin'>
+			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="signin">
 			
 			<label for="name">What is your full name</label></br>
 			<input type="text" id="name" name="name"></br>
