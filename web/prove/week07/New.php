@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link rel="stylesheet" type="text/css" href="../stylesheet.css" />
 			<title>SIGN IN</title>
 			<?php
 				require('dbConnect.php');
@@ -11,14 +12,16 @@
 	</head>
 		<body>
 			<?php
+				require('../header.php');
+
 				if($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
 					if(isset($_POST['pass']))
 					{
 						$userName = htmlspecialchars($_POST['userName']);
 						$pass = htmlspecialchars($_POST['pass']);
-						$query = "SELECT password, username, id
-						FROM simple";
+						$query = "SELECT password, username, id, display_name 
+						FROM project1.user";
 						
 						$stmt = $db->prepare($query);
 						$stmt->execute();
@@ -26,10 +29,11 @@
 
 						foreach ($rows as $row)
 						{
-							if(password_verify( $pass, $row['password']) && $row['username'] == $userName){
-							$_SESSION['userName'] = $row['username'];
+							if(password_verify( $pass, $row['password']) && $row['display_name'] == $userName){
+							$_SESSION['name'] = $row['username'];
 							$_SESSION['user_id'] = $row['id'];
-							$new_Page ="welcome.php";
+							$_SESSION['display_name'] = $row['display_name'];
+							$new_Page ="userPage.php";
 							header("Location: $new_Page");
 							die();
 							}
@@ -44,11 +48,17 @@
 		<input type="text" id="userName" name="userName"></br>
 
 		<label for="message">Please Enter Your Password</label></br>
-		<input type="password" id="pass" name="pass"></br>
+		<input type="text" id="pass" name="pass"></br>
 		<input type="submit" name="submit" value="Submit">
 		</form></br> 
-		<form action="sign-up.php">
-		<input type="submit" value="Sign Up" />
+		<form action="createProfile.php">
+		<input type="submit" value="Create Profile" />
 		</form>
+		
+		
+
+		<?php
+			require('../../footer.php');
+		?>
 	</body>
 </html>
