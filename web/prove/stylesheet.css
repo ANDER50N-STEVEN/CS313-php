@@ -152,5 +152,16 @@ div.checkout{
 
 form.signin{
 	margin: 0 auto; 
-width:250px;
+	width:250px;
 }
+
+.submit {
+      border: 1px solid transparent;
+      border-radius: 40px;
+      display: inline-block;
+      text-decoration: none;
+      padding: .5rem 1rem;
+      color: rgba(255, 255, 255, .6);
+      font-weight: 700;
+      background: rgba(10, 20, 30, .2);
+      }
