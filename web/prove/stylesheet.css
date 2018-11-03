@@ -160,6 +160,10 @@ form.signin{
 	font-size: 20;
 }
 
+br.half{
+	height: 10px;
+}
+
 .submit {
       border: 1px solid transparent;
       border-radius: 40px;

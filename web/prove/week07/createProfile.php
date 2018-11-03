@@ -51,13 +51,13 @@
 			?>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="signin">
 			
-			<label for="name">What is your full name</label></br>
-			<input type="text" id="name" name="name"></br>
+			<label for="name">Create Profile</label></br>
+			<input type="text" id="name" name="name" placeholder='Full Name'></br>
 				
-			<label for="username"> Please Enter A Username</label></br>
-			<input type="text" id="userName" name="userName"></br>
+			<label for="username"></label></br>
+			<input type="text" id="userName" name="userName"></br class='half'>
 
-			<label for="message">Please Enter A Password</label></br>
+			<label for="message"></label></br class ='half'>
 			<input type="password" id="pass" name="pass">
 			<?php
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -65,7 +65,7 @@
 				}
 				echo "</br>";
 			?>
-			<label for="test">Please Re-enter your Password</label></br>
+			<label for="test"></label></br class='half'>
 			<input type="password" id="test" name="test">
 			<?php
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
