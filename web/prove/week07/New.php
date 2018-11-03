@@ -44,7 +44,7 @@
 			?>
 		
 		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='signin'>
-		<img src="book.jpg" alt="Logo" height="120" width="120"></br>
+		<img src="book.png" alt="Logo" height="120" width="120"></br>
 		<label for="username"> SIGN INTO uREVIEW</label></br>
 		<input type="text" id="userName" name="userName" placeholder="User Name"></br>
 
