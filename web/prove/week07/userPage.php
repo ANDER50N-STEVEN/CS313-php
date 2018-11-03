@@ -48,9 +48,10 @@ session_start();
 	<form method="post" action="review.php" class='signin'>
 	<input type="text" id="search" name="search" placeholder='Title'>
 	<input type="submit" name="submit" value="Search for a Book" class='submit'>
-	</form>
+	</form></br>
 	
   <div class='ratings' style="text-align: center">
+			<h1> Your Reviews</h1>
 			<table style="width:80%">
 			<tr>
 				<th style="width:200px">Title</th>
@@ -73,13 +74,13 @@ session_start();
     echo "<td>" . $row['review'] . "</td>";
     echo "</tr>";
 }
-echo "</table>";
+echo "</table></br>";
 
 ?>
   
   	<form method="get" action='createBookReview.php'>
-	<input type="text" name="title" />
-		<input type="submit" value="Create Book Review" class='submit' placeholder='Title'/>
+	<input type="text" name="title"  placeholder='Title'/>
+		<input type="submit" value="Create Book Review" class='submit'/>
 		</form>
   
    <?php
