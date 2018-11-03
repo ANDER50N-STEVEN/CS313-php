@@ -11,7 +11,7 @@ session_start();
 	
 	 if($_SERVER['REQUEST_METHOD'] == 'POST')
 	  {
-		if(isset($_POST['search'] && $_POST['search'] != '')) 
+		if(isset($_POST['search']) && $_POST['search'] != '') 
 		{
 			
 		  $bookName = test_input($_POST['search']);
