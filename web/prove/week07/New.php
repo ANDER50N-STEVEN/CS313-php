@@ -45,7 +45,7 @@
 		
 		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='signin'>
 		<img src="book.png" alt="Logo" height="120" width="120"></br></br>
-		<label for="username" class='intro'> SIGN INTO uREVIEW</label></br>
+		<label for="username" class='intro'> SIGN INTO uREVIEW</label></br></br>
 		<input type="text" id="userName" name="userName" placeholder="User Name"></br>
 
 		<input type="password" id="pass" name="pass" placeholder="Password"></br></br>
