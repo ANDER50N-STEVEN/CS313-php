@@ -42,7 +42,7 @@ session_start();
 <body>
  <?php
     require('../header.php');
-	echo "<p> Hello  " . $_SESSION["name"] . "</p>";
+
     ?>
 	
 	<form method="post" action="review.php" class='signin' style='text-align: right'>
@@ -51,7 +51,7 @@ session_start();
 	</form></br>
 	
   <div class='ratings' style="text-align: center">
-			<h1> <?php $_SESSION['name'] ?>'s Reviews</h1>
+			<h1> <?php echo $_SESSION['name']; ?>'s Reviews</h1>
 			<table style="width:80%">
 			<tr>
 				<th style="width:200px">Title</th>
