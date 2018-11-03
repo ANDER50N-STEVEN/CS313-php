@@ -49,34 +49,35 @@
 				
 				}
 			?>
+			<div id="signin">
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 			
 			<label for="name">What is your full name</label></br>
-		<input type="text" id="name" name="name"></br>
-			
-		<label for="username"> Please Enter A Username</label></br>
-		<input type="text" id="userName" name="userName"></br>
+			<input type="text" id="name" name="name"></br>
+				
+			<label for="username"> Please Enter A Username</label></br>
+			<input type="text" id="userName" name="userName"></br>
 
-		<label for="message">Please Enter A Password</label></br>
-		<input type="text" id="pass" name="pass">
-		<?php
-			if($_SERVER['REQUEST_METHOD'] == 'POST'){
-				echo "<span style='color:red'> * </span>";
-			}
-			echo "</br>";
-		?>
-		<label for="test">Please Re-enter your Password</label></br>
-		<input type="password" id="test" name="test">
-		<?php
-			if($_SERVER['REQUEST_METHOD'] == 'POST'){
-				echo "<span style='color:red'> * </span>";
-			}
-			echo "</br>";
-		?>
-		<input type="submit" name="submit" value="Submit">
-		</form></br> 
+			<label for="message">Please Enter A Password</label></br>
+			<input type="password" id="pass" name="pass">
 			<?php
-			require('../../footer.php');
-		?>
+				if($_SERVER['REQUEST_METHOD'] == 'POST'){
+					echo "<span style='color:red'> * </span>";
+				}
+				echo "</br>";
+			?>
+			<label for="test">Please Re-enter your Password</label></br>
+			<input type="password" id="test" name="test">
+			<?php
+				if($_SERVER['REQUEST_METHOD'] == 'POST'){
+					echo "<span style='color:red'> * </span>";
+				}
+				echo "</br>";
+			?>
+			<input type="submit" name="submit" value="Submit">
+			</form></br> </div>
+				<?php
+				require('../../footer.php');
+			?>
 	</body>
 </html>
