@@ -52,14 +52,15 @@
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="signin">
 			
 			<label for="name">Create Profile</label></br>
-			<input type="text" id="name" name="name" placeholder='Full Name'></br>
+			<input type="text" id="name" name="name" placeholder='Full Name'>
+			<hr style="height:5px; visibility:hidden;" />
 				
 			<label for="username"></label></br>
 			<input type="text" id="userName" name="userName">
-			<hr style="height:10px; visibility:hidden;" />
+			<hr style="height:5px; visibility:hidden;" />
 
 			<label for="message"></label>
-			<hr style="height:10px; visibility:hidden;" />
+			<hr style="height:5px; visibility:hidden;" />
 			<input type="password" id="pass" name="pass">
 			<?php
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -67,8 +68,9 @@
 				}
 				echo "</br>";
 			?>
+			
 			<label for="test"></label>
-			<hr style="height:10px; visibility:hidden;" />
+			<hr style="height:5px; visibility:hidden;" />
 			<input type="password" id="test" name="test">
 			<?php
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
