@@ -5,9 +5,12 @@ html {
     min-height: 100%;
     background-color: #7997a1;
     color: white;
-	display: flex;
-	flex-direction: column;
-    flex-wrap: nowrap;
+	position: relative
+}
+body{
+	margin: 0 0 100px;
+    /* bottom = footer height */
+    padding: 25px;
 }
 
 hr{
@@ -32,10 +35,11 @@ table, tr, th{
 .footer {
     display: block;
     background-color: grey;
-    position: sticky;
+    position: absolute;
     bottom: 0;
     width: 74%;
     margin-left: 13%;
+	overflow: hidden;
 }
 
 h1.home{
