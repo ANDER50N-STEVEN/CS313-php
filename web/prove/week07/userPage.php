@@ -59,7 +59,7 @@ else{
 	</form>
 	
   <div class='ratings' style="text-align: center">
-			<h1> <?php echo $_SESSION['name']; ?>'s Reviews</h1>
+			<h3> <?php echo $_SESSION['name']; ?>'s Reviews</h3>
 			<table style="width:80%">
 			<tr>
 				<th style="width:200px">Title</th>
