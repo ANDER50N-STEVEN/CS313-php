@@ -161,7 +161,8 @@ form.signin{
 }
 
 input.search{
-	margin-right: 7%
+	text-align: right;
+	margin-right: 7%;
 }	
 
 .submit {

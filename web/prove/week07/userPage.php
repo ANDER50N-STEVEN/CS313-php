@@ -53,8 +53,8 @@ else{
 
     ?>
 	
-	<form method="post" action="review.php" class='signin' style='text-align: right'>
-	<input type="text" id="search" name="search" placeholder='Title'>
+	<form method="post" action="review.php" class='signin'>
+	<input type="text" id="search" name="search" placeholder='Title' class='search'>
 	<input type="submit" name="submit" value="Search for a Book" class='submit'>
 	</form></br>
 	
