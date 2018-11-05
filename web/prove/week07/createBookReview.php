@@ -147,8 +147,8 @@ else{
 					echo "<p name='summary' class='summary' value=" . $summary . ">" . $summary . "</p>";
 				}
 				else{
-					echo "<label for='summary'>Summary(Optional)</label></br>"
-					echo "	<textarea rows='4' cols='50' id='review' name='review' ></textarea></br>"
+					echo "<label for='summary'>Summary(Optional)</label></br>";
+					echo "<textarea rows='4' cols='50' id='review' name='review' ></textarea></br>";
 				}
 			?>
 			
