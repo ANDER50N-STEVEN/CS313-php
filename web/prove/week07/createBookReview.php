@@ -25,14 +25,17 @@ else{
 				
 				$title = htmlspecialchars($_GET['title']);
 				
-				$result = $db->prepare("SELECT id, author_id FROM project1.library WHERE title = :title");
+				$result = $db->prepare("SELECT id, author_id, summary FROM project1.library WHERE title = :title");
 				$result->bindValue(':title', $title, PDO::PARAM_STR);
 				$result->execute();
 				$row = $result->fetch(PDO::FETCH_ASSOC);
 					if($row['id'] == 0) {
 						 $author_id = '';
-					}else
+						 $summary = '';
+					}else{
 						$author_id = $row['author_id'];
+						$summary = $row['summary'];
+					}
 				if($author_id != ''){
 					$result = $db->prepare('SELECT author_name FROM project1.author WHERE id = :id');
 					$result->bindValue(':id', $author_id, PDO::PARAM_STR);
@@ -47,6 +50,7 @@ else{
 					$author = htmlspecialchars($_POST['author']);
 					$genreIds = $_POST['genreIds'];
 					$rating = $_POST['rating'];
+					$summary = htmlspecialchars($_POST['summary']);
 					$review = htmlspecialchars($_POST['review']);
 					$addGenre = htmlspecialchars($_POST['addGenre']);
 					$user_id = $_SESSION['user_id'];
@@ -80,10 +84,11 @@ else{
 					$result->execute();
 					$row = $result->fetch(PDO::FETCH_ASSOC);
 						if($row['id'] == 0) {
-							 $stmt = $db->prepare('INSERT INTO project1.library(title, author_id)
-												VALUES (:title, :author_id)');
+							 $stmt = $db->prepare('INSERT INTO project1.library(title, author_id, summary)
+												VALUES (:title, :author_id, :summary)');
 							 $stmt->bindValue(':title', $title, PDO::PARAM_STR);
 							 $stmt->bindValue(':author_id', $author_id, PDO::PARAM_INT);
+							  $stmt->bindValue(':summary', $summary, PDO::PARAM_STR);
 							 $stmt->execute();
 							 $title_id = $db->lastInsertId('project1.library_id_seq');
 						}else
@@ -137,6 +142,17 @@ else{
 			<input type='radio' name='rating' value='3'>3</input>
 			<input type='radio' name='rating' value='4'>4</input>
 			<input type='radio' name='rating' value='5'>5</input></br></br>
+			<?php
+				if($summary != ''){
+					echo "<p name='summary' class='summary' value=" . $summary . ">" . $summary . "</p>";
+				}
+				else{
+					echo "<label for='summary'>Summary(Optional)</label></br>"
+					echo "	<textarea rows='4' cols='50' id='review' name='review' ></textarea></br>"
+				}
+			?>
+			
+		
 			
 			<label for="review">Review</label></br>
 			<textarea rows="4" cols="50" id="review" name="review" ></textarea></br>
