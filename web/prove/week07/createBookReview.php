@@ -33,7 +33,7 @@ else{
 						 $author_id = '';
 					}else
 						$author_id = $row['author_id'];
-				if($title_id != ''){
+				if($author_id != ''){
 					$result = $db->prepare('SELECT author_name FROM project1.author WHERE id = :id');
 					$result->bindValue(':id', $author_id, PDO::PARAM_STR);
 					$result->execute();
