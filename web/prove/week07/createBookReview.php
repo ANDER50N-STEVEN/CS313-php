@@ -119,9 +119,16 @@ else{
 			
 			<label for="title">Title</label></br>
 			<input type="text" id="title" name="title" value="<?php echo $title?>"></br></br>
+			<?php
+			if($title != ''){
+				echo"<p style='text-align: center' value=". $author .">" . $author . "</p>";
+			}
+			else{
+			echo"	<label for='author'> Author</label></br>";
+			echo "<input type='text' id='author' name='author' value =" . $author . "></br></br>";
+			}
+			?>
 			
-			<label for="author"> Author</label></br>
-			<input type="text" id="author" name="author" value ="<?php echo $author ?>"></br></br>
 
 			<label for="message">Genre</label></br>
 			<?php
