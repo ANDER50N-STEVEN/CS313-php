@@ -56,7 +56,7 @@ else{
 	<form method="post" action="review.php" class='search'>
 	<input type="text" id="search" name="search" placeholder='Title'>
 	<input type="submit" name="submit" value="Search for a Book" class='submit'>
-	</form></br>
+	</form>
 	
   <div class='ratings' style="text-align: center">
 			<h1> <?php echo $_SESSION['name']; ?>'s Reviews</h1>

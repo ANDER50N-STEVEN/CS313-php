@@ -162,8 +162,8 @@ form.signin{
 
 form.search{
 	text-align: center;
-	margin: 0 auto; 
-}	
+	margin: auto;
+}
 
 .submit {
       border: 1px solid transparent;
