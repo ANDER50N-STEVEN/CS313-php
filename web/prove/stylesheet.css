@@ -183,9 +183,10 @@ form.signin{
       border: 1px solid rgba(255, 255, 255, .6);
       }	  
 	  
-.summary{
+p.summary{
 	text-align: left;
-	margin: 60%;
+	margin-left: 20%;
+	margin-right: 20%;
 }
 
 	  
