@@ -53,9 +53,9 @@ else{
 
     ?>
 	
-	<form method="post" action="review.php" class='signin' class='submit'>
-	<input type="text" id="search" name="search" placeholder='Title' class='search'>
-	<input type="submit" name="submit" value="Search for a Book" >
+	<form method="post" action="review.php" class='signin' class='search'>
+	<input type="text" id="search" name="search" placeholder='Title'>
+	<input type="submit" name="submit" value="Search for a Book" class='submit'>
 	</form></br>
 	
   <div class='ratings' style="text-align: center">
