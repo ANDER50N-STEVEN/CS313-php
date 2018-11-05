@@ -160,7 +160,7 @@ form.signin{
 	font-size: 20;
 }
 
-input.search{
+form.search{
 	text-align: right;
 	margin-right: 7%;
 }	
