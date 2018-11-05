@@ -5,6 +5,9 @@ html {
     min-height: 100%;
     background-color: #7997a1;
     color: white;
+	display: flex;
+	flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 hr{
@@ -29,10 +32,9 @@ table, tr, th{
 .footer {
     display: block;
     background-color: grey;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 74%;
-	height: 60px;
     margin-left: 13%;
 }
 
