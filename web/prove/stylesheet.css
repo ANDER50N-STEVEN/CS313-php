@@ -29,9 +29,10 @@ table, tr, th{
 .footer {
     display: block;
     background-color: grey;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     width: 74%;
+	height: 60px;
     margin-left: 13%;
 }
 
