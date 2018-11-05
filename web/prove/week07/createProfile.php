@@ -51,7 +51,7 @@
 			?>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="signin">
 			
-			<label for="name">Create Profile</label></br>
+			<h2>Create Profile</h2></br>
 			<input type="text" id="name" name="name" placeholder='Full Name'>
 			<hr style="height:5px; visibility:hidden;" />
 				

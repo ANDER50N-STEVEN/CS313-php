@@ -25,6 +25,23 @@ else{
 				
 				$title = htmlspecialchars($_GET['title']);
 				
+				$result = $db->prepare("SELECT id, author_id FROM project1.library WHERE title = :title");
+				$result->bindValue(':title', $title, PDO::PARAM_STR);
+				$result->execute();
+				$row = $result->fetch(PDO::FETCH_ASSOC);
+					if($row['id'] == 0) {
+						 $author_id = '';
+					}else
+						$author_id = $row['author_id'];
+				if($title_id != ''){
+					$result = $db->prepare('SELECT author_name FROM project1.author WHERE id = :id');
+					$result->bindValue(':id', $author_id, PDO::PARAM_STR);
+					$result->execute();
+					$row = $result->fetch(PDO::FETCH_ASSOC);
+					$author = $row['author_name'];
+				}
+						
+				
 				if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					$title = htmlspecialchars($_POST['title']);
 					$author = htmlspecialchars($_POST['author']);
@@ -99,7 +116,7 @@ else{
 			<input type="text" id="title" name="title" value="<?php echo $title?>"></br></br>
 			
 			<label for="author"> Author</label></br>
-			<input type="text" id="author" name="author"></br></br>
+			<input type="text" id="author" name="author" value ="<?php echo $author ?>></br></br>
 
 			<label for="message">Genre</label></br>
 			<?php
