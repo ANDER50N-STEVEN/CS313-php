@@ -160,6 +160,9 @@ form.signin{
 	font-size: 20;
 }
 
+input.search{
+	margin-right: 7%
+}	
 
 .submit {
       border: 1px solid transparent;
