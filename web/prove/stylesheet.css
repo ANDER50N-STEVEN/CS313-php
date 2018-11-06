@@ -201,9 +201,10 @@ p.summary{
 }
 
 .border{
-	width: 450px;
+	border-radius: 10px;
+	width: 250px;
     margin: auto;
-    background-color:#003366;
+    background-color:#d9dde2;
     padding: 50px;
 }
 	  
