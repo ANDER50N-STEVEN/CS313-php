@@ -52,10 +52,10 @@
 		<input type="text" id="userName" name="userName" placeholder="User Name"></br>
 
 		<input type="password" id="pass" name="pass" placeholder="Password"></br></br>
-		<input type="submit" name="submit" value="Submit" class='submit'>
+		<input type="submit" name="submit" value="Submit" class='submit' style='color:black'>
 		</form></br> 
 		<form action="createProfile.php" class='signin'>
-		<input type="submit" value="Create Profile" class='submit'/>
+		<input type="submit" value="Create Profile" class='submit'style='color:black'/>
 		</form></div>
 		
 		
