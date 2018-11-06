@@ -49,6 +49,7 @@
 				
 				}
 			?>
+			<div class='border'>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="signin">
 			
 			<h2>Create Profile</h2></br>
@@ -81,6 +82,7 @@
 			
 			<input type="submit" name="submit" value="Submit" class='submit'>
 			</form></br>
+			</div>
 				<?php
 				require('../../footer.php');
 			?>
