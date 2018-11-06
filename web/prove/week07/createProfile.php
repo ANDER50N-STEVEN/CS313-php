@@ -6,7 +6,7 @@
 <html lang="en">
 	<head>
 		<link rel="stylesheet" type="text/css" href="../stylesheet.css" />
-			<title>CREATE PROFILE</title>
+			<title style='color:'#515254'>CREATE PROFILE</title>
 			<?php
 				require('dbConnect.php');
 				
@@ -80,7 +80,7 @@
 			?>
 			<hr style="height:5px; visibility:hidden;" />
 			
-			<input type="submit" name="submit" value="Submit" class='submit'>
+			<input type="submit" name="submit" value="Submit" class='submit' style='color: black'>
 			</form></br>
 			</div>
 				<?php
