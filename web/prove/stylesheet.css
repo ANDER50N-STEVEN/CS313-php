@@ -173,6 +173,10 @@ form.signin{
 	margin-right: 8%;
 }
 
+tr.rating{
+	text-align: left;
+}
+
 .submit {
       border: 1px solid transparent;
       border-radius: 40px;

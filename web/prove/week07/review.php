@@ -48,7 +48,7 @@ else{
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       
-      echo "<p><span style='font-size:2em; font-weight:bold;'>Reviews for " . $bookName . "</span></p>";
+      echo "<p><span style='font-size:2em; font-weight:bold; margin-left: 11%;'>" . $bookName . "</span></p>";
 	  echo "<div class='ratings' style='text-align: center'>";
 	  echo "<table style='width:80%'>";
 	  echo "<tr><th style='width:200px'>User Name</th>";
@@ -57,7 +57,7 @@ else{
      
         foreach ($rows as $row)
         {
-			echo "<tr>";
+			echo "<tr class='rating'>";
 			echo "<td>" . $row['display_name'] . "</td>";
 			echo "<td>" . $row['rating'] . "</td>";
 			echo "<td>" . $row['review'] . "</td>";

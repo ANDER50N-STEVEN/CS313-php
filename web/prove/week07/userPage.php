@@ -76,7 +76,7 @@ else{
       $stmt->execute();
       while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {  
-	echo "<tr>";
+	echo "<tr class='rating'>";
     echo "<td>" . $row['title'] . "</td>";
     echo "<td>" . $row['rating'] . "</td>";
     echo "<td>" . $row['review'] . "</td>";
