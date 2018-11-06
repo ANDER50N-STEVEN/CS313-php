@@ -36,7 +36,7 @@ else{
     {
       $bookName = htmlspecialchars($_POST['search']);
 	  
-	  $query = "SELECT tbl_b.rating, tbl_b.review, tbl_c.display_name
+	  $query = "SELECT tbl_b.rating, tbl_b.review, tbl_c.display_name, tbl_a.summary
 				FROM  project1.library tbl_a    
 				INNER JOIN project1.rating tbl_b   
 				ON tbl_a.id = tbl_b.book_id
@@ -49,6 +49,7 @@ else{
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
       
       echo "<p><span style='font-size:2em; font-weight:bold; margin-left: 11%;'>" . $bookName . "</span></p>";
+	  echo "<p style='text-align:left; margin-left: 13%; margin-right: 13%;'>" . $row['summary'] . "</p>";
 	  echo "<div class='ratings' style='text-align: center'>";
 	  echo "<table style='width:80%'>";
 	  echo "<tr><th style='width:200px'>User Name</th>";
