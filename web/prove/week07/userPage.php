@@ -54,12 +54,12 @@ else{
     ?>
 	
 	<form method="post" action="review.php" class='search'>
-	<input type="text" id="search" name="search" placeholder='Title'>
+	<input type="text" id="search" name="search" placeholder='Title' style='width: 20%'>
 	<input type="submit" name="submit" value="Search for a Book" class='submit'>
 	</form>
 	
   <div class='ratings' style="text-align: center">
-			<h3> <?php echo $_SESSION['name']; ?>'s Reviews</h3>
+			<h3 style='width: 30%'> <?php echo $_SESSION['name']; ?>'s Reviews</h3>
 			<table style="width:80%">
 			<tr>
 				<th style="width:200px">Title</th>
