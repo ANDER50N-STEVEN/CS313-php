@@ -5,7 +5,7 @@
             Home Page</em></a>
 
     <a href="mailto:and12128@byui.edu" class="email"> 
-		<img src="email.jpg" alt="EMAIL" style="width:40px;height:30px;border:0;">
+		<img src="../email.jpg" alt="EMAIL" style="width:40px;height:30px;border:0;">
 		</a>   </h1>
       <hr class = "top"/>
         
