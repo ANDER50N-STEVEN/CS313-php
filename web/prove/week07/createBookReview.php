@@ -117,10 +117,11 @@ else{
 			?>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='signin'>
 			
-			<label for="title">Title</label></br>
-			<input type="text" id="title" name="title" value="<?php echo $title?>"></br></br>
+			
+			
+			<h2> <?php echo $title?></h2>
 			<?php
-			if($title != ''){
+			if($author != ''){
 				echo"<p style='text-align: center' value=". $author .">" . $author . "</p>";
 			}
 			else{
