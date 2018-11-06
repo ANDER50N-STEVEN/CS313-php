@@ -200,7 +200,12 @@ p.summary{
 	margin-right: 20%;
 }
 
-	  
+.border{
+	width: 450px;
+    margin: auto;
+    background-color:#003366;
+    padding: 50px;
+}
 	  
 	  
 	  
