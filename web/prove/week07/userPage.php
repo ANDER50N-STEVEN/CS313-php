@@ -19,12 +19,12 @@ else{
 	
 	 if($_SERVER['REQUEST_METHOD'] == 'POST')
 	  {
-		if(isset($_POST['search'])) 
+		if(isset($_POST['book'])) 
 		{
-			echo"something";
+			
 		  $bookName = test_input($_POST['search']);
 		  
-		  $stmt = $db->prepare('SELECT title, summary FROM project1.library WHERE title=:bookName');
+		  $stmt = $db->prepare('SELECT title FROM project1.library WHERE title=:bookName');
 		  $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
 		  $stmt->execute();
 		  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -35,7 +35,6 @@ else{
 		  }
 		  else{
 			  $_SESSION['title'] = $row['title'];
-			  $_SESSION['summary'] = $row['summary'];
 			$new_Page ="review.php";
 			header("Location: $new_Page");
 			die();
@@ -54,7 +53,7 @@ else{
 
     ?>
 	
-	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='search'>
+	<form method="post" action="review.php" class='search'>
 	<input type="text" id="search" name="search" placeholder='Title' style='width: 20%'>
 	<input type="submit" name="submit" value="Search for a Book" class='submit'>
 	</form>

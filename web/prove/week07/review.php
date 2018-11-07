@@ -47,24 +47,36 @@ else{
 	  $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	  $q2 = "SELECT summary FROM project1.library WHERE title = :bookName";
+	  $s2 = $db->prepare($q2);
+	  $s2->bindValue(':bookName', $bookName, PDO::PARAM_STR);
+	  $s2->execute();
+	  $summary = $s2->fetch(PDO::FETCH_ASSOC);
       
       echo "<p><span style='font-size:2em; font-weight:bold; margin-left: 11%;'>" . $bookName . "</span></p>";
-	  echo "<p style='text-align:left; margin-left: 13%; margin-right: 13%;'>" . $_SESSION['summary'] . "</p>";
+	  echo "<p style='text-align:left; margin-left: 13%; margin-right: 13%;'>" . $summary['summary'] . "</p>";
 	  echo "<div class='ratings' style='text-align: center'>";
-	  echo "<table style='width:80%'>";
-	  echo "<tr><th style='width:200px'>User Name</th>";
-	  echo "<th style='width:50px'>Rating</th> ";
-	  echo "<th>Review</th></tr>";
-     
-        foreach ($rows as $row)
-        {
-			echo "<tr class='rating'>";
-			echo "<td>" . $row['display_name'] . "</td>";
-			echo "<td>" . $row['rating'] . "</td>";
-			echo "<td>" . $row['review'] . "</td>";
-			echo "</tr>";
-        }     
-	echo "</table>";	
+	
+	if(count($rows) <= 0)
+		  {
+			echo "No Reviews Found";
+		  }
+	  else{
+		 echo "<table style='width:80%'>";
+		  echo "<tr><th style='width:200px'>User Name</th>";
+		  echo "<th style='width:50px'>Rating</th> ";
+		  echo "<th>Review</th></tr>";
+		 
+			foreach ($rows as $row)
+			{
+				echo "<tr class='rating'>";
+				echo "<td>" . $row['display_name'] . "</td>";
+				echo "<td>" . $row['rating'] . "</td>";
+				echo "<td>" . $row['review'] . "</td>";
+				echo "</tr>";
+			}     
+		echo "</table>";	
+	  }
     } else {
       
       echo "Something Else!";
