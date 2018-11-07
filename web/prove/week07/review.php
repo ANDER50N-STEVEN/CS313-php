@@ -53,7 +53,10 @@ else{
 	  $s2->bindValue(':bookName', $bookName, PDO::PARAM_STR);
 	  $s2->execute();
 	  $summary = $s2->fetch(PDO::FETCH_ASSOC);
-      
+			
+			echo "<form method='get' action='userPage.php'>";
+			echo "<input type='submit' value='Go Back' class='submit'/>";
+			echo "</form>"	;
       echo "<p><span style='font-size:2em; font-weight:bold; margin-left: 11%;'>" . $bookName . "</span></p>";
 	  echo "<p style='text-align:left; margin-left: 13%; margin-right: 13%;'>" . $summary['summary'] . "</p>";
 	  echo "<div class='ratings' style='text-align: center'>";
