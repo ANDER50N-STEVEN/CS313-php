@@ -54,7 +54,7 @@ else{
 	  $summary = $s2->fetch(PDO::FETCH_ASSOC);
       
       echo "<p><span style='font-size:2em; font-weight:bold; margin-left: 11%;'>" . $bookName . "</span></p>";
-	  echo "<p style='text-align:left; margin-left: 13%; margin-right: 13%;'>" . $summary . "</p>";
+	  echo "<p style='text-align:left; margin-left: 13%; margin-right: 13%;'>" . $summary['summary'] . "</p>";
 	  echo "<div class='ratings' style='text-align: center'>";
 	  echo "<table style='width:80%'>";
 	  echo "<tr><th style='width:200px'>User Name</th>";
