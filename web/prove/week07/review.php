@@ -48,6 +48,7 @@ else{
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  $q2 = "SELECT summary FROM project1.library WHERE title = :bookName";
+	  $s2 = $db->prepare($q2);
 	  $s2->bindValue(':bookName', $bookName, PDO::PARAM_STR);
 	  $s2->execute();
 	  $summary = $s2->fetch(PDO::FETCH_ASSOC);
