@@ -21,10 +21,10 @@ else{
 	  {
 		if(isset($_POST['search'])) 
 		{
-			
+			echo"something";
 		  $bookName = test_input($_POST['search']);
 		  
-		  $stmt = $db->prepare('SELECT title FROM project1.library WHERE title=:bookName');
+		  $stmt = $db->prepare('SELECT title, summary FROM project1.library WHERE title=:bookName');
 		  $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
 		  $stmt->execute();
 		  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -35,6 +35,7 @@ else{
 		  }
 		  else{
 			  $_SESSION['title'] = $row['title'];
+			  $_SESSION['summary'] = $row['summary'];
 			$new_Page ="review.php";
 			header("Location: $new_Page");
 			die();
