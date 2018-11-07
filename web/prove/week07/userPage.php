@@ -28,6 +28,9 @@ else{
 	<input type="text" id="search" name="search" placeholder='Title' style='width: 20%'>
 	<input type="submit" name="submit" value="Search for a Book" class='submit'>
 	</form>
+	<form method="get" action="New.php" class='signout'>
+	<input type="submit" name="submit" value="Sign Out" class='submit'>
+	</form>
 	
   <div class='ratings' style="text-align: center">
 			<h3 style='width: 30%'> <?php echo $_SESSION['name']; ?>'s Reviews</h3>

@@ -14,6 +14,10 @@
 			<?php
 				require('../header.php');
 
+				if($_SERVER['REQUEST_METHOD'] == 'GET'){
+				session_unset(); 
+				session_destroy(); 
+				}
 				if($_SERVER['REQUEST_METHOD'] == 'POST')
 				{
 					if(isset($_POST['pass']))
