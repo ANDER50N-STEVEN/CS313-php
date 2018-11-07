@@ -62,7 +62,7 @@ else{
 		  {
 			echo "No Reviews Found Would You like to add Review?";
 			echo "<form method='' action='createBookReview.php'>";
-			echo "<input type='hidden' name='title'  value=".$bookName."/>";
+			echo "<input type='hidden' name='title'  value='".$bookName."'/>";
 			echo "<input type='submit' value='Yes' class='submit'/>";
 			echo "</form>"	;
 			echo "<form method='get' action='userPage.php'>";
