@@ -117,10 +117,9 @@ else{
 			?>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='signin'>
 			
-			
-			
 			<h2> <?php echo $title?></h2>
 			<?php
+			echo $author;
 			if($author != ''){
 				echo"<p style='text-align: center' value=". $author .">" . $author . "</p>";
 			}
@@ -142,7 +141,7 @@ else{
 				  } 
 			?>
 			<input type = 'checkbox' >
-			<input type="text" id="addGenre" name="addGenre">
+			<input type="text" id="addGenre" name="addGenre" style='width:100px'>
 			</br></br>
 			
 			<input type='radio' name='rating' value='1'>1</input>
