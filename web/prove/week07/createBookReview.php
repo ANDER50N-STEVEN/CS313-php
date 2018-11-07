@@ -14,7 +14,7 @@ else{
 <html lang="en">
 	<head>
 		<link rel="stylesheet" type="text/css" href="../stylesheet.css" />
-			<title>CREATE REVIEW</title>
+			<title>CREATE PROFILE</title>
 			<?php
 				require('dbConnect.php');
 			?>
@@ -23,11 +23,7 @@ else{
 			<?php
 				require('../header.php');
 				
-				 if($_SERVER['REQUEST_METHOD'] == 'POST')
-					 $title = $_SESSION['title'];
-				 else
-					 $title = htmlspecialchars($_GET['title']);
-				
+				$title = htmlspecialchars($_GET['title']);
 				
 				$result = $db->prepare("SELECT id, author_id, summary FROM project1.library WHERE title = :title");
 				$result->bindValue(':title', $title, PDO::PARAM_STR);

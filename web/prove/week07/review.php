@@ -61,8 +61,8 @@ else{
 	if(count($rows) <= 0)
 		  {
 			echo "No Reviews Found Would You like to add Review?";
-			echo "<form method='post' action='createBookReview.php'>";
-			echo "<input type='submit' value='Yes' class='submit'/>";
+			echo "<form method='GET' action='createBookReview.php'>";
+			echo "<input type='submit' value=" . $bookName . " class='submit' text='YES'/>";
 			echo "</form>"	;
 			echo "<form method='get' action='userPage.php'>";
 			echo "<input type='submit' value='No' class='submit'/>";
