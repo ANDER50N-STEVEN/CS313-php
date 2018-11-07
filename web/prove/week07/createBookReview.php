@@ -119,7 +119,6 @@ else{
 			
 			<h2> <?php echo $title?></h2>
 			<?php
-			echo $author;
 			if($author != ''){
 				echo"<p style='text-align: center' value=". $author .">" . $author . "</p>";
 			}
