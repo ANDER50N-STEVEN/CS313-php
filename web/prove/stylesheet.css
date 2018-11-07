@@ -209,8 +209,8 @@ p.summary{
 }
 	  
 	  .signout{
-		  text-align: right;
-	margin-right: 8%;
+		  text-align: left;
+	margin-left: 8%;
 	margin-top: -20px;
 	  }
 	  
