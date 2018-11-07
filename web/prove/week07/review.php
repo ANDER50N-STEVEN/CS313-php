@@ -35,6 +35,7 @@ else{
     if(isset($_POST['search'])) 
     {
       $bookName = htmlspecialchars($_POST['search']);
+	  $_SESSION['title'] = $bookName;
 	  
 	  $query = "SELECT tbl_b.rating, tbl_b.review, tbl_c.display_name, tbl_a.summary
 				FROM  project1.library tbl_a    
