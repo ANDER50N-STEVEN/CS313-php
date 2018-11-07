@@ -105,10 +105,11 @@ INSERT INTO project1.library (title, author_id, summary) VALUES
 ('Magician: Apprentice', 18, ' At Crydee, Pug, an orphan boy is apprenticed to a master magician. Suddenly the Kingdom is aswarm with alien invaders, destroying the peace of the kingdom. Pug and his friend Tomas are swept up into the conflict, with Pugs destiny leading him through a rift to a new world.') ;
 
 
--- INSERT INTO project1.rating (user_id, book_id, rating, review) VALUES
--- (1, 5, 5, 'This is one of my favorite books, not because the book itself is that unique, but because it sets the stage and creates characters you learn to love'),
--- (2, 5, 4, 'Really good book, but a little too much like Lord of the Rings'),
--- (1, 2, 5, 'This is one of the greates books ever written, if only because of its originallity in the world');
+INSERT INTO project1.rating (user_id, book_id, rating, review) VALUES
+(1, 5, 5, 'This is one of my favorite books, not because the book itself is that unique, but because it sets the stage and creates characters you learn to love'),
+(2, 5, 4, 'Really good book, but a little too much like Lord of the Rings'),
+(1, 2, 5, 'This is one of the greates books ever written, if only because of its originallity in the world'),
+(3, 5, 2, 'Look, Im sorry. This is another one of those Lord-of-the-Rings moment where I appreciate the effort, but this is not for me. ');
 
 INSERT INTO project1.books_genres (title_id, genre_id) VALUES
 (1, 1),
