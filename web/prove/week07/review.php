@@ -54,7 +54,7 @@ else{
 	  $s2->execute();
 	  $summary = $s2->fetch(PDO::FETCH_ASSOC);
 			
-			echo "<form method='get' action='userPage.php'>";
+			echo "<form method='get' action='userPage.php' class='search'>";
 			echo "<input type='submit' value='Go Back' class='submit'/>";
 			echo "</form>"	;
       echo "<p><span style='font-size:2em; font-weight:bold; margin-left: 11%;'>" . $bookName . "</span></p>";
