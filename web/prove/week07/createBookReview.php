@@ -24,6 +24,7 @@ else{
 				require('../header.php');
 				
 				$title = htmlspecialchars($_GET['title']);
+				$_SESSION['title'] = $title;
 				
 				$result = $db->prepare("SELECT id, author_id, summary FROM project1.library WHERE title = :title");
 				$result->bindValue(':title', $title, PDO::PARAM_STR);
@@ -117,7 +118,7 @@ else{
 			?>
 			<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='signin'>
 			
-			<h2> <?php echo $title?></h2>
+			<h2> <?php echo $_SESSION['title']?></h2>
 			<?php
 			if($author != ''){
 				echo"<p style='text-align: center' value=". $author .">" . $author . "</p>";
