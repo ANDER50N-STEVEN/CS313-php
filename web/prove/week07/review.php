@@ -47,9 +47,13 @@ else{
 	  $stmt->bindValue(':bookName', $bookName, PDO::PARAM_STR);
       $stmt->execute();
       $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	  $q2 = "SELECT summary FROM project1.library WHERE title = :bookName";
+	  $s2->bindValue(':bookName', $bookName, PDO::PARAM_STR);
+	  $s2->execute();
+	  $summary = $s2->fetch(PDO::FETCH_ASSOC);
       
       echo "<p><span style='font-size:2em; font-weight:bold; margin-left: 11%;'>" . $bookName . "</span></p>";
-	  echo "<p style='text-align:left; margin-left: 13%; margin-right: 13%;'>" . $name = $stmt->query("SELECT summary FROM project1.library WHERE title =" .  $bookName)->fetch_object()->name;   . "</p>";
+	  echo "<p style='text-align:left; margin-left: 13%; margin-right: 13%;'>" . $summary . "</p>";
 	  echo "<div class='ratings' style='text-align: center'>";
 	  echo "<table style='width:80%'>";
 	  echo "<tr><th style='width:200px'>User Name</th>";
