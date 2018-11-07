@@ -65,7 +65,6 @@ else{
 			echo "</tr>";
         }     
 	echo "</table>";	
-		if($rows =
     } else {
       
       echo "Something Else!";
