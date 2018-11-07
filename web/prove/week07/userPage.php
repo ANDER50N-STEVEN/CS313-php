@@ -19,7 +19,7 @@ else{
 	
 	 if($_SERVER['REQUEST_METHOD'] == 'POST')
 	  {
-		if(isset($_POST['book'])) 
+		if(isset($_POST['search'])) 
 		{
 			
 		  $bookName = test_input($_POST['search']);
@@ -53,7 +53,7 @@ else{
 
     ?>
 	
-	<form method="post" action="review.php" class='search'>
+	<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class='search'>
 	<input type="text" id="search" name="search" placeholder='Title' style='width: 20%'>
 	<input type="submit" name="submit" value="Search for a Book" class='submit'>
 	</form>
