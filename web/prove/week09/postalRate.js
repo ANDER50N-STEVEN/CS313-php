@@ -19,7 +19,7 @@ app.get('/home', function(req, res){
 	
 });
 
-app.listen(5000, function() {
+app.listen(app.get('port'), function() {
 	console.log('server running on port 5000')
 });
 
